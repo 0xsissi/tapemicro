@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-17T15:45:11.920747+00:00",
+  "guideLanguages": [
+    "zh-CN",
+    "en"
+  ],
+  "guideUrls": [
+    "https://tapemicro.top/guide.html",
+    "https://tapemicro.top/guide-en.html"
+  ],
+  "marketVersion": 4,
+  "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+  "referralBonusBps": 1000,
+  "frontendTests": 131,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "websitePublished": true,
+  "resourcesVerified": 27,
+  "manifestSha256": "c1c7f08f87b833677841fbe3f370e35fe9f4f8ff9d401ebd3138be77702f97ec",
+  "contentChecks": {
+    "passed": true,
+    "date": "2026-10-17T15:39:14.954582+00:00",
+    "bothReferralBonusesBps": 1000,
+    "marketVersion": 4,
+    "standaloneStatic": true,
+    "rows": [
+      {
+        "file": "guide.html",
+        "language": "zh-CN",
+        "sections": 11,
+        "figureElements": 10,
+        "inlineDiagrams": 6,
+        "allLocalLinksResolved": true,
+        "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+        "bytes": 71550
+      },
+      {
+        "file": "guide-en.html",
+        "language": "en",
+        "sections": 11,
+        "figureElements": 10,
+        "inlineDiagrams": 6,
+        "allLocalLinksResolved": true,
+        "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+        "bytes": 73013
+      }
+    ],
+    "sourceOriginalUntouched": true
+  },
+  "browserChecks": {
+    "passed": true,
+    "mainnetTransactionsSubmitted": false,
+    "checks": [
+      {
+        "guide": "http://127.0.0.1:4176/guide-en.html",
+        "label": "demo-en-320-final",
+        "overflow": false,
+        "width": 320
+      },
+      {
+        "label": "guide-en-390",
+        "overflow": false,
+        "sections": 11,
+        "width": 390
+      },
+      {
+        "label": "guide-en-mobile-faq",
+        "languageLink": "http://127.0.0.1:4176/guide.html#faq",
+        "openFaq": "Why did the match cover only part of my amount?Matching is limited by loaded order-book depth and a maximum of 16 fills per transaction. The quote shows the matched amount before confirmation. Execution is atomic: a stale quote reverts the whole batch rather than skipping failed fills. Review a new quote before submitting again.",
+        "overflow": false,
+        "width": 390
+      },
+      {
+        "label": "guide-zh-mobile-language",
+        "language": "zh-CN",
+        "overflow": false,
+        "url": "http://127.0.0.1:4176/guide.html#faq",
+        "width": 390
+      },
+      {
+        "label": "guide-en-desktop",
+        "overflow": false,
+        "sections": 11,
+        "width": 1280
+      },
+      {
+        "guide": "http://127.0.0.1:4176/guide-en.html",
+        "label": "main-language-return",
+        "language": "en",
+        "overflow": false,
+        "width": 1280
+      },
+      {
+        "label": "demo-en-1024-final",
+        "nav": 953,
+        "overflow": false,
+        "width": 1024
+      },
+      {
+        "label": "guide-zh-768-final",
+        "overflow": false,
+        "sections": 11,
+        "width": 768
+      },
+      {
+        "label": "guide-en-768-final",
+        "overflow": false,
+        "sections": 11,
+        "width": 768
+      },
+      {
+        "label": "guide-en-1024-final",
+        "overflow": false,
+        "width": 1024
+      },
+      {
+        "label": "guide-en-320-final",
+        "overflow": false,
+        "width": 320
+      },
+      {
+        "label": "guide-zh-320-final",
+        "overflow": false,
+        "url": "http://127.0.0.1:4176/guide.html#safety",
+        "width": 320
+      }
+    ],
+    "faqExpanded": true,
+    "languagePreservesSection": true,
+    "returnToAppPreservesLanguage": true,
+    "issuesFixed": [
+      "narrow English navigation overflow",
+      "tablet guide TOC overflow",
+      "TOC must only scroll horizontally"
+    ]
+  }
+}

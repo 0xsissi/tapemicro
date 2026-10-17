@@ -1,6 +1,6 @@
 # TapeMicro
 
-[正式网站 / App](https://tapemicro.top/) · [离线演示 / Demo](https://tapemicro.top/demo/index.html#market) · [合约部署 / Deployments](deployments/bsc-mainnet.json)
+[正式网站 / App](https://tapemicro.top/) · [使用指南](https://tapemicro.top/guide.html) · [User guide](https://tapemicro.top/guide-en.html) · [离线演示 / Demo](https://tapemicro.top/demo/index.html#market) · [合约部署 / Deployments](deployments/bsc-mainnet.json)
 
 TapeMicro 将 BSC 上合格的 TapeOut 原矿机拆成 ERC-1155 微矿机，提供拆分、双边交易、BEM 领取及交易/邀请积分四个功能。源码采用 [MIT License](LICENSE)。这是第三方集成，未获得 TapeOut 官方背书。
 

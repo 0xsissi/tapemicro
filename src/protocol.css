@@ -107,7 +107,7 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 }
 @media(prefers-reduced-motion:reduce){.toast{transition:none}}
 .language-switch{min-width:42px;height:36px;padding:5px 8px;font-size:13px;color:var(--text-2);border:1px solid var(--line);border-radius:8px;white-space:nowrap;flex-shrink:0}.language-switch:hover{color:var(--text);border-color:var(--text-3)}
-@media(min-width:801px) and (max-width:1000px){.app-header{height:auto;min-height:76px;display:grid;grid-template-columns:1fr auto;gap:0 20px;padding-top:18px}.brand{grid-column:1;grid-row:1}.header-right{grid-column:2;grid-row:1}.main-nav{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:0;margin-top:14px;height:52px}.main-nav a{justify-content:center;flex:1}}
+@media(min-width:801px) and (max-width:1180px){.app-header{height:auto;min-height:76px;display:grid;grid-template-columns:1fr auto;gap:0 20px;padding-top:18px}.brand{grid-column:1;grid-row:1}.header-right{grid-column:2;grid-row:1}.main-nav{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:0;margin-top:14px;height:52px}.main-nav a{justify-content:center;flex:1}}
 @media(max-width:560px){.app-header{grid-template-columns:minmax(0,1fr) auto auto;gap:0 8px}.language-switch{grid-column:2;grid-row:1;min-width:36px;padding:5px 6px}.header-right .button{grid-column:3;grid-row:1;padding-left:10px;padding-right:10px}.header-balances,.main-nav{grid-column:1/-1}.brand{min-width:0}.brand span:last-child{overflow:hidden;text-overflow:ellipsis}.claim-selection{gap:10px}.book-controls.has-mine-filters{grid-template-columns:minmax(0,1fr) 132px}}
 @media(max-width:360px){.brand{font-size:16px;gap:6px}.brand-mark,.brand-mark svg{width:22px;height:22px}.header-right .button{padding-left:8px;padding-right:8px}.header-balances>span,.header-balances>a{flex-direction:column;align-items:flex-start;gap:2px}}
 @media(max-width:560px){.mobile-reward-caption{display:block;margin-bottom:12px}.asset-list-heading .claim-selection{width:100%;margin:10px 0}.asset-list-heading .claim-selection>span{order:0;flex-basis:auto}.claim-selection>.button{margin-left:auto}.split-visual{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:6px}.split-visual .amount{font-size:clamp(30px,8vw,40px)}}
@@ -162,3 +162,7 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 
 .wallet-choices{display:grid;gap:10px;margin:20px 0}.wallet-choice{display:flex;justify-content:space-between;align-items:center;gap:18px;text-align:left;padding:16px;border:1px solid var(--line);border-radius:10px;font-size:15px}.wallet-choice:hover:not(:disabled){border-color:var(--text-2);background:var(--raise)}.wallet-choice span:first-child{min-width:0;overflow-wrap:anywhere}
 .protocol-app:not(.wallet-connected) #rewards-chain,.protocol-app:not(.wallet-connected) #points-chain{min-height:0}
+
+/* The guide is the fifth navigation item; keep the wrapped header within small screens. */
+@media(max-width:1180px){.main-nav{gap:0}}
+@media(max-width:360px){.main-nav a{font-size:14px}}

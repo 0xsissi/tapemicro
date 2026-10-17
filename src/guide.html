@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>使用指南 · TapeMicro</title>
+<meta name="description" content="TapeMicro 使用指南：拆分 TapeOut / Behemoth 原矿机、买卖 1H 微矿机、领取 BEM、赎回、交易积分与邀请、费用和安全授权。">
+<meta name="theme-color" content="#0B0C0E">
+<!-- Standalone bilingual guide. Market version 4; ANY bids and both referral bonuses are live. Illustrations use fictional examples. -->
+<link rel="preload" href="./fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" hreflang="en" href="./guide-en.html">
+<style>
+@font-face{font-family:Plex;src:url('./fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Plex;src:url('./fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+:root{
+  --bg:#0B0C0E;--surface:#131518;--raise:#1A1D21;--line:#262A30;--line-soft:#1C1F24;
+  --text:#F3F3F1;--text-2:#B4B8BF;--text-3:#858A92;--up:#4CC38A;--down:#F0716B;--gold:#E8B44A;
+  --gold-tint:rgba(232,180,74,.07);--up-tint:rgba(76,195,138,.08);--down-tint:rgba(240,113,107,.08);
+  --font:"Plex","IBM Plex Sans","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;
+  --mono:var(--font);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.75 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,12,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;font-size:16px}
+.brand svg{width:22px;height:22px;fill:none;stroke:var(--text);stroke-width:1.6}
+.brand .core{fill:var(--gold);stroke:none}
+.nav{display:flex;gap:22px;font-size:14px}
+.nav a{text-decoration:none;color:var(--text-2);padding:20px 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--text)}
+.nav a.on{color:var(--text);border-color:var(--text)}
+.top .go{margin-left:auto;text-decoration:none;font-size:14px;border:1px solid var(--line);border-radius:10px;padding:7px 14px}
+.top .go:hover{background:var(--raise)}
+/* layout */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding:40px 24px 96px}
+.toc{position:sticky;top:96px;align-self:start;font-size:14px}
+.toc b{display:block;color:var(--text-3);font-weight:400;font-size:13px;letter-spacing:.08em;margin-bottom:10px}
+.toc a{display:flex;gap:10px;text-decoration:none;color:var(--text-2);padding:6px 10px;border-radius:8px;border-left:2px solid transparent}
+.toc a span{color:var(--text-3);font-variant-numeric:tabular-nums}
+.toc a:hover{background:var(--surface);color:var(--text)}
+.toc a.on{color:var(--text);background:var(--surface);border-left-color:var(--gold)}
+main{min-width:0}
+.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.12em;font-weight:600}
+h1{font-size:40px;line-height:1.25;margin:10px 0 14px;font-weight:600;letter-spacing:-.01em}
+.lead{color:var(--text-2);font-size:16px;max-width:720px;margin:0}
+section{padding-top:64px}
+section>header{border-top:1px solid var(--line-soft);padding-top:28px;margin-bottom:22px}
+h2{font-size:26px;line-height:1.35;margin:6px 0 10px;font-weight:600}
+h3{font-size:17px;margin:30px 0 10px;font-weight:600}
+p{margin:0 0 12px}
+.sub{color:var(--text-2);max-width:760px}
+.muted{color:var(--text-3)}
+code,.mono{font-family:var(--mono);font-size:.9em}
+code{background:var(--raise);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+strong{font-weight:600}
+/* quick cards */
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.quick a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;transition:border-color .15s}
+.quick a:hover{border-color:var(--text-3)}
+.quick .n{color:var(--gold);font-size:13px;font-weight:600}
+.quick .t{display:block;font-size:17px;font-weight:600;margin:6px 0 4px}
+.quick .d{display:block;color:var(--text-2);font-size:13.5px}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:22px 0}
+.facts div{padding:16px 18px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts small{display:block;color:var(--text-3);font-size:13px}
+.facts b{display:block;font-size:22px;font-weight:600;margin-top:4px}
+.facts span{display:block;color:var(--text-2);font-size:13px}
+/* figures */
+figure{margin:22px 0 26px}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;overflow:hidden}
+figcaption{color:var(--text-3);font-size:13px;margin-top:10px;display:flex;gap:8px;align-items:baseline}
+figcaption .tag{border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:13px;color:var(--text-3);flex:none}
+svg.dia{width:100%;height:auto;display:block}
+svg.dia text{font-family:var(--font);fill:var(--text)}
+svg.dia .t2{fill:var(--text-2)}
+svg.dia .t3{fill:var(--text-3)}
+svg.dia .gold{fill:var(--gold)}
+svg.dia .up{fill:var(--up)}
+svg.dia .down{fill:var(--down)}
+/* steps */
+ol.steps{list-style:none;padding:0;margin:16px 0;counter-reset:s}
+ol.steps>li{position:relative;padding:0 0 18px 46px;counter-increment:s}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--raise);display:grid;place-items:center;font-size:13px;font-weight:600}
+ol.steps>li::after{content:"";position:absolute;left:14px;top:32px;bottom:4px;width:1px;background:var(--line)}
+ol.steps>li:last-child::after{display:none}
+ol.steps b{display:block;font-weight:600}
+ol.steps p{color:var(--text-2);margin:2px 0 0}
+/* two col */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
+/* callouts */
+.note{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 16px;margin:16px 0;color:var(--text-2)}
+.note b{color:var(--text)}
+.note.warn{border-color:rgba(232,180,74,.35);background:var(--gold-tint)}
+.note.warn b{color:var(--gold)}
+.note.bad{border-color:rgba(240,113,107,.35);background:var(--down-tint)}
+.note.bad b{color:var(--down)}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+.tbl th,.tbl td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.tbl th{color:var(--text-3);font-weight:400;font-size:13px;border-bottom-color:var(--line)}
+.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl .free{color:var(--up)}
+.tblwrap{border:1px solid var(--line);border-radius:14px;overflow-x:auto;background:var(--surface)}
+.tblwrap .tbl{margin:0}
+.tblwrap .tbl tr:last-child td{border-bottom:0}
+/* ui mockups (示意，按主站样式) */
+.mock{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;font-size:13.5px;position:relative}
+.mock .ttl{font-weight:600;font-size:15px;margin-bottom:12px}
+.mock .row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:var(--text-2)}
+.mock .row b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.mock .row.tot{border-top:1px solid var(--line);margin-top:6px;padding-top:10px}
+.mock .row.tot b{font-size:16px}
+.mock .lbl{color:var(--text-3);font-size:13px;margin:10px 0 6px}
+.mock .input{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);font-size:18px;font-weight:600}
+.mock .input small{font-size:13px;color:var(--text-3);font-weight:400}
+.mock .chips{display:flex;gap:8px;margin-top:8px}
+.mock .chips span{flex:1;text-align:center;border:1px solid var(--line);border-radius:8px;padding:5px 0;color:var(--text-2);font-size:13px}
+.mock .chips span.on{border-color:var(--text);color:var(--text)}
+.mock .btn{display:block;text-align:center;border-radius:10px;padding:10px;margin-top:14px;font-weight:600;background:var(--text);color:var(--bg)}
+.mock .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.mock .tabs{display:flex;border-bottom:1px solid var(--line);margin:-4px -4px 14px}
+.mock .tabs span{flex:1;text-align:center;padding:8px 0;color:var(--text-3)}
+.mock .tabs span.on{color:var(--text);border-bottom:2px solid var(--text)}
+.mock .seg{display:flex;gap:8px}
+.mock .seg span{flex:1;border:1px solid var(--line);border-radius:10px;padding:9px 10px;color:var(--text-2);font-size:13px;line-height:1.45}
+.mock .seg span b{display:block;color:var(--text);font-size:13.5px}
+.mock .seg span.on{border-color:var(--gold);background:var(--gold-tint)}
+.mock .seg span.on b{color:var(--gold)}
+.mock .step{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;color:var(--text-2)}
+.mock .step>i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;border:1px solid var(--line);flex:none}
+.mock .step.done>i{background:var(--up);border-color:var(--up);color:var(--bg)}
+.mock .step.cur{border-color:var(--text);color:var(--text)}
+.mock .item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.mock .item.on{border-color:var(--text)}
+.mock .item .chip{width:34px;height:34px;border-radius:8px;background:var(--raise);display:grid;place-items:center;flex:none}
+.mock .item .chip svg{width:18px;height:18px;fill:none;stroke:var(--text-2);stroke-width:1.6}
+.mock .item div{flex:1;min-width:0}
+.mock .item small{display:block;color:var(--text-3);font-size:13px}
+.mock .item .r{text-align:right;flex:none}
+.mock .box{width:16px;height:16px;border:1px solid var(--text-3);border-radius:4px;flex:none}
+.mock .box.on{background:var(--text);border-color:var(--text);position:relative}
+.mock .box.on::after{content:"";position:absolute;left:5px;top:1px;width:4px;height:9px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.mock .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 8px;font-size:13px;color:var(--text-3)}
+.mock .pill.ok{color:var(--up);border-color:rgba(76,195,138,.4)}
+.mk{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--bg);font-size:13px;font-weight:600;margin-right:6px;vertical-align:1px;font-style:normal;box-shadow:0 0 0 3px rgba(232,180,74,.16)}
+ol.steps.mkd>li::before{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.tbl.k td:first-child{white-space:nowrap}
+svg.dia.dia-m{display:none}
+@media (max-width:640px){svg.dia.dia-w{display:none}svg.dia.dia-m{display:block}}
+.flow{display:flex;align-items:stretch;gap:10px;margin:18px 0}
+.flow .fb{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.flow .fb small{display:block;color:var(--text-3);font-size:13px}
+.flow .fb b{display:block;margin:2px 0}
+.flow .fb p{color:var(--text-2);font-size:13.5px;margin:0}
+.flow .fb.hl{border-color:rgba(232,180,74,.45);background:var(--gold-tint)}
+.flow .fa{display:grid;place-items:center;color:var(--text-3);font-size:18px;flex:none}
+@media (max-width:640px){.flow{flex-direction:column}.flow .fa{transform:rotate(90deg);height:18px}}
+.legend{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.legend li{display:flex;gap:10px;color:var(--text-2);font-size:13.5px}
+.legend li i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--bg);font-size:13px;font-weight:600;display:grid;place-items:center;flex:none;margin-top:2px}
+/* wallet prompt mock */
+.wallet{max-width:340px;margin:0 auto;background:#16181c;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:13px}
+.wallet .wh{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;color:var(--text-2)}
+.wallet .wb{padding:16px}
+.wallet .wb .fn{font-family:var(--mono);font-size:14px;color:var(--text);margin-bottom:10px}
+.wallet .kv{display:flex;justify-content:space-between;gap:10px;padding:5px 0;color:var(--text-3)}
+.wallet .kv span:last-child{color:var(--text);font-family:var(--mono);font-size:13px;text-align:right}
+.wallet .wf{display:flex;gap:10px;padding:0 16px 16px}
+.wallet .wf span{flex:1;text-align:center;border-radius:10px;padding:8px 0;border:1px solid var(--line)}
+.wallet .wf span.ok{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
+/* check lists */
+.ck{list-style:none;padding:0;margin:8px 0}
+.ck li{padding:4px 0 4px 26px;position:relative;color:var(--text-2)}
+.ck li::before{content:"";position:absolute;left:2px;top:11px;width:12px;height:7px;border:solid var(--up);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+.ck.no li::before{border:0;width:auto;height:auto;transform:none;content:"✕";color:var(--down);top:4px;left:3px;font-size:13px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card b{display:block;margin-bottom:4px}
+.card p{color:var(--text-2);font-size:13.5px;margin:0}
+/* faq */
+details{border-bottom:1px solid var(--line-soft)}
+details:first-of-type{border-top:1px solid var(--line-soft)}
+summary{list-style:none;cursor:pointer;padding:16px 36px 16px 0;position:relative;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:12px;font-size:20px;font-weight:400;color:var(--text-3)}
+details[open] summary::after{content:"−"}
+details .a{color:var(--text-2);padding:0 0 18px;max-width:780px}
+.faqgroup{color:var(--text-3);font-size:13px;letter-spacing:.08em;margin:30px 0 6px}
+/* addresses */
+.addr{display:grid;gap:10px;margin:14px 0}
+.addr div{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.addr b{min-width:96px;font-weight:600}
+.addr code{background:none;border:0;padding:0;word-break:break-all;color:var(--text-2)}
+.addr a{font-size:13px;color:var(--text-3)}
+.addr a:hover{color:var(--text)}
+footer{border-top:1px solid var(--line-soft);color:var(--text-3);font-size:13px;padding:28px 0 40px}
+.totop{color:var(--text-3);text-decoration:none;font-size:13px}
+@media (max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0;padding-top:24px}
+  .toc{position:sticky;top:64px;z-index:10;background:var(--bg);margin:0 -24px;padding:10px 24px;border-bottom:1px solid var(--line-soft);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+  .toc::-webkit-scrollbar{display:none}
+  .toc b{display:none}
+  .toc a{white-space:nowrap;border-left:0;border:1px solid var(--line);padding:4px 10px}
+  .toc a.on{border-color:var(--gold)}
+  html{scroll-padding-top:128px}
+  .two{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .toc{margin:0 -16px;padding:10px 16px}
+  .nav{display:none}
+  h1{font-size:30px}
+  h2{font-size:22px}
+  .quick,.cols3{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .fig{padding:14px}
+  .mock{padding:14px}
+}
+
+body{font-variant-numeric:tabular-nums}
+.guide-language{flex-shrink:0;white-space:nowrap;margin-left:auto;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:14px}
+.top .go{margin-left:0;white-space:nowrap}
+.top .brand{flex-shrink:0}
+.mock,.flow .fb,.wallet{min-width:0;overflow-wrap:anywhere}
+.mock .row>*,.wallet .kv>*{min-width:0}
+.mock .row b{flex-shrink:0;text-align:right}
+.wallet .wb .fn{overflow-wrap:anywhere}
+@media(max-width:1120px){.top .wrap{gap:16px}.nav{gap:16px}}
+@media(max-width:960px){.top .nav{display:none}}
+@media(max-width:640px){.top .wrap{gap:12px}.top .go{padding:7px 10px}.tbl th,.tbl td{padding:10px 8px}.tbl.k td:first-child{white-space:normal}.fig{padding:12px}.wallet .wb,.wallet .wh{padding:12px}.mock .row b{flex-shrink:1}.legend li{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><rect class="core" x="9" y="9" width="6" height="6" rx="1"/></symbol>
+</svg>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="./index.html"><svg><use href="#i-logo"/></svg>TapeMicro</a>
+    <nav class="nav">
+      <a href="./index.html#deposit">拆分</a><a href="./index.html#market">交易</a><a href="./index.html#rewards">领取</a><a href="./index.html#points">积分</a><a class="on" href="./guide.html">使用指南</a>
+    </nav>
+    <a class="guide-language" href="./guide-en.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+    <a class="go" href="./index.html#market">打开应用 →</a>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <aside class="toc" id="toc">
+    <b>使用指南</b>
+    <a href="#what"><span>01</span>TapeMicro 是什么</a>
+    <a href="#start"><span>02</span>准备钱包</a>
+    <a href="#split"><span>03</span>拆分原矿机</a>
+    <a href="#buy"><span>04</span>买入微矿机</a>
+    <a href="#sell"><span>05</span>卖出微矿机</a>
+    <a href="#claim"><span>06</span>领取 BEM</a>
+    <a href="#redeem"><span>07</span>赎回原矿机</a>
+    <a href="#points"><span>08</span>积分与邀请</a>
+    <a href="#fees"><span>09</span>费用说明</a>
+    <a href="#safety"><span>10</span>安全与授权</a>
+    <a href="#faq"><span>11</span>常见问题</a>
+  </aside>
+
+  <main>
+    <div class="eyebrow">TAPEMICRO / 使用指南</div>
+    <h1>从这里开始使用 TapeMicro</h1>
+    <p class="lead">TapeMicro 把 TapeOut 和 Behemoth 的原矿机拆成 1H 一份的微矿机。1H 起买，随时挂单买卖，按持有份额领取 $BEM，集齐整台还能赎回原矿机。</p>
+
+    <div class="quick">
+      <a href="#what"><span class="n">01 · 第一次使用</span><span class="t">3 分钟看懂微矿机</span><span class="d">原矿机、微矿机、收益归属和赎回的关系</span></a>
+      <a href="#buy"><span class="n">02 · 开始交易</span><span class="t">买入第一份微矿机</span><span class="d">立即买入、挂买单，以及成交前要核对什么</span></a>
+      <a href="#safety"><span class="n">03 · 遇到问题</span><span class="t">授权、确认与常见问题</span><span class="d">看懂钱包弹窗，识别不该确认的请求</span></a>
+    </div>
+
+    <!-- 01 -->
+    <section id="what">
+      <header><div class="eyebrow">01 / 认识 TapeMicro</div><h2>一台原矿机 = N 份 1H 微矿机</h2>
+      <p class="sub">原矿机由合约独立托管，按算力 1:1 发行微矿机。每 1H 微矿机和原矿机的每 1H 同权同产，收益按全网实际算力结算。</p></header>
+
+      <figure>
+        <div class="fig">
+          <svg class="dia dia-w" viewBox="0 0 860 310" role="img" aria-label="拆分与赎回示意：原矿机存入独立托管合约，发行等量 1H 微矿机；集齐全部份额可赎回原矿机">
+            <defs>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#B4B8BF"/></marker>
+              <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E8B44A"/></marker>
+            </defs>
+            <!-- NFT -->
+            <rect x="20" y="70" width="190" height="150" rx="14" fill="#1A1D21" stroke="#262A30"/>
+            <g transform="translate(40 92)" fill="none" stroke="#B4B8BF" stroke-width="1.6"><rect x="5" y="5" width="22" height="22" rx="4"/><path d="M11 0v5m10-5v5M11 27v5m10-5v5M0 11h5m-5 10h5m22-10h5m-5 10h5"/><rect x="12" y="12" width="8" height="8" rx="1" fill="#E8B44A" stroke="none"/></g>
+            <text x="40" y="160" font-size="15" font-weight="600">原矿机 NFT</text>
+            <text x="40" y="182" font-size="13" class="t2">TapeOut #18203</text>
+            <text x="40" y="203" font-size="13" class="gold">算力 100H</text>
+            <!-- arrow split -->
+            <line x1="218" y1="128" x2="318" y2="128" stroke="#B4B8BF" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="268" y="116" font-size="13" text-anchor="middle">拆分</text>
+            <text x="268" y="148" font-size="11.5" text-anchor="middle" class="t3">0 手续费</text>
+            <!-- vault -->
+            <rect x="326" y="50" width="200" height="190" rx="14" fill="none" stroke="#262A30" stroke-dasharray="4 4"/>
+            <text x="426" y="76" font-size="12" text-anchor="middle" class="t3">TapeMicro 金库</text>
+            <rect x="350" y="92" width="152" height="96" rx="10" fill="#1A1D21" stroke="#262A30"/>
+            <text x="426" y="124" font-size="13.5" font-weight="600" text-anchor="middle">独立托管合约</text>
+            <text x="426" y="146" font-size="12" text-anchor="middle" class="t2">每台矿机一个</text>
+            <text x="426" y="166" font-size="12" text-anchor="middle" class="t2">继续挖 BEM</text>
+            <text x="426" y="216" font-size="11.5" text-anchor="middle" class="t3">无管理员提取入口</text>
+            <!-- arrow mint -->
+            <line x1="534" y1="128" x2="622" y2="128" stroke="#B4B8BF" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="578" y="116" font-size="13" text-anchor="middle">发行</text>
+            <text x="578" y="148" font-size="11.5" text-anchor="middle" class="t3">1:1 按 H</text>
+            <!-- shares grid -->
+            <g transform="translate(632 62)">
+              <g fill="#1A1D21" stroke="#3a3f46">
+                <rect x="0" y="0" width="34" height="34" rx="6"/><rect x="42" y="0" width="34" height="34" rx="6"/><rect x="84" y="0" width="34" height="34" rx="6"/><rect x="126" y="0" width="34" height="34" rx="6"/><rect x="168" y="0" width="34" height="34" rx="6"/>
+                <rect x="0" y="42" width="34" height="34" rx="6"/><rect x="42" y="42" width="34" height="34" rx="6"/><rect x="84" y="42" width="34" height="34" rx="6"/><rect x="126" y="42" width="34" height="34" rx="6"/><rect x="168" y="42" width="34" height="34" rx="6"/>
+                <rect x="0" y="84" width="34" height="34" rx="6"/><rect x="42" y="84" width="34" height="34" rx="6"/><rect x="84" y="84" width="34" height="34" rx="6"/><rect x="126" y="84" width="34" height="34" rx="6"/><rect x="168" y="84" width="34" height="34" rx="6" stroke-dasharray="3 3"/>
+              </g>
+              <g font-size="11" text-anchor="middle" class="t2">
+                <text x="17" y="21">1H</text><text x="59" y="21">1H</text><text x="101" y="21">1H</text><text x="143" y="21">1H</text><text x="185" y="21">1H</text>
+                <text x="17" y="63">1H</text><text x="59" y="63">1H</text><text x="101" y="63">1H</text><text x="143" y="63">1H</text><text x="185" y="63">1H</text>
+                <text x="17" y="105">1H</text><text x="59" y="105">1H</text><text x="101" y="105">1H</text><text x="143" y="105">1H</text><text x="185" y="105" class="t3">…</text>
+              </g>
+              <text x="101" y="146" font-size="14" font-weight="600" text-anchor="middle">100 份微矿机</text>
+              <text x="101" y="166" font-size="12" text-anchor="middle" class="t2">ERC-1155 · 可分散买卖</text>
+            </g>
+            <!-- redeem back -->
+            <path d="M733 236 C733 286 115 286 115 228" fill="none" stroke="#E8B44A" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arg)"/>
+            <text x="430" y="302" font-size="13" text-anchor="middle" class="gold">集齐这台的 100% 份额 → 赎回原矿机（0 手续费）</text>
+          </svg>
+          <svg class="dia dia-m" viewBox="0 0 360 560" role="img" aria-label="拆分与赎回示意（竖版）">
+            <defs><marker id="arm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#B4B8BF"/></marker>
+            <marker id="argm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E8B44A"/></marker></defs>
+            <rect x="40" y="10" width="240" height="92" rx="14" fill="#1A1D21" stroke="#262A30"/>
+            <g transform="translate(60 38)" fill="none" stroke="#B4B8BF" stroke-width="1.6"><rect x="5" y="5" width="22" height="22" rx="4"/><path d="M11 0v5m10-5v5M11 27v5m10-5v5M0 11h5m-5 10h5m22-10h5m-5 10h5"/><rect x="12" y="12" width="8" height="8" rx="1" fill="#E8B44A" stroke="none"/></g>
+            <text x="112" y="44" font-size="15" font-weight="600">原矿机 NFT</text>
+            <text x="112" y="64" font-size="13" class="t2">TapeOut #18203</text>
+            <text x="112" y="84" font-size="13" class="gold">算力 100H</text>
+            <line x1="160" y1="108" x2="160" y2="160" stroke="#B4B8BF" stroke-width="1.5" marker-end="url(#arm)"/>
+            <text x="172" y="132" font-size="13">拆分</text><text x="172" y="150" font-size="11.5" class="t3">0 手续费</text>
+            <rect x="40" y="168" width="240" height="112" rx="14" fill="none" stroke="#262A30" stroke-dasharray="4 4"/>
+            <text x="160" y="190" font-size="12" text-anchor="middle" class="t3">TapeMicro 金库</text>
+            <rect x="64" y="200" width="192" height="52" rx="10" fill="#1A1D21" stroke="#262A30"/>
+            <text x="160" y="222" font-size="13.5" font-weight="600" text-anchor="middle">独立托管合约</text>
+            <text x="160" y="242" font-size="12" text-anchor="middle" class="t2">每台矿机一个 · 继续挖 BEM</text>
+            <text x="160" y="270" font-size="11.5" text-anchor="middle" class="t3">无管理员提取入口</text>
+            <line x1="160" y1="286" x2="160" y2="336" stroke="#B4B8BF" stroke-width="1.5" marker-end="url(#arm)"/>
+            <text x="172" y="308" font-size="13">发行</text><text x="172" y="326" font-size="11.5" class="t3">1:1 按 H</text>
+            <g transform="translate(42 346)"><g fill="#1A1D21" stroke="#3a3f46"><rect x="18" y="0" width="32" height="32" rx="6"/><rect x="58" y="0" width="32" height="32" rx="6"/><rect x="98" y="0" width="32" height="32" rx="6"/><rect x="138" y="0" width="32" height="32" rx="6"/><rect x="178" y="0" width="32" height="32" rx="6"/><rect x="18" y="40" width="32" height="32" rx="6"/><rect x="58" y="40" width="32" height="32" rx="6"/><rect x="98" y="40" width="32" height="32" rx="6"/><rect x="138" y="40" width="32" height="32" rx="6"/><rect x="178" y="40" width="32" height="32" rx="6"/><rect x="18" y="80" width="32" height="32" rx="6"/><rect x="58" y="80" width="32" height="32" rx="6"/><rect x="98" y="80" width="32" height="32" rx="6"/><rect x="138" y="80" width="32" height="32" rx="6"/><rect x="178" y="80" width="32" height="32" rx="6"/></g><g font-size="10.5" text-anchor="middle" class="t2"><text x="34" y="20">1H</text><text x="74" y="20">1H</text><text x="114" y="20">1H</text><text x="154" y="20">1H</text><text x="194" y="20">1H</text><text x="34" y="60">1H</text><text x="74" y="60">1H</text><text x="114" y="60">1H</text><text x="154" y="60">1H</text><text x="194" y="60">1H</text><text x="34" y="100">1H</text><text x="74" y="100">1H</text><text x="114" y="100">1H</text><text x="154" y="100">1H</text><text x="194" y="100" class="t3">…</text></g></g>
+            <text x="160" y="482" font-size="14" font-weight="600" text-anchor="middle">100 份微矿机</text>
+            <text x="160" y="502" font-size="12" text-anchor="middle" class="t2">ERC-1155 · 可分散买卖</text>
+            <path d="M300 420 C344 420 344 56 290 56" fill="none" stroke="#E8B44A" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#argm)"/>
+            <text x="180" y="540" font-size="12.5" text-anchor="middle" class="gold">集齐 100% 份额 → 赎回原矿机（0 手续费）</text>
+          </svg>
+        </div>
+        <figcaption><span class="tag">示意图</span>以 100H 原矿机为例。不同原矿机的微矿机是不同的份额，各自独立结算。</figcaption>
+      </figure>
+
+      <div class="facts">
+        <div><small>份额单位</small><b>1H = 1 份</b><span>按原矿机已验证算力发行</span></div>
+        <div><small>收益</small><b>同权同产</b><span>每 1H 与原矿机相同</span></div>
+        <div><small>拆分 / 赎回</small><b>0 费用</b><span>只付链上 Gas</span></div>
+        <div><small>交易费</small><b>1%</b><span>只由主动成交方支付</span></div>
+      </div>
+
+      <h3>四个板块分别做什么</h3>
+      <div class="tblwrap"><table class="tbl k">
+        <tr><th>板块</th><th>适合谁</th><th>能做什么</th></tr>
+        <tr><td><strong>拆分</strong></td><td>持有原矿机的人</td><td>把一台普通已验证矿机存入金库，按 H 拿到等量微矿机</td></tr>
+        <tr><td><strong>交易</strong></td><td>所有人</td><td>立即买入 / 立即卖出，或挂卖单、挂买单等待成交</td></tr>
+        <tr><td><strong>领取</strong></td><td>持有过微矿机的人</td><td>按每台原矿机领取 BEM；集齐整台份额时赎回原矿机</td></tr>
+        <tr><td><strong>积分</strong></td><td>交易过的人</td><td>查看成交积分，复制自己的邀请链接</td></tr>
+      </table></div>
+    </section>
+
+    <!-- 02 -->
+    <section id="start">
+      <header><div class="eyebrow">02 / 准备</div><h2>准备一个 BSC 钱包和少量 BNB</h2>
+      <p class="sub">TapeMicro 运行在 BNB Smart Chain 上。所有操作都在你自己的钱包里确认，网站不会获取你的私钥或助记词。</p></header>
+      <ol class="steps">
+        <li><b>安装钱包</b><p>电脑使用提供 EVM 连接接口的浏览器钱包插件；手机在钱包 App 的内置浏览器里打开 tapemicro.top。目前不支持 WalletConnect 扫码连接。</p></li>
+        <li><b>切换到 BSC 主网</b><p>网络选 BNB Smart Chain（Chain ID 56）。网站检测到其他网络时会提示切换。</p></li>
+        <li><b>准备 BNB</b><p>立即买入要付成交金额 + 1% 服务费；每次链上操作还需要 BNB 支付 Gas，请按钱包的实际预估预留。</p></li>
+        <li><b>点击右上角「连接钱包」</b><p>连接只读取你的地址和链上数据，<strong>不等于授权</strong>，不会动你的任何资产。</p></li>
+      </ol>
+      <div class="note warn"><b>只认官方域名 tapemicro.top。</b> 群聊、私信里的相似链接、“空投领取”页面都不要连接钱包。</div>
+    </section>
+
+    <!-- 03 -->
+    <section id="split">
+      <header><div class="eyebrow">03 / 拆分</div><h2>把原矿机拆成微矿机</h2>
+      <p class="sub">适合手里有 TapeOut / Behemoth 原矿机、想部分卖出或提高流动性的人。拆分不收手续费，拆分后你仍然持有全部份额，收益照常归你。</p></header>
+
+      <div class="two">
+        <figure style="margin-top:0">
+          <div class="fig">
+            <div class="mock">
+              <div class="ttl">拆分原矿机</div>
+              <div class="lbl"><i class="mk">1</i>钱包里的原矿机</div>
+              <div class="item on"><span class="chip"><svg viewBox="0 0 24 24"><use href="#i-logo"/></svg></span><div><b>TapeOut #18203</b><small>已验证 · 可拆分</small></div><div class="r"><b>100H</b></div></div>
+              <div class="item"><span class="chip"><svg viewBox="0 0 24 24"><use href="#i-logo"/></svg></span><div><b>TapeOut #20577</b><small>最优首创 · 不可入池</small></div><div class="r muted">40H</div></div>
+              <div class="row" style="margin-top:8px"><span><i class="mk">2</i>可拆分</span><b>100H → 100 份</b></div>
+              <div class="row"><span>拆分前收益</span><b>先发给你</b></div>
+              <div class="row"><span>拆分费</span><b style="color:var(--up)">0</b></div>
+              <div class="lbl"><i class="mk">3</i>两次钱包确认</div>
+              <div class="step done"><i>✓</i>1 / 2 · 授权这台原矿机</div>
+              <div class="step cur"><i>2</i>2 / 2 · 确认拆分</div>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>拆分页面：选矿机、核对数量、两步确认。</figcaption>
+        </figure>
+        <div>
+          <ol class="steps mkd">
+            <li><b>选择原矿机</b><p>连接钱包后自动读取你钱包里的原矿机，也可以按「矿机来源 + 编号」查找。不能入池的矿机会标明原因。</p></li>
+            <li><b>核对可拆分 H</b><p>拆出的份数 = 这台矿机的已验证算力。拆分前已产出的 BEM 会在拆分时先发到你的钱包。</p></li>
+            <li><b>两次钱包确认</b><p>第 1 步授权<strong>这一台</strong> NFT（approve，只针对这个编号）；第 2 步确认拆分。完成后微矿机直接到你的钱包。</p></li>
+          </ol>
+        </div>
+      </div>
+
+      <h3>哪些矿机可以入池</h3>
+      <p class="sub">入池条件由合约在拆分那一刻检查，前端绕不过去：</p>
+      <div class="two">
+        <div class="card"><b style="color:var(--up)">可以入池</b>
+          <ul class="ck"><li>TapeOut 或 Behemoth 矿机</li><li>状态正常、算力已全部验证</li><li>通过官方的电路反例检查</li></ul></div>
+        <div class="card"><b style="color:var(--down)">不能入池</b>
+          <ul class="ck no"><li>最优首创矿机（含额外设计加成）</li><li>未验证、部分未验证的矿机</li><li>验证失败、已失效或停止挖矿的矿机</li></ul></div>
+      </div>
+      <div class="note bad"><b>只能通过「拆分」按钮存入。</b> 直接用钱包把 NFT 转给金库或托管地址（transferFrom），不会发行微矿机，也没有找回入口。</div>
+    </section>
+
+    <!-- 04 -->
+    <section id="buy">
+      <header><div class="eyebrow">04 / 买入</div><h2>买入微矿机：立即买入或挂买单</h2>
+      <p class="sub">想马上买到，用「立即买入」；觉得现价贵，用「挂单买入」出个价等人卖给你。</p></header>
+
+      <figure>
+        <div class="fig">
+          <svg class="dia dia-w" viewBox="0 0 860 280" role="img" aria-label="盘口示意：卖单按价格从低到高，买单按价格从高到低；立即买入从最低卖价开始成交，立即卖出从最高买价开始成交">
+            <text x="20" y="28" font-size="13" class="t3">在售盘口（卖单）· 单价从低到高</text>
+            <text x="450" y="28" font-size="13" class="t3">买单盘口 · 单价从高到低</text>
+            <!-- asks -->
+            <g font-size="13.5">
+              <rect x="20" y="44" width="390" height="40" rx="8" fill="rgba(240,113,107,.10)" stroke="rgba(240,113,107,.45)"/>
+              <text x="36" y="69" class="down" font-weight="600">0.060</text><text x="130" y="69">20H</text><text x="210" y="69" class="t2">TapeOut #18203</text><text x="394" y="69" text-anchor="end" class="t3">最低卖价</text>
+              <rect x="20" y="92" width="390" height="40" rx="8" fill="#1A1D21" stroke="#262A30"/>
+              <text x="36" y="117" class="down">0.062</text><text x="130" y="117">35H</text><text x="210" y="117" class="t2">Behemoth #2041</text>
+              <rect x="20" y="140" width="390" height="40" rx="8" fill="#1A1D21" stroke="#262A30"/>
+              <text x="36" y="165" class="down">0.070</text><text x="130" y="165">50H</text><text x="210" y="165" class="t2">TapeOut #20577</text>
+            </g>
+            <!-- bids -->
+            <g font-size="13.5">
+              <rect x="450" y="44" width="390" height="40" rx="8" fill="rgba(76,195,138,.10)" stroke="rgba(76,195,138,.45)"/>
+              <text x="466" y="69" class="up" font-weight="600">0.055</text><text x="560" y="69">30H</text><text x="640" y="69" class="t2">任意矿机</text><text x="824" y="69" text-anchor="end" class="t3">最高买价</text>
+              <rect x="450" y="92" width="390" height="40" rx="8" fill="#1A1D21" stroke="#262A30"/>
+              <text x="466" y="117" class="up">0.052</text><text x="560" y="117">10H</text><text x="640" y="117" class="t2">指定 2 台矿机</text>
+              <rect x="450" y="140" width="390" height="40" rx="8" fill="#1A1D21" stroke="#262A30"/>
+              <text x="466" y="165" class="up">0.050</text><text x="560" y="165">80H</text><text x="640" y="165" class="t2">任意矿机</text>
+            </g>
+            <!-- explanation -->
+            <rect x="20" y="204" width="390" height="58" rx="10" fill="none" stroke="#262A30"/>
+            <text x="36" y="228" font-size="13.5" font-weight="600">立即买入 25H</text>
+            <text x="36" y="249" font-size="12.5" class="t2">先吃 0.060 的 20H，再吃 0.062 的 5H，一笔完成</text>
+            <rect x="450" y="204" width="390" height="58" rx="10" fill="none" stroke="#262A30"/>
+            <text x="466" y="228" font-size="13.5" font-weight="600">立即卖出 40H</text>
+            <text x="466" y="249" font-size="12.5" class="t2">先卖给 0.055 的 30H，剩下的按可接受范围往下匹配</text>
+          </svg>
+          <svg class="dia dia-m" viewBox="0 0 360 470" role="img" aria-label="盘口示意（竖版）">
+            <g font-size="13">
+            <text x="10" y="18" font-size="12.5" class="t3">在售盘口（卖单）· 单价从低到高</text>
+            <rect x="10" y="28" width="340" height="36" rx="8" fill="rgba(240,113,107,.10)" stroke="rgba(240,113,107,.45)"/><text x="24" y="52" class="down" font-weight="600">0.060</text><text x="92" y="52">20H</text><text x="148" y="52" class="t2">TapeOut #18203</text><text x="336" y="52" text-anchor="end" font-size="11.5" class="t3">最低卖价</text><rect x="10" y="70" width="340" height="36" rx="8" fill="#1A1D21" stroke="#262A30"/><text x="24" y="94" class="down">0.062</text><text x="92" y="94">35H</text><text x="148" y="94" class="t2">Behemoth #2041</text><rect x="10" y="112" width="340" height="36" rx="8" fill="#1A1D21" stroke="#262A30"/><text x="24" y="136" class="down">0.070</text><text x="92" y="136">50H</text><text x="148" y="136" class="t2">TapeOut #20577</text>
+            <text x="10" y="176" font-size="12.5" class="t3">买单盘口 · 单价从高到低</text>
+            <rect x="10" y="186" width="340" height="36" rx="8" fill="rgba(76,195,138,.10)" stroke="rgba(76,195,138,.45)"/><text x="24" y="210" class="up" font-weight="600">0.055</text><text x="92" y="210">30H</text><text x="148" y="210" class="t2">任意矿机</text><text x="336" y="210" text-anchor="end" font-size="11.5" class="t3">最高买价</text><rect x="10" y="228" width="340" height="36" rx="8" fill="#1A1D21" stroke="#262A30"/><text x="24" y="252" class="up">0.052</text><text x="92" y="252">10H</text><text x="148" y="252" class="t2">指定 2 台矿机</text><rect x="10" y="270" width="340" height="36" rx="8" fill="#1A1D21" stroke="#262A30"/><text x="24" y="294" class="up">0.050</text><text x="92" y="294">80H</text><text x="148" y="294" class="t2">任意矿机</text>
+            </g>
+            <rect x="10" y="324" width="340" height="62" rx="10" fill="none" stroke="#262A30"/>
+            <text x="24" y="348" font-size="13.5" font-weight="600">立即买入 25H</text>
+            <text x="24" y="370" font-size="12" class="t2">先吃 0.060 的 20H，再吃 0.062 的 5H</text>
+            <rect x="10" y="396" width="340" height="62" rx="10" fill="none" stroke="#262A30"/>
+            <text x="24" y="420" font-size="13.5" font-weight="600">立即卖出 40H</text>
+            <text x="24" y="442" font-size="12" class="t2">先卖给 0.055 的 30H，剩下的继续往下匹配</text>
+          </svg>
+        </div>
+        <figcaption><span class="tag">示意图</span>价格为举例。卖单与买单之间的差距就是价差，价差越小越容易成交。</figcaption>
+      </figure>
+
+      <h3>立即买入</h3>
+      <div class="two">
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="mock">
+              <div class="tabs"><span class="on">立即买入</span><span>立即卖出</span></div>
+              <div class="ttl">买入微矿机</div>
+              <div class="lbl"><i class="mk">1</i>想买多少 H</div>
+              <div class="input">10 <small>H</small></div>
+              <div class="chips"><span class="on">10H</span><span>50H</span><span>100H</span><span>全部</span></div>
+              <div class="row" style="margin-top:10px"><span><i class="mk">2</i>成交金额</span><b>0.6 BNB</b></div>
+              <div class="row"><span>服务费 1%</span><b>0.006 BNB</b></div>
+              <div class="row tot"><span>合计支付</span><b>0.606 BNB</b></div>
+              <div class="row"><span>成交积分</span><b style="color:var(--gold)">+600 分</b></div>
+              <span class="btn">确认买入</span>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>以单价 0.06 BNB / H 买 10H 为例。</figcaption>
+        </figure>
+        <div>
+          <ol class="steps mkd">
+            <li><b>输入想买的 H</b><p>系统从最低卖价开始自动凑单，可以跨多台矿机一起买，单笔最多 16 笔成交。</p></li>
+            <li><b>核对报价再确认</b><p>看清成交金额、1% 服务费和合计支付，再在钱包里确认。<strong>买入不需要任何授权</strong>，钱包里只应出现支付 BNB。</p></li>
+            <li><b>份额到账，开始拿 BEM</b><p>通常先收割并结清卖家的旧收益，你从成交时开始分配后续收益。若官方收割暂时失败，尚未收割的 BEM 会随份额转给新持有人。</p></li>
+          </ol>
+          <div class="note">报价期间盘口有变化（被别人先买走、卖家撤单），交易会安全失败，不会多扣钱。重新核对报价即可。</div>
+        </div>
+      </div>
+
+      <h3>挂单买入（挂买单）</h3>
+      <div class="two">
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="mock">
+              <div class="ttl">挂单买入微矿机</div>
+              <div class="lbl"><i class="mk">1</i>接受范围</div>
+              <div class="seg"><span class="on"><b>任意矿机（默认）</b>池子里任何正常矿机的份额</span><span><b>指定矿机</b>只接受勾选的，最多 32 台</span></div>
+              <div class="lbl"><i class="mk">2</i>单价（BNB / H）</div>
+              <div class="input">0.055 <small>BNB</small></div>
+              <div class="lbl">想买数量（H）</div>
+              <div class="input">30 <small>H</small></div>
+              <div class="lbl">有效期</div>
+              <div class="chips"><span>1 天</span><span class="on">7 天</span><span>30 天</span></div>
+              <div class="row tot"><span><i class="mk">3</i>需托管</span><b>1.65 BNB</b></div>
+              <span class="btn">挂买单</span>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>挂 30H、单价 0.055 的买单，托管 30 × 0.055 = 1.65 BNB。</figcaption>
+        </figure>
+        <div>
+          <ol class="steps mkd">
+            <li><b>选接受范围</b><p>默认「任意矿机」：接受当前和以后新入池的可交易矿机。各原矿机收益和风险独立；只想买某几台，可切到「指定矿机」勾选。</p></li>
+            <li><b>出价和数量</b><p>出价如果已经高于或等于在售最低价，页面会提示你直接「立即买入」，更便宜也更快。</p></li>
+            <li><b>托管 BNB，等人成交</b><p>挂单时把 数量 × 单价 的 BNB 存进市场合约托管。有人卖给你时立即成交，份额直接进你的钱包。</p></li>
+          </ol>
+          <ul class="ck">
+            <li>挂买单不收费，卖给你的一方付 1% 服务费，你按出价付款。</li>
+            <li>没成交的部分随时撤单，托管的 BNB 全额退回；到期未成交也可一键退款。</li>
+            <li>停挖或异常矿机的份额，合约不允许卖进你的买单。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section id="sell">
+      <header><div class="eyebrow">05 / 卖出</div><h2>卖出微矿机：卖给买单或挂卖单</h2>
+      <p class="sub">着急变现，用「立即卖出」直接卖给现有买单；想卖个好价，用「挂单卖出」自己定价。</p></header>
+      <div class="cols3">
+        <div class="card"><b>立即卖出</b><p>输入想卖的 H，按最高买价开始匹配。只匹配接受你这台矿机的买单。卖款扣除 1% 服务费后直接到账。</p></div>
+        <div class="card"><b>挂单卖出</b><p>选一台矿机的份额，设置单价 / H、数量和有效期（1 / 7 / 30 天）。挂单不收费，买家付 1%。</p></div>
+        <div class="card"><b>收益怎么算</b><p>通常成交时先结清旧收益；已经结算的 BEM 仍归卖家。若官方收割暂时失败，尚未收割的 BEM 会随份额转给买家。</p></div>
+      </div>
+      <div class="two">
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="mock">
+              <div class="ttl">挂单卖出微矿机</div>
+              <div class="lbl"><i class="mk">1</i>选择份额</div>
+              <div class="item on"><span class="chip"><svg viewBox="0 0 24 24"><use href="#i-logo"/></svg></span><div><b>TapeOut #18203</b><small>持有 12H · 可挂售 12H</small></div><div class="r"><b>12H</b></div></div>
+              <div class="lbl"><i class="mk">2</i>单价（BNB / H）</div>
+              <div class="input">0.065 <small>BNB</small></div>
+              <div class="lbl">出售数量（H）</div>
+              <div class="input">10 <small>H</small></div>
+              <div class="lbl">有效期</div>
+              <div class="chips"><span>1 天</span><span class="on">7 天</span><span>30 天</span></div>
+              <div class="row tot"><span>全部成交可得</span><b>0.65 BNB</b></div>
+              <div class="row"><span>挂单服务费</span><b style="color:var(--up)">0</b></div>
+              <div class="lbl"><i class="mk">3</i>首次挂单需授权一次</div>
+              <div class="step done"><i>✓</i>1 / 2 · 首次挂单授权</div>
+              <div class="step cur"><i>2</i>2 / 2 · 确认发布卖单</div>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>挂 10H、单价 0.065 的卖单；买家买入时另付 1%，你按挂价全额到账。</figcaption>
+        </figure>
+        <div>
+      <ol class="steps mkd">
+        <li><b>选择份额</b><p>每张卖单只卖一台原矿机的份额。持有多台的，分别挂单。</p></li>
+        <li><b>设置单价、数量和有效期</b><p>如果你的卖价不高于某张买单的出价，页面会提示你直接卖给这张买单，成交更快。</p></li>
+        <li><b>首次挂单或卖出时授权一次</b><p>钱包会请求 <code>setApprovalForAll</code>，授权市场合约转移你的<strong>微矿机份额</strong>（包括金库内所有原矿机对应的 Micro 批次）。它不包括 BNB、BEM 或你的原矿机 NFT。</p></li>
+        <li><b>挂单后份额仍在你的钱包</b><p>挂单只是给这部分份额加上“预留”，成交时才转给买家。没成交的部分随时撤单。</p></li>
+        <li><b>卖款到账</b><p>卖款直接打到你的钱包。如果你的地址是不能接收 BNB 的合约钱包，卖款会记入「待提取余额」，可以提取到你指定的地址。</p></li>
+      </ol>
+        </div>
+      </div>
+      <div class="note warn"><b>份额转走后记得撤旧卖单。</b> 挂单期间把份额转到别的钱包，旧卖单的预留额度不会自动释放，页面会标为“不可成交”，撤掉后再重新挂。</div>
+    </section>
+
+    <!-- 06 -->
+    <section id="claim">
+      <header><div class="eyebrow">06 / 领取</div><h2>领取 BEM：持有多久，就拿多久的收益</h2>
+      <p class="sub">每台原矿机的收益单独累积，按份额分配。已结算收益留给原持有人；官方收割失败时，尚未收割的收益随份额转移。</p></header>
+
+      <figure>
+        <div class="fig">
+          <svg class="dia dia-w" viewBox="0 0 860 210" role="img" aria-label="正常收割时的收益归属；官方收割失败时，未收割 BEM 随份额转移">
+            <text x="20" y="28" font-size="13" class="t3">某台原矿机的 10H 份额 · 时间 →</text>
+            <rect x="20" y="48" width="470" height="54" rx="10" fill="rgba(180,184,191,.10)" stroke="#3a3f46"/>
+            <text x="255" y="73" font-size="14" font-weight="600" text-anchor="middle">A 持有期间产出</text>
+            <text x="255" y="93" font-size="12.5" text-anchor="middle" class="t2">归 A，A 卖出后仍可领取</text>
+            <rect x="500" y="48" width="340" height="54" rx="10" fill="rgba(76,195,138,.10)" stroke="rgba(76,195,138,.45)"/>
+            <text x="670" y="73" font-size="14" font-weight="600" text-anchor="middle">B 持有期间产出</text>
+            <text x="670" y="93" font-size="12.5" text-anchor="middle" class="t2">归 B</text>
+            <line x1="495" y1="36" x2="495" y2="118" stroke="#E8B44A" stroke-width="2"/>
+            <text x="495" y="140" font-size="13" text-anchor="middle" class="gold">A 把 10H 卖给 B（成交时先给 A 结算）</text>
+            <text x="20" y="182" font-size="13" class="t2">日产随全网参数与矿机状态变化：请查看交易页最新估算，实际以链上领取为准。</text>
+          </svg>
+          <svg class="dia dia-m" viewBox="0 0 360 330" role="img" aria-label="收益归属示意（竖版）">
+            <text x="10" y="18" font-size="12.5" class="t3">某台原矿机的 10H 份额 · 时间 ↓</text>
+            <rect x="10" y="30" width="340" height="70" rx="10" fill="rgba(180,184,191,.10)" stroke="#3a3f46"/>
+            <text x="180" y="60" font-size="14" font-weight="600" text-anchor="middle">A 持有期间产出</text>
+            <text x="180" y="82" font-size="12.5" text-anchor="middle" class="t2">归 A，A 卖出后仍可领取</text>
+            <line x1="10" y1="118" x2="350" y2="118" stroke="#E8B44A" stroke-width="2"/>
+            <text x="180" y="142" font-size="12.5" text-anchor="middle" class="gold">A 把 10H 卖给 B（成交时先给 A 结算）</text>
+            <rect x="10" y="158" width="340" height="70" rx="10" fill="rgba(76,195,138,.10)" stroke="rgba(76,195,138,.45)"/>
+            <text x="180" y="188" font-size="14" font-weight="600" text-anchor="middle">B 持有期间产出</text>
+            <text x="180" y="210" font-size="12.5" text-anchor="middle" class="t2">归 B</text>
+            <text x="10" y="262" font-size="12.5" class="t2">日产随全网参数与矿机状态变化。</text>
+            <text x="10" y="284" font-size="12.5" class="t2">请查看交易页最新估算，</text>
+            <text x="10" y="306" font-size="12.5" class="t2">实际以链上领取为准。</text>
+          </svg>
+        </div>
+        <figcaption><span class="tag">示意图</span>正常收割时的收益归属示意；官方收割失败时，未收割收益随份额转移。</figcaption>
+      </figure>
+
+      <div class="two">
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="mock">
+              <div class="ttl">领取 BEM</div>
+              <div class="lbl"><i class="mk">1</i>勾选要领取的矿机</div>
+              <div class="item on"><span class="box on"></span><div><b>TapeOut #18203</b><small>持有 12H · <span class="pill ok">正常</span></small></div><div class="r"><b>0.0213</b><small>BEM</small></div></div>
+              <div class="item on"><span class="box on"></span><div><b>Behemoth #2041</b><small>持有 5H · <span class="pill ok">正常</span></small></div><div class="r"><b>0.0089</b><small>BEM</small></div></div>
+              <div class="item"><span class="box"></span><div><b>TapeOut #20577</b><small>已全部卖出 · 历史收益</small></div><div class="r"><b>0.0040</b><small>BEM</small></div></div>
+              <div class="row tot"><span><i class="mk">2</i>预计领取</span><b>0.0302 BEM</b></div>
+              <span class="btn">领取 BEM</span>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>每台原矿机一行，已卖光的矿机也会保留历史收益。</figcaption>
+        </figure>
+        <div>
+          <ol class="steps mkd">
+            <li><b>勾选要领取的矿机</b><p>页面按原矿机列出你的待领 BEM，包括已经全部卖出、但还有历史收益的矿机。</p></li>
+            <li><b>确认领取</b><p>领取时合约先向官方挖矿合约收取最新产出，再按份额发给你。矿机多时会分几笔依次处理，中断后可以继续。</p></li>
+          </ol>
+          <div class="note"><b>官方领取暂时失败时：</b> 页面会提示「官方领取暂不可用」。你可以稍后重试，或先用「领取已同步 BEM」领走已经同步进金库的部分。未收割部分可稍后重试；期间若转走份额或赎回，它会随份额或原矿机转移。</div>
+          <div class="note">BEM 有 8 位小数，小额持有时每天的产出可能只有零点零几个 BEM，属于正常。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section id="redeem">
+      <header><div class="eyebrow">07 / 赎回</div><h2>集齐一台的全部份额，赎回原矿机</h2>
+      <p class="sub">微矿机和原矿机等价，绝大多数人不需要赎回。只有想把整台矿机拿回钱包时才用。</p></header>
+      <ol class="steps">
+        <li><b>集齐 100% 份额</b><p>比如 100H 的矿机需要同一台的 100 份。不同矿机的份额不能混用。</p></li>
+        <li><b>在「领取」页点这台矿机的「赎回整台」</b><p>持有量达到 100% 时，这一行会出现「赎回整台」按钮。确认后份额销毁，原矿机 NFT 回到你的钱包，不收手续费。</p></li>
+        <li><b>历史 BEM 照常领取</b><p>赎回前已经分给你的 BEM 不受影响，赎回后仍然可以领。</p></li>
+      </ol>
+      <div class="note warn"><b>份额丢失会导致无法赎回整台。</b> 如果有份额被转进无法取回的地址，这台矿机就永远凑不齐 100%，但其余份额仍然正常挖矿、领取和交易。赎回后原来的卖单无法成交，记得撤单。</div>
+    </section>
+
+    <!-- 08 -->
+    <section id="points">
+      <header><div class="eyebrow">08 / 积分</div><h2>交易积分与邀请</h2>
+      <p class="sub">按 BNB 成交额计分，买卖双方都计：<strong>1 BNB 成交额 = 1,000 分</strong>。积分暂不开放兑换，也不承诺空投。</p></header>
+      <div class="flow" role="img" aria-label="邀请示意">
+        <div class="fb"><small>第 1 步</small><b>你复制邀请链接</b><p>在「积分」页复制，发给朋友</p></div>
+        <div class="fa">→</div>
+        <div class="fb"><small>第 2 步</small><b>朋友通过链接首次参与</b><p>首次成功交互携带邀请标识后绑定</p></div>
+        <div class="fa">→</div>
+        <div class="fb hl"><small>结果</small><b>朋友 600 + 60 分</b><p>你额外 +60 分；之后朋友每笔成交都照此计算</p></div>
+      </div>
+      <div class="two">
+        <div>
+          <div class="tblwrap"><table class="tbl">
+            <tr><th>场景</th><th class="num">成交额</th><th class="num">你的积分</th></tr>
+            <tr><td>买入 10H × 0.06</td><td class="num">0.6 BNB</td><td class="num">600</td></tr>
+            <tr><td>卖出 10H × 0.06</td><td class="num">0.6 BNB</td><td class="num">600</td></tr>
+            <tr><td>通过邀请链接交易，买入 0.6 BNB</td><td class="num">0.6 BNB</td><td class="num">600 + 60</td></tr>
+            <tr><td>你邀请的人成交 0.6 BNB</td><td class="num">—</td><td class="num">+60</td></tr>
+            <tr><td>挂单、撤单、拆分、领取</td><td class="num">—</td><td class="num">不计分</td></tr>
+          </table></div>
+          <p class="muted" style="margin-top:10px;font-size:13.5px">服务费不计入成交额。</p>
+        </div>
+        <div>
+          <h3 style="margin-top:0">邀请规则</h3>
+          <ul class="ck">
+            <li>在「积分」页复制你的邀请链接，形如 <code>tapemicro.top/?ref=0x…</code>。</li>
+            <li>新用户通过你的链接<strong>首次成功参与</strong>时，交易须携带邀请标识才能绑定。仅打开链接或连接钱包不绑定；之前已有未带标识的协议交互，可能不再符合新用户条件。绑定后不再改变。</li>
+            <li>被邀请人每笔成交积分 <strong>+10%</strong>；你额外获得被邀请人成交基础积分的 <strong>10%</strong>。</li>
+            <li>只有一级邀请；自己邀请自己不计。</li>
+          </ul>
+          <div class="note">邀请奖励由链上成交记录统计，可能比成交积分晚一些显示。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 -->
+    <section id="fees">
+      <header><div class="eyebrow">09 / 费用</div><h2>只收一项费用：主动成交 1%</h2>
+      <p class="sub">挂单的一方不收费，主动成交的一方付 1%。拆分、赎回、领取都不收费。链上 Gas 由 BSC 网络收取，在钱包里单独显示。</p></header>
+      <div class="tblwrap"><table class="tbl">
+        <tr><th>操作</th><th class="num">TapeMicro 服务费</th><th>说明</th></tr>
+        <tr><td>拆分原矿机</td><td class="num free">0</td><td>100H 拆出 100 份，不扣份额</td></tr>
+        <tr><td>赎回原矿机</td><td class="num free">0</td><td>集齐 100% 份额即可</td></tr>
+        <tr><td>领取 BEM</td><td class="num free">0</td><td>项目不抽取挖矿收益</td></tr>
+        <tr><td>挂卖单 / 挂买单 / 撤单</td><td class="num free">0</td><td>挂买单需托管 BNB，撤单全额退回</td></tr>
+        <tr><td>立即买入（吃卖单）</td><td class="num">1%</td><td>加在支付金额上</td></tr>
+        <tr><td>立即卖出（吃买单）</td><td class="num">1%</td><td>从卖款中扣除</td></tr>
+      </table></div>
+      <div class="two" style="margin-top:18px">
+        <div class="mock"><div class="ttl">买入示例</div>
+          <div class="row"><span>买 10H × 0.06 BNB</span><b>0.6 BNB</b></div>
+          <div class="row"><span>服务费 1%</span><b>0.006 BNB</b></div>
+          <div class="row tot"><span>你支付</span><b>0.606 BNB</b></div>
+          <div class="row"><span>卖家到账</span><b>0.6 BNB</b></div></div>
+        <div class="mock"><div class="ttl">卖给买单示例</div>
+          <div class="row"><span>卖 10H × 0.05 BNB</span><b>0.5 BNB</b></div>
+          <div class="row"><span>服务费 1%</span><b>−0.005 BNB</b></div>
+          <div class="row tot"><span>你到账</span><b>0.495 BNB</b></div>
+          <div class="row"><span>买家已托管</span><b>0.5 BNB</b></div></div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="safety">
+      <header><div class="eyebrow">10 / 安全</div><h2>先看懂钱包请求，再点确认</h2>
+      <p class="sub">TapeMicro 只会出现下面两种授权，各自只覆盖一类资产。钱包请求和你刚才的操作对不上，就先拒绝。</p></header>
+      <div class="two">
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="wallet">
+              <div class="wh"><span>tapemicro.top</span><span>BNB Smart Chain</span></div>
+              <div class="wb">
+                <div class="fn">approve(address, tokenId)</div>
+                <div class="kv"><span>合约</span><span>TapeOut 矿机 NFT</span></div>
+                <div class="kv"><span>授权给</span><span>TapeMicro 金库 0x8c0D…b0E7</span></div>
+                <div class="kv"><span>范围</span><span>仅 #18203 这一台</span></div>
+              </div>
+              <div class="wf"><span>拒绝</span><span class="ok">确认</span></div>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>拆分第 1 步：只授权你选中的这一台原矿机。</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div class="fig">
+            <div class="wallet">
+              <div class="wh"><span>tapemicro.top</span><span>BNB Smart Chain</span></div>
+              <div class="wb">
+                <div class="fn">setApprovalForAll(operator, true)</div>
+                <div class="kv"><span>合约</span><span>TapeMicro 微矿机 0x8c0D…b0E7</span></div>
+                <div class="kv"><span>授权给</span><span>TapeMicro 市场 <span data-market-short>0xbc1E…3805</span></span></div>
+                <div class="kv"><span>范围</span><span>金库内全部微矿机份额</span></div>
+              </div>
+              <div class="wf"><span>拒绝</span><span class="ok">确认</span></div>
+            </div>
+          </div>
+          <figcaption><span class="tag">示意图</span>第一次挂卖单或卖出时：只覆盖微矿机，不含 BNB、BEM 和原矿机。</figcaption>
+        </figure>
+      </div>
+
+      <h3>每个操作应该看到什么</h3>
+      <div class="tblwrap"><table class="tbl">
+        <tr><th>操作</th><th>钱包里应该出现</th><th>不应该出现</th></tr>
+        <tr><td>连接钱包</td><td>选择账户、连接网站</td><td>任何 approve、Permit、转账</td></tr>
+        <tr><td>拆分</td><td>approve 一台原矿机 → 调用金库 deposit</td><td>整个 NFT 合集的授权</td></tr>
+        <tr><td>立即买入 / 挂买单</td><td>向市场合约支付 BNB，金额与页面一致</td><td>任何授权请求</td></tr>
+        <tr><td>挂卖单 / 立即卖出</td><td>首次 setApprovalForAll 微矿机，之后直接调用市场合约</td><td>BNB 或 BEM 的授权</td></tr>
+        <tr><td>领取 / 赎回</td><td>调用金库领取 BEM / 取回 NFT，仅付 BNB Gas</td><td>额外付款或新授权（正常的 BEM / NFT 收款除外）</td></tr>
+      </table></div>
+
+      <h3>遇到这些请求，先拒绝</h3>
+      <div class="cols3">
+        <div class="card"><b>索要私钥或助记词</b><p>任何正常操作都不需要把密钥输进网页。</p></div>
+        <div class="card"><b>请求和操作不符</b><p>买入却要求授权，领取却要求转出资产。</p></div>
+        <div class="card"><b>地址或域名对不上</b><p>授权给的合约不在下面的官方列表里，或域名不是 tapemicro.top。</p></div>
+      </div>
+
+      <h3>官方合约地址</h3>
+      <p class="sub">合约源码已在 Sourcify 公开验证（exact match）。金库没有管理员及管理员资产提取接口；源码验证不等于安全审计。</p>
+      <div class="addr">
+        <div><b>金库 / 微矿机</b><code>0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7</code>
+          <a href="https://bscscan.com/address/0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7" target="_blank" rel="noopener">BscScan ↗</a>
+          <a href="https://repo.sourcify.dev/56/0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7" target="_blank" rel="noopener">Sourcify ↗</a></div>
+        <div data-market="0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805"><b>市场</b><code>0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805</code>
+          <a href="https://bscscan.com/address/0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805" target="_blank" rel="noopener">BscScan ↗</a>
+          <a href="https://repo.sourcify.dev/56/0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805" target="_blank" rel="noopener">Sourcify ↗</a></div>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section id="faq">
+      <header><div class="eyebrow">11 / 常见问题</div><h2>常见问题</h2></header>
+
+      <div class="faqgroup">收益</div>
+      <details><summary>微矿机的收益和原矿机一样吗？</summary><div class="a">一样。每 1H 微矿机对应原矿机的 1H 已验证算力，产出按全网实际算力分配。持有 10H 微矿机，就拿这台原矿机 10% 的产出（假设它是 100H）。</div></details>
+      <details><summary>买到之后多久开始有收益？</summary><div class="a">通常从成交时开始，之前的收益先结给卖家。若官方收割暂时失败，未收割的 BEM 随份额转给买家；已经结算的收益仍归卖家。</div></details>
+      <details><summary>为什么领到的 BEM 这么少？</summary><div class="a">日产随全网算力、发行参数及原矿机状态变化，不是固定值。请查看交易页按最新参数估算的「每 100H 日产」；实际到账以链上领取为准。</div></details>
+      <details><summary>不领取的话收益会过期吗？</summary><div class="a">已结算给你的 BEM 会记在链上，卖出或赎回后仍可领。尚未收割的部分，在官方收割失败时会随转出的份额或赎回的原矿机转移。</div></details>
+      <details><summary>原矿机停挖或变成异常了怎么办？</summary><div class="a">它的份额会被标为不可交易，不能挂单、买入或卖进买单。已产生的收益仍然可以领取，集齐全部份额也仍然可以赎回。</div></details>
+
+      <div class="faqgroup">交易</div>
+      <details><summary>不同原矿机的微矿机可以混在一起吗？</summary><div class="a">不能。每台原矿机的份额是单独的一种资产，收益也单独结算。你的持仓会按原矿机分行显示。买入时系统可以跨矿机凑单，到账后仍然分开记录。</div></details>
+      <details><summary>挂单和买单可以撤吗？</summary><div class="a">随时可以。撤卖单立即释放预留份额；撤买单退回未成交部分的全部托管 BNB。到期未成交的订单也可以一键清理退款。</div></details>
+      <details><summary>为什么只成交了一部分？</summary><div class="a">凑单受已加载深度和每笔最多 16 条成交限制，确认前会显示实际可成交数量。提交后整批原子执行：报价失效会整笔失败，不会跳过失效单只成交一部分。请重新核对报价后提交。</div></details>
+      <details><summary>钱包已经确认，页面为什么还没更新？</summary><div class="a">链上确认需要几秒。可以在右上角「交易记录」查看状态和 BscScan 链接，确认后页面会自动刷新；一直没变化时手动点「刷新」。</div></details>
+      <details><summary>卖款为什么没直接到账？</summary><div class="a">如果收款地址是不能接收 BNB 的合约钱包，卖款会记入「待提取余额」，在交易页提取到任何能接收 BNB 的地址即可。</div></details>
+
+      <div class="faqgroup">拆分与赎回</div>
+      <details><summary>可以直接把 NFT 转给金库吗？</summary><div class="a">不可以。只能通过「拆分」按钮存入。直接转账不会发行微矿机，也没有找回入口。</div></details>
+      <details><summary>为什么我的矿机不能拆分？</summary><div class="a">只接收普通已验证矿机。最优首创、未验证、验证失败或已失效的矿机不能入池；入池时合约还会做官方反例检查，没通过也会被拒绝。</div></details>
+      <details><summary>拆分会损失收益或份额吗？</summary><div class="a">不会。拆分不收费，100H 拆出 100 份全部归你，拆分前的收益在拆分时先发给你。</div></details>
+
+      <div class="faqgroup">联系与支持</div>
+      <p class="sub">遇到问题时，请提供所在页面、钱包地址和交易哈希。任何人索要私钥、助记词或验证码，都不要提供。</p>
+
+      <h3>风险提示</h3>
+      <p class="muted" style="font-size:13.5px">参与前请了解：原矿机可能停挖或变成异常状态；BEM 价格和全网产出都会变化，历史产出不代表未来；官方挖矿合约的领取可能暂时失败；智能合约存在未知漏洞的风险，目前合约未经第三方审计。请只投入你能承受损失的资金。</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span>© 2026 TapeMicro. 保留所有权利。</span>
+    <a class="totop" href="#">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var language=document.documentElement.lang==='en'?'en':'zh';
+  try{localStorage.setItem('tapemicro-language',language);}catch(e){}
+  var switcher=document.querySelector('.guide-language');
+  if(switcher){var languagePath=switcher.getAttribute('href');function updateLanguageLink(){switcher.href=languagePath+location.hash;}updateLanguageLink();window.addEventListener('hashchange',updateLanguageLink);}
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var current=null;
+  function set(id){
+    if(current===id)return;current=id;
+    links.forEach(function(a){a.classList.toggle('on',a===map[id]);});
+    var a=map[id],toc=document.getElementById('toc');if(a&&window.innerWidth<=960){toc.scrollTo({left:Math.max(0,a.offsetLeft-toc.clientWidth/2+a.offsetWidth/2),behavior:'auto'});}
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)set(e.target.id);});
+    },{rootMargin:'-30% 0px -60% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>

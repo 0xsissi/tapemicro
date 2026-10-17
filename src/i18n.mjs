@@ -9,6 +9,7 @@ let language=readLanguage();
 export const getLanguage=()=>language;
 export const locale=()=>language==='en'?'en-US':'zh-CN';
 const words={
+ '使用指南':'Guide',
  '缓存数据':'Cached display data','链上读取':'Direct chain read',
  '停止核验':'Stop checking','停止读取':'Stop loading','已停止读取，可重新读取或按编号查找。':'Loading stopped. Retry or look up a miner by ID.','已停止核验，可重新查询。':'Check stopped. You can look up the miner again.',
  "我的邀请链接":"My invitation link",
@@ -514,7 +515,7 @@ export function initializeLocalization({onChange=()=>{}}={}){
  const doc=globalThis.document;if(!doc)return;
  const title=doc.title,description=doc.querySelector('meta[name="description"]'),descriptionSource=description?.content;
  const button=doc.getElementById('language-switch');
- const apply=()=>{doc.documentElement.lang=language==='en'?'en':'zh-CN';doc.title=translateText(title);if(description)description.content=translateText(descriptionSource);localizeTree(doc.body);if(button){button.textContent=language==='en'?'中文':'EN';button.setAttribute('aria-label',language==='en'?'Switch to Chinese':'切换到英文');button.title=language==='en'?'Switch to Chinese':'切换到英文';}};
+ const apply=()=>{doc.documentElement.lang=language==='en'?'en':'zh-CN';doc.title=translateText(title);if(description)description.content=translateText(descriptionSource);localizeTree(doc.body);for(const link of doc.querySelectorAll('[data-guide-link]'))link.setAttribute('href',link.getAttribute('data-guide-link').replace(/guide(?:-en)?\.html$/,language==='en'?'guide-en.html':'guide.html'));if(button){button.textContent=language==='en'?'中文':'EN';button.setAttribute('aria-label',language==='en'?'Switch to Chinese':'切换到英文');button.title=language==='en'?'Switch to Chinese':'切换到英文';}};
  button?.addEventListener('click',event=>{event.stopPropagation();setLanguage(language==='en'?'zh':'en');apply();onChange();});
  apply();return{apply};
 }
