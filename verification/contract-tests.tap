@@ -1,0 +1,402 @@
+TAP version 13
+# seed 7: 100/400 ledger steps verified
+# seed 7: 200/400 ledger steps verified
+# seed 7: 300/400 ledger steps verified
+# seed 7: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 7
+ok 1 - bid/ask independent ledger 400 steps, seed 7
+  ---
+  duration_ms: 40630.6603
+  type: 'test'
+  ...
+# seed 81: 100/400 ledger steps verified
+# seed 81: 200/400 ledger steps verified
+# seed 81: 300/400 ledger steps verified
+# seed 81: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 81
+ok 2 - bid/ask independent ledger 400 steps, seed 81
+  ---
+  duration_ms: 37170.0726
+  type: 'test'
+  ...
+# seed 912: 100/400 ledger steps verified
+# seed 912: 200/400 ledger steps verified
+# seed 912: 300/400 ledger steps verified
+# seed 912: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 912
+ok 3 - bid/ask independent ledger 400 steps, seed 912
+  ---
+  duration_ms: 36208.2706
+  type: 'test'
+  ...
+# seed 1807: 100/400 ledger steps verified
+# seed 1807: 200/400 ledger steps verified
+# seed 1807: 300/400 ledger steps verified
+# seed 1807: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 1807
+ok 4 - bid/ask independent ledger 400 steps, seed 1807
+  ---
+  duration_ms: 36738.6775
+  type: 'test'
+  ...
+# seed 81723: 100/400 ledger steps verified
+# seed 81723: 200/400 ledger steps verified
+# seed 81723: 300/400 ledger steps verified
+# seed 81723: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 81723
+ok 5 - bid/ask independent ledger 400 steps, seed 81723
+  ---
+  duration_ms: 38401.5207
+  type: 'test'
+  ...
+# seed 299003: 100/400 ledger steps verified
+# seed 299003: 200/400 ledger steps verified
+# seed 299003: 300/400 ledger steps verified
+# seed 299003: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 299003
+ok 6 - bid/ask independent ledger 400 steps, seed 299003
+  ---
+  duration_ms: 36101.2256
+  type: 'test'
+  ...
+# seed 771019: 100/400 ledger steps verified
+# seed 771019: 200/400 ledger steps verified
+# seed 771019: 300/400 ledger steps verified
+# seed 771019: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 771019
+ok 7 - bid/ask independent ledger 400 steps, seed 771019
+  ---
+  duration_ms: 38883.8407
+  type: 'test'
+  ...
+# seed 20261017: 100/400 ledger steps verified
+# seed 20261017: 200/400 ledger steps verified
+# seed 20261017: 300/400 ledger steps verified
+# seed 20261017: 400/400 ledger steps verified
+# Subtest: bid/ask independent ledger 400 steps, seed 20261017
+ok 8 - bid/ask independent ledger 400 steps, seed 20261017
+  ---
+  duration_ms: 38724.3451
+  type: 'test'
+  ...
+# Subtest: V3 keeps vault protocol 2, market version 4, fixed fee, transferable owner; no receive/fallback or asset rescue
+ok 9 - V3 keeps vault protocol 2, market version 4, fixed fee, transferable owner; no receive/fallback or asset rescue
+  ---
+  duration_ms: 2063.3791
+  type: 'test'
+  ...
+# Subtest: bid admission validates exact principal, uint128 bounds, duration, empty ANY or sorted unique 1–32 live IDs and kind event
+ok 10 - bid admission validates exact principal, uint128 bounds, duration, empty ANY or sorted unique 1–32 live IDs and kind event
+  ---
+  duration_ms: 732.0884
+  type: 'test'
+  ...
+# Subtest: wrong asset, self fill, closed/stale bid, missing approval, balance, deadline and minNet are rejected without state drift
+ok 11 - wrong asset, self fill, closed/stale bid, missing approval, balance, deadline and minNet are rejected without state drift
+  ---
+  duration_ms: 934.5495
+  type: 'test'
+  ...
+# Subtest: multiple sellers and IDs fill one bid in parts; seller receives gross less fee and both sides earn gross-volume points
+ok 12 - multiple sellers and IDs fill one bid in parts; seller receives gross less fee and both sides earn gross-volume points
+  ---
+  duration_ms: 684.6267
+  type: 'test'
+  ...
+# Subtest: 16-fill batch succeeds; any one failing fill atomically restores BNB, shares, escrow, points and bid quantities
+ok 13 - 16-fill batch succeeds; any one failing fill atomically restores BNB, shares, escrow, points and bid quantities
+  ---
+  duration_ms: 466.2647
+  type: 'test'
+  ...
+# Subtest: closed and expired bids refund exactly the unfilled principal; outsiders cannot cancel or expire early
+ok 14 - closed and expired bids refund exactly the unfilled principal; outsiders cannot cancel or expire early
+  ---
+  duration_ms: 762.8118
+  type: 'test'
+  ...
+# Subtest: rejecting/gas-burning seller and bidder receive recoverable pending balances; withdrawal supports another recipient
+ok 15 - rejecting/gas-burning seller and bidder receive recoverable pending balances; withdrawal supports another recipient
+  ---
+  duration_ms: 1118.9101
+  type: 'test'
+  ...
+# Subtest: bidder rejection rolls back only that fill; token callback cannot reenter market or vault
+ok 16 - bidder rejection rolls back only that fill; token callback cannot reenter market or vault
+  ---
+  duration_ms: 871.0574
+  type: 'test'
+  ...
+# Subtest: BNB callbacks cannot reenter settlement or owner mutation; owner nomination acceptance itself is guarded
+ok 17 - BNB callbacks cannot reenter settlement or owner mutation; owner nomination acceptance itself is guarded
+  ---
+  duration_ms: 984.7261
+  type: 'test'
+  ...
+# Subtest: revocation before or during token/BNB callback rolls back sale and accounting; healthy other bid stays usable
+ok 18 - revocation before or during token/BNB callback rolls back sale and accounting; healthy other bid stays usable
+  ---
+  duration_ms: 731.3518
+  type: 'test'
+  ...
+# Subtest: sale fee dust is per fill; fee withdrawal cannot take bid escrow or deferred payouts after recipient/owner changes
+ok 19 - sale fee dust is per fill; fee withdrawal cannot take bid escrow or deferred payouts after recipient/owner changes
+  ---
+  duration_ms: 748.4393
+  type: 'test'
+  ...
+# Subtest: BEM before bid fill remains with seller; only subsequent production belongs to bidder
+ok 20 - BEM before bid fill remains with seller; only subsequent production belongs to bidder
+  ---
+  duration_ms: 498.8858
+  type: 'test'
+  ...
+# Subtest: 32 accepted IDs are supported with no on-chain array; every selected ID is enforced
+ok 21 - 32 accepted IDs are supported with no on-chain array; every selected ID is enforced
+  ---
+  duration_ms: 8666.8021
+  type: 'test'
+  ...
+# Subtest: post-payment check catches an ID becoming inactive in the seller native callback and reverts the payout
+ok 22 - post-payment check catches an ID becoming inactive in the seller native callback and reverts the payout
+  ---
+  duration_ms: 610.5524
+  type: 'test'
+  ...
+# Subtest: any-miner bid: empty list accepts every tradable ID, mixes IDs and sellers, still blocks untradable IDs and keeps escrow exact
+ok 23 - any-miner bid: empty list accepts every tradable ID, mixes IDs and sellers, still blocks untradable IDs and keeps escrow exact
+  ---
+  duration_ms: 1011.3151
+  type: 'test'
+  ...
+# Subtest: ANY bids accept an NFT deposited after the bid, and post-payment invalidation rolls the entire fill back
+ok 24 - ANY bids accept an NFT deposited after the bid, and post-payment invalidation rolls the entire fill back
+  ---
+  duration_ms: 1020.2237
+  type: 'test'
+  ...
+# Subtest: fixed 1% fee; limited owner authority supports handover and renunciation, no upgrade or user-asset authority
+ok 25 - fixed 1% fee; limited owner authority supports handover and renunciation, no upgrade or user-asset authority
+  ---
+  duration_ms: 777.6918
+  type: 'test'
+  ...
+# Subtest: only current owner initiates handover; only nominee accepts; former and pending owners cannot change recipient
+ok 26 - only current owner initiates handover; only nominee accepts; former and pending owners cannot change recipient
+  ---
+  duration_ms: 776.5941
+  type: 'test'
+  ...
+# Subtest: owner can replace or cancel a pending handover; sending transferOwnership to zero only cancels, never renounces
+ok 27 - owner can replace or cancel a pending handover; sending transferOwnership to zero only cancels, never renounces
+  ---
+  duration_ms: 463.3079
+  type: 'test'
+  ...
+# Subtest: renunciation clears pending handover, permanently locks recipient; fee collection, trades, BEM and redemption remain usable
+ok 28 - renunciation clears pending handover, permanently locks recipient; fee collection, trades, BEM and redemption remain usable
+  ---
+  duration_ms: 1869.1014
+  type: 'test'
+  ...
+# Subtest: only deployer changes recipient; accrued and future fees follow the change, without touching seller funds or BEM
+ok 29 - only deployer changes recipient; accrued and future fees follow the change, without touching seller funds or BEM
+  ---
+  duration_ms: 1351.7379
+  type: 'test'
+  ...
+# Subtest: deployer can recover pending fees from a rejecting destination and switch to a container
+ok 30 - deployer can recover pending fees from a rejecting destination and switch to a container
+  ---
+  duration_ms: 1570.9868
+  type: 'test'
+  ...
+# Subtest: quote equals frontend integer calculation, including fee dust and overflow rejection
+ok 31 - quote equals frontend integer calculation, including fee dust and overflow rejection
+  ---
+  duration_ms: 155.3388
+  type: 'test'
+  ...
+# Subtest: buyer receives full quantity, pays +1%; seller gets full BNB immediately and retains past BEM
+ok 32 - buyer receives full quantity, pays +1%; seller gets full BNB immediately and retains past BEM
+  ---
+  duration_ms: 918.5171
+  type: 'test'
+  ...
+# Subtest: cross-ID multi-seller partial fills, ID-local reservations and volume points
+ok 33 - cross-ID multi-seller partial fills, ID-local reservations and volume points
+  ---
+  duration_ms: 1320.0266
+  type: 'test'
+  ...
+# Subtest: underpayment, stale price, expired/self order and failed batch revert payouts, fees, points and transfers
+ok 34 - underpayment, stale price, expired/self order and failed batch revert payouts, fees, points and transfers
+  ---
+  duration_ms: 1727.8773
+  type: 'test'
+  ...
+# Subtest: one inactive ID cannot trade, while another remains fillable and cancelable
+ok 35 - one inactive ID cannot trade, while another remains fillable and cancelable
+  ---
+  duration_ms: 1131.5128
+  type: 'test'
+  ...
+# Subtest: rejecting and gas-burning sellers fall back to funded withdrawals without blocking batch fills
+ok 36 - rejecting and gas-burning sellers fall back to funded withdrawals without blocking batch fills
+  ---
+  duration_ms: 1285.9741
+  type: 'test'
+  ...
+# Subtest: seller payout callback cannot reenter settlement or cancel its order
+ok 37 - seller payout callback cannot reenter settlement or cancel its order
+  ---
+  duration_ms: 962.3853
+  type: 'test'
+  ...
+# Subtest: fee-container rejection/reentry affects only fee release, and destination stays fixed
+ok 38 - fee-container rejection/reentry affects only fee release, and destination stays fixed
+  ---
+  duration_ms: 1556.6773
+  type: 'test'
+  ...
+# Subtest: fee dust rounds per fill; volume points aggregate wei without per-fill point rounding
+ok 39 - fee dust rounds per fill; volume points aggregate wei without per-fill point rounding
+  ---
+  duration_ms: 824.726
+  type: 'test'
+  ...
+# Subtest: approval revocation or external transfer makes orders unfillable; expiry releases reservations
+ok 40 - approval revocation or external transfer makes orders unfillable; expiry releases reservations
+  ---
+  duration_ms: 968.0175
+  type: 'test'
+  ...
+# Subtest: one miner/key per ID and custody; exact 60H,100H,1260H issuance, including NFT zero
+ok 41 - one miner/key per ID and custody; exact 60H,100H,1260H issuance, including NFT zero
+  ---
+  duration_ms: 1664.6155
+  type: 'test'
+  ...
+# Subtest: optimal, unverified, inactive, wrong collection, known counterexample and stale H are refused
+ok 42 - optimal, unverified, inactive, wrong collection, known counterexample and stale H are refused
+  ---
+  duration_ms: 1424.7213
+  type: 'test'
+  ...
+# Subtest: 1240-gate valid miner with registered counterexamples uses the upstream budget once and fits one transaction
+ok 43 - 1240-gate valid miner with registered counterexamples uses the upstream budget once and fits one transaction
+  ---
+  duration_ms: 1200.566
+  type: 'test'
+  ...
+# Subtest: NFT pre-deposit BEM goes to original owner, not its future Micro buyer
+ok 44 - NFT pre-deposit BEM goes to original owner, not its future Micro buyer
+  ---
+  duration_ms: 403.0043
+  type: 'test'
+  ...
+# Subtest: external upstream claims already sitting in custody are attributed only to their own ID
+ok 45 - external upstream claims already sitting in custody are attributed only to their own ID
+  ---
+  duration_ms: 1186.5621
+  type: 'test'
+  ...
+# Subtest: transfer settles full seller history, buyer starts at zero, and sold-out IDs remain discoverable
+ok 46 - transfer settles full seller history, buyer starts at zero, and sold-out IDs remain discoverable
+  ---
+  duration_ms: 1028.1916
+  type: 'test'
+  ...
+# Subtest: only the affected ID stops trading; healthy minting, transfers, claims and redemption continue
+ok 47 - only the affected ID stops trading; healthy minting, transfers, claims and redemption continue
+  ---
+  duration_ms: 1434.2923
+  type: 'test'
+  ...
+# Subtest: failed harvest keeps transfers/trades/redemption live; funded history stays, unharvested BEM follows units
+ok 48 - failed harvest keeps transfers/trades/redemption live; funded history stays, unharvested BEM follows units
+  ---
+  duration_ms: 2057.4636
+  type: 'test'
+  ...
+# Subtest: a gas-burning upstream cannot consume the gas needed for local transfers and full redemption
+ok 49 - a gas-burning upstream cannot consume the gas needed for local transfers and full redemption
+  ---
+  duration_ms: 544.1346
+  type: 'test'
+  ...
+# Subtest: redemption during failed harvest preserves funded BEM; unharvested reward follows the NFT recipient
+ok 50 - redemption during failed harvest preserves funded BEM; unharvested reward follows the NFT recipient
+  ---
+  duration_ms: 1053.7525
+  type: 'test'
+  ...
+# Subtest: pausing upstream does not trap already received BEM or funded claims
+ok 51 - pausing upstream does not trap already received BEM or funded claims
+  ---
+  duration_ms: 623.358
+  type: 'test'
+  ...
+# Subtest: all shares of selected ID are required; other IDs cannot substitute; no forced buyout
+ok 52 - all shares of selected ID are required; other IDs cannot substitute; no forced buyout
+  ---
+  duration_ms: 978.4035
+  type: 'test'
+  ...
+# Subtest: redemption/redeposit of same NFT never resets past rewards or gives them to its new holder
+ok 53 - redemption/redeposit of same NFT never resets past rewards or gives them to its new holder
+  ---
+  duration_ms: 921.8468
+  type: 'test'
+  ...
+# Subtest: extra actual BEM uses ordinary settlement, without issuing extra Micro or special exit
+ok 54 - extra actual BEM uses ordinary settlement, without issuing extra Micro or special exit
+  ---
+  duration_ms: 790.4836
+  type: 'test'
+  ...
+# Subtest: actual mint clipping is accounted, never upstream debt differences
+ok 55 - actual mint clipping is accounted, never upstream debt differences
+  ---
+  duration_ms: 1041.6935
+  type: 'test'
+  ...
+# Subtest: custody has no public sweep, NFT release, reinitialization or arbitrary execution
+ok 56 - custody has no public sweep, NFT release, reinitialization or arbitrary execution
+  ---
+  duration_ms: 517.0594
+  type: 'test'
+  ...
+# Subtest: receiver reentry is blocked, refusal rolls back transfer and reward settlement
+ok 57 - receiver reentry is blocked, refusal rolls back transfer and reward settlement
+  ---
+  duration_ms: 574.578
+  type: 'test'
+  ...
+# Subtest: duplicate-ID batch transfers preserve subatomic fractions; invalid size and destinations fail
+ok 58 - duplicate-ID batch transfers preserve subatomic fractions; invalid size and destinations fail
+  ---
+  duration_ms: 2617.8421
+  type: 'test'
+  ...
+# Subtest: 70 miners exceed old cap; one-ID gas stays bounded; 16 distinct IDs trade in one transaction
+ok 59 - 70 miners exceed old cap; one-ID gas stays bounded; 16 distinct IDs trade in one transaction
+  ---
+  duration_ms: 19393.4396
+  type: 'test'
+  ...
+# Subtest: 75 mixed multi-ID actions preserve supply, per-ID reward attribution and actual BEM solvency
+ok 60 - 75 mixed multi-ID actions preserve supply, per-ID reward attribution and actual BEM solvency
+  ---
+  duration_ms: 27941.7479
+  type: 'test'
+  ...
+1..60
+# tests 60
+# suites 0
+# pass 60
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 410776.4915

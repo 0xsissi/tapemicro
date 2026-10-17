@@ -1,0 +1,14 @@
+import test from'node:test';import assert from'node:assert/strict';import{keccak256}from'ethers';
+import{startAnvil,mockSystem,deploy,tx,artifact}from'../scripts/chain-helpers.mjs';import{LiveGateway}from'../src/live-gateway.mjs';
+test('scoped crossing checks include older relevant orders and post-write reads touch only affected holdings',{timeout:90000},async()=>{
+ const node=await startAnvil();try{const sys=await mockSystem(node.provider),{signers:[a,b],addresses,nft,vault}=sys,market=await deploy('TapeMicroMarketV2',a,[vault.target,addresses[4]]),protocol={};for(const name of['TapeMicroVault','TapeMicroMarketV2','TapeMicroCustody','IPodMining']){const a=await artifact(name);protocol[name]={abi:a.abi,runtimeHash:keccak256(a.deployedBytecode),immutableRanges:Object.values(a.immutableReferences).flat()};}
+ const config={local:true,chainId:31337,marketVersion:4,vault:vault.target,market:market.target,mining:sys.mining.target,bem:sys.bem.target,tapeout:nft.target,behemoth:sys.giant.target,feeManager:addresses[0],deploymentBlock:1},g=new LiveGateway(config,protocol,{provider:node.provider,hostname:'127.0.0.1'});await g.init();await g.connect(0);
+ const ids=[];for(const n of[1,2]){ids.push(BigInt(await sys.mintMiner(a,n,100)));await tx(vault.deposit(nft.target,n,100,{gasLimit:12000000}));}await tx(vault.setApprovalForAll(market.target,true));const end=(await node.provider.getBlock('latest')).timestamp+86400;
+ await tx(market.createListing(ids[0],1,800,end));for(let i=0;i<81;i++){await tx(market.createListing(ids[0],1,2000+i,end));await tx(market.cancelListing(2+i));}await tx(market.createListing(ids[1],1,1000,end));
+ await tx(market.connect(b).createBid([ids[1]],1,900,end,{value:900}));await tx(market.connect(b).createBid([ids[0]],1,700,end,{value:700}));
+ assert.equal(await g.crossingPrice([ids[1]],'buy'),1000n);assert.equal(await g.crossingPrice([ids[0]],'buy'),800n,'the oldest matching listing remains visible to the price guard');assert.equal(await g.crossingPrice([ids[0]],'sell'),700n);assert.equal(await g.crossingPrice([ids[1]],'sell'),900n);
+ const check=await g.checkPurchase([{id:83n,assetId:ids[1],amount:1n,priceWei:1000n}]);assert.deepEqual(check.orders.map(o=>o.id),[83n]);await assert.rejects(g.checkPurchase([{id:83n,assetId:ids[1],amount:1n,priceWei:999n}]),/卖单已变化/);
+ const data=await g.readAction({kind:'list',assetId:ids[1]},{assets:ids.map(id=>({id})),result:{listingId:83n}});assert.equal(data.partialAssets,true);assert.deepEqual(data.assets.map(a=>a.id),[ids[1]]);assert.deepEqual(data.orders.map(a=>a.id),[83n]);assert.ok(data.assets.every(a=>!a.fresh),'ordinary reads do not run reward previews');
+ const page1=await g.readBook({orderLimit:80}),page2=await g.readBook({orderLimit:80,askCursor:page1.askCursor,bidCursor:page1.bidCursor});assert.ok(page1.orderWindowIds.every(id=>!page2.orderWindowIds.includes(id)));assert.equal(page2.orders[0].id,1n);
+ }finally{await node.stop();}
+});

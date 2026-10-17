@@ -1,0 +1,44 @@
+{
+  "name": "tapemicro",
+  "version": "1.0.0-rc.4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/compile-contracts.mjs && node scripts/build.mjs",
+    "compile": "node scripts/compile-contracts.mjs",
+    "dev": "node scripts/preview.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:contracts": "node --test --test-concurrency=1 test/contracts/*.test.mjs",
+    "verify:contracts": "node scripts/verify-contracts.mjs",
+    "test:fork": "node scripts/bids-fork.mjs",
+    "local": "node scripts/local-chain.mjs",
+    "deploy:prepare": "node scripts/prepare-deployment.mjs",
+    "package:deweb": "node scripts/package-release.mjs",
+    "package:contracts": "node scripts/package-contracts.mjs",
+    "test:fork:legacy": "node scripts/fork-check.mjs",
+    "verify:bids": "node scripts/verify-bids-release.mjs",
+    "kol:points": "node scripts/kol-points.mjs",
+    "verify:kol": "node scripts/verify-kol-release.mjs",
+    "verify:mainnet": "node scripts/verify-mainnet.mjs",
+    "package:mainnet": "node scripts/package-mainnet.mjs output/any-miner-release/verification.json",
+    "verify:loading": "node scripts/verify-loading-release.mjs",
+    "verify:transactions": "node scripts/verify-transactions-release.mjs",
+    "verify:read-speed": "node scripts/verify-read-speed-release.mjs",
+    "build:cache": "node scripts/build-cache.mjs",
+    "verify:cache": "node scripts/verify-cache-release.mjs",
+    "verify:responsiveness": "node scripts/verify-responsiveness-release.mjs",
+    "verify:any": "node scripts/verify-any-release.mjs"
+  },
+  "dependencies": {
+    "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "@foundry-rs/anvil": "1.7.1",
+    "@openzeppelin/contracts": "5.4.0",
+    "esbuild": "0.25.10",
+    "solc": "0.8.24"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
+  }
+}

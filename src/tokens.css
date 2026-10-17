@@ -1,0 +1,12 @@
+/* TapeMicro visual tokens, adapted from the supplied tokens.css. All font assets are local. */
+@font-face{font-family:"Plex";src:url("./fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Plex";src:url("./fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
+:root{
+  color-scheme:dark;
+  --bg:#0B0C0E;--surface:#131518;--raise:#1A1D21;--line:#262A30;--line-soft:#1C1F24;
+  --text:#F3F3F1;--text-2:#B4B8BF;--text-3:#858A92;
+  --gold:#E8B44A;--gold-tint:rgba(232,180,74,.06);
+  --up:#4CC38A;--down:#F0716B;
+  --font:"Plex","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;
+  --muted:var(--text-2);--danger:var(--down);--mint:var(--up);--accent:var(--text);--mono:var(--font);
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-17T14:51:32.372003+00:00",
+  "passed": true,
+  "freshDependencyInstall": true,
+  "frontendTests": 121,
+  "contractTests": 60,
+  "randomLedgerSteps": 3200,
+  "compilerInputIdentical": true,
+  "productionFrontendIdentical": true,
+  "productionManifestSha256": "1abc43ff729ece7abe9912b135840032189ef874a93be95ab4b4237effaf161b",
+  "deployedContractBytecodesUnchanged": true,
+  "sourcifyExactMatchConfirmed": true,
+  "secretScanPassed": true,
+  "mainnetTransactionsSubmittedDuringPublication": false
+}

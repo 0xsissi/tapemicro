@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0-rc.4",
+  "uiProtocolVersion": 2,
+  "contractUiReady": true,
+  "liveContractsConfigured": true,
+  "localBuild": false,
+  "files": {
+    "index.html": {
+      "bytes": 11217,
+      "sha256": "3c0aa14282f7924f49ed93946cd84326b643de5f35237f3d4e0c3127b307c0bb"
+    },
+    "styles.css": {
+      "bytes": 85,
+      "sha256": "711d57b28e9934c2e6c7e6eae407e6db92808a4d7e95802914956519ed39b1e9"
+    },
+    "tokens.css": {
+      "bytes": 837,
+      "sha256": "6aef3afb6ebc155f5ad15f5427d7d233b0ef7a42653b1074cf3d9ff4752db212"
+    },
+    "protocol.css": {
+      "bytes": 41885,
+      "sha256": "69c7849601799b82d2d8d42805561a78a29cbaf7c1e686283a03670b5d174c37"
+    },
+    "app.js": {
+      "bytes": 609110,
+      "sha256": "392c70d80d12affd96eb4cfff001d3d8149da4d78ef91a932f84aae47a81e6b3"
+    },
+    "config.json": {
+      "bytes": 1153,
+      "sha256": "96d3556419f04d97f22c7fe79f17f863b3379a8a24b4ffcba9c4fcf62f198503"
+    },
+    "kol-list.json": {
+      "bytes": 35,
+      "sha256": "0a9af7b72b1e349634fb85ea9dcbee3c9505eb337c2300f7a5bbfcddfd1597a8"
+    },
+    "kol-points.json": {
+      "bytes": 732,
+      "sha256": "c358f6014d5b3ccdebe611ae353ddd86627f3a3d1a65193f9a09f8f99732a6ae"
+    },
+    "protocol.json": {
+      "bytes": 69474,
+      "sha256": "85964232f518c000bffc0e472f6da5b1098ecfda3c9ee6fd4c055f18420f13d7"
+    },
+    "demo/index.html": {
+      "bytes": 11244,
+      "sha256": "c0eb72dd1e0c7913556f095aa2ed166effa20e85db515eadd5370fc4a335f553"
+    },
+    "demo/app.js": {
+      "bytes": 257029,
+      "sha256": "7ef3648bb1820720b52e0b7699ab62ccbf9c569d778fd1b7abb325be399900c7"
+    },
+    "deploy.html": {
+      "bytes": 3813,
+      "sha256": "439ea8d660f5c6bed02d74980600c21306a84eb13ce1f2af714236f91e2f2d5d"
+    },
+    "deploy.js": {
+      "bytes": 569029,
+      "sha256": "d7089f03c4a9f7501d659667715e38edf90bee79c356ae12ad9b792ca6f2e6da"
+    },
+    "fees.html": {
+      "bytes": 5170,
+      "sha256": "d5de762523290dcecc137d5816ce589d26e5fa9d829f90018332b0d98812e626"
+    },
+    "fees.js": {
+      "bytes": 448277,
+      "sha256": "7a0e6866ba0d4910bd29e52ca62920bd09c1ce25c04b6c4ad7979cec48186176"
+    },
+    "contracts/compiler-input.json": {
+      "bytes": 305563,
+      "sha256": "a7f183fbd7c336970c7f111515bb846ee04c25bab9cbd20598bb7a2da7a73930"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "bytes": 11618,
+      "sha256": "07a9a5b3d77037e368a65d7ec6ff171d30d1f3bdcfff474b9c6d56f0559a1b33"
+    },
+    "fonts/ibm-plex-sans-latin-400-normal.woff2": {
+      "bytes": 22588,
+      "sha256": "3b646991d30055a93a4ecc499713d4347953a74a947ecab435ab72070cbdab0e"
+    },
+    "fonts/ibm-plex-sans-latin-600-normal.woff2": {
+      "bytes": 24252,
+      "sha256": "8960851d691c054ed38e259bdcf1a6190d157b4203ed5bb32c632a863fb8ec2f"
+    },
+    "fonts/LICENSE": {
+      "bytes": 4429,
+      "sha256": "d0283623ef57e722fd0eb688a8041589670c608ab780cd3612d06ba6f153d3fd"
+    },
+    "contracts/TapeMicroVault.sol": {
+      "bytes": 14648,
+      "sha256": "017d880bef241841afdc983fe90953d125e38111a2ef53966e709dfaac800328"
+    },
+    "contracts/TapeMicroMarket.sol": {
+      "bytes": 10781,
+      "sha256": "bcc5ba53f689c0c735d408495e9d29b53d5fcea1aec2b186079af3cf9e86b3fd"
+    },
+    "contracts/TapeMicroMarketV2.sol": {
+      "bytes": 7202,
+      "sha256": "9535a75524e383774caee7bb34d88e97ce1f41bedfd04002f4274d78d1bc238f"
+    },
+    "contracts/TapeMicroCustody.sol": {
+      "bytes": 3821,
+      "sha256": "df723e208bcc1d0fb6b71f439ad741dbd31b009400b0fd0cd5824ecc736182d4"
+    }
+  }
+}

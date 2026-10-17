@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https: http://127.0.0.1:* http://localhost:*; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"><title>TapeMicro · 项目手续费</title><link rel="stylesheet" href="./tokens.css"><link rel="stylesheet" href="./protocol.css"><script defer src="./fees.js"></script></head>
+<body><main class="deploy-shell">
+<button id="language-switch" class="language-switch" data-no-i18n type="button" aria-label="切换到英文">EN</button>
+<a href="./index.html#market">← 返回 Micro 市场</a><h1>项目手续费</h1>
+<p>主动成交方支付的 1% 服务费单独记账。只有当前 owner 能修改收款地址。owner 可以移交或永久弃权，买单本金、用户卖款和 BEM 不受影响。</p>
+<article class="info-card"><h2>链上记录</h2>
+<div class="wallet-row"><span>市场合约</span><b id="fee-market">尚未配置</b></div>
+<div class="wallet-row"><span>初始 owner（部署钱包）</span><b id="fee-initial-manager">—</b></div>
+<div class="wallet-row"><span>当前 owner</span><b id="fee-manager">—</b></div>
+<div class="wallet-row"><span>待接收的新 owner</span><b id="fee-pending-manager">—</b></div>
+<div class="wallet-row"><span>管理状态</span><b id="fee-management-state">—</b></div>
+<div class="wallet-row"><span>固定费率</span><b id="fee-rate">1%</b></div>
+<div class="wallet-row"><span>当前收款地址</span><b id="fee-container">尚未配置</b></div>
+<div class="wallet-row"><span>容器当前所有者</span><b id="fee-owner">—</b></div>
+<div class="wallet-row"><span>待归集手续费</span><b id="fee-pending">—</b></div>
+<div class="wallet-row"><span>累计已归集</span><b id="fee-released">—</b></div>
+<div class="wallet-row"><span>收款地址 BNB 余额</span><b id="fee-balance">—</b></div>
+<button id="fees-refresh" class="button secondary">刷新记录</button></article>
+<button id="fees-connect" class="button secondary">连接钱包</button><button id="fees-collect" class="button primary" disabled>归集手续费</button>
+<p id="fees-wallet">尚未连接钱包</p><p id="fees-status" role="status">正在读取配置…</p>
+<p>任何人都能支付 Gas 发起归集，资金只发送到链上当前收款地址。只有当前 owner 能改址，不能改费率或提取用户资产；弃权后任何人都不能再改址。</p>
+<article class="info-card"><h2>修改手续费收款地址</h2>
+<p>初始使用部署钱包。切换到容器前核验其收款与所有者提现；容器控制权随绑定电路 NFT 转移。</p>
+<label class="form-label" for="fees-new-recipient">新收款地址</label><input id="fees-new-recipient" class="form-input" placeholder="钱包或电路容器的 0x 地址">
+<button id="fees-preview-recipient" class="button secondary" disabled>预览新收款地址</button><p id="fees-recipient-preview" class="mono"></p>
+<button id="fees-change-recipient" class="button primary" disabled>确认修改收款地址</button></article>
+<article class="info-card"><h2>移交 owner 权限</h2>
+<p>仅移交修改手续费收款地址的权限，收款地址不会跟着改变。新钱包必须接受移交才生效，之前仍由当前 owner 管理。</p>
+<label class="form-label" for="fees-new-owner">新 owner 地址</label><input id="fees-new-owner" class="form-input" placeholder="能发起交易的钱包或多签 0x 地址">
+<button id="fees-preview-owner" class="button secondary" disabled>预览移交</button><button id="fees-transfer-owner" class="button primary" disabled>确认发起移交</button>
+<p id="fees-owner-preview" class="mono" role="status"></p>
+<div class="owner-actions"><button id="fees-accept-owner" class="button secondary" disabled>接受 owner 权限</button><button id="fees-cancel-owner" class="button secondary" disabled>取消待接受的移交</button></div>
+</article>
+<article class="info-card"><h2>永久弃权</h2>
+<p>弃权后 owner 变为零地址，不能恢复，也不能再改收款地址。1% 费率不变，交易、赎回、BEM 领取和手续费归集仍可使用。请先确认最终收款地址可以正常接收和提取 BNB。</p>
+<p>弃权后固定的收款地址：<b id="fees-renounce-destination" class="mono">—</b></p>
+<label class="form-label" for="fees-renounce-word">输入 RENOUNCE 确认永久弃权</label><input id="fees-renounce-word" class="form-input" placeholder="RENOUNCE" autocomplete="off">
+<button id="fees-preview-renounce" class="button secondary" disabled>预览永久弃权</button><button id="fees-renounce-owner" class="button secondary" disabled>确认永久弃权</button>
+<p id="fees-renounce-preview" class="mono" role="status"></p></article>
+<p>这个页面只管理项目手续费。<a href="https://tapeout.net/" target="_blank" rel="noreferrer">打开 TapeOut 官方网站 →</a></p>
+</main></body></html>

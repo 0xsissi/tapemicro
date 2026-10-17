@@ -1,0 +1,21 @@
+import {spawn} from 'node:child_process';
+import {readFile,writeFile,readdir,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {keccak256} from 'ethers';
+import {root,artifact} from './chain-helpers.mjs';
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const pkg=JSON.parse(await readFile(root+'package.json','utf8'));
+const names=['TapeMicroVault','TapeMicroMarket','TapeMicroMarketV2','TapeMicroCustody'];
+async function snapshot(){const sources={};for(const dir of ['contracts','test/contracts']){async function walk(p){for(const e of await readdir(root+p,{withFileTypes:true})){const name=p+'/'+e.name;if(e.isDirectory())await walk(name);else sources[name]=sha(await readFile(root+name));}}await walk(dir);}for(const file of ['scripts/chain-helpers.mjs','src/trade-quote.mjs','package-lock.json'])sources[file]=sha(await readFile(root+file));const build={};for(const name of names)build[name]=keccak256((await artifact(name)).bytecode);return{build,sources,compilerInputSha256:sha(await readFile(root+'artifacts/compiler-input.json'))};}
+const before=await snapshot(),input=JSON.parse(await readFile(root+'artifacts/compiler-input.json','utf8'));
+for(const name of Object.keys(before.sources).filter(n=>n.endsWith('.sol')))if(sha(input.sources[name]?.content??'')!==before.sources[name])throw Error('Compile current source first: '+name);
+await mkdir(root+'output',{recursive:true});
+const files=(await readdir(root+'test/contracts')).filter(n=>n.endsWith('.test.mjs')).sort().map(n=>'test/contracts/'+n);
+const child=spawn(process.execPath,['--test','--test-concurrency=1','--test-reporter=tap',...files],{cwd:root,windowsHide:true,stdio:['ignore','pipe','pipe']});let log='';
+for(const stream of [child.stdout,child.stderr])stream.on('data',b=>{log+=b;process.stdout.write(b);});
+const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('exit',resolve);});await writeFile(root+'output/contract-tests-rc4.tap',log);
+if(code!==0)throw Error('Contract tests failed; see output/contract-tests-rc4.tap');
+const after=await snapshot();if(JSON.stringify(after)!==JSON.stringify(before))throw Error('Inputs changed during tests');
+const tests=Number(log.match(/^# tests (\d+)\s*$/m)?.[1]),passed=Number(log.match(/^# pass (\d+)\s*$/m)?.[1]),failed=Number(log.match(/^# fail (\d+)\s*$/m)?.[1]);
+if(!tests||tests!==passed||failed!==0)throw Error('Incomplete test totals');
+await writeFile(root+'output/contract-tests-rc4.json',JSON.stringify({version:pkg.version,protocolVersion:2,passed:true,tests,passedCount:passed,failedCount:failed,...before,verifiedAt:new Date().toISOString()},null,2));

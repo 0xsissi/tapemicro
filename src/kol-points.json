@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "chainId": 56,
+  "vault": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+  "markets": [
+    "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+    "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805"
+  ],
+  "deploymentBlock": 128133399,
+  "toBlock": 128133511,
+  "toBlockHash": "0x7325d3ccec563014420cc3cfbca13c35fb3463522c745a157a8657ac11fbcb51",
+  "referralMode": "open",
+  "fingerprint": "557e4f8ead065b12b263c3596b1cda64315a6039540a011d66bf81531edef5d7",
+  "rules": {
+    "kolShareBps": 1000,
+    "refereeBonusBps": 1000,
+    "requireFirstInteraction": true,
+    "validityDays": 0
+  },
+  "pointsPerBnb": 1000,
+  "kols": [],
+  "referees": [],
+  "catchingUp": true,
+  "backfillToBlock": 128183568
+}

@@ -1,0 +1,7 @@
+import{isAddress}from'ethers';import{escapeHtml as esc,shortAddress}from'./client-utils.mjs';import{setHTML}from'./dom-updates.mjs';import{localizeTree}from'./i18n.mjs';
+export function trustMarkup(config,{demo=false}={}){
+ if(demo||config.local)return'<p>© 2026 TapeMicro. 保留所有权利。</p>';
+ const link=(address,label)=>isAddress(address)?`<div class="trust-contract"><span>${esc(label)}</span><a class="mono" href="https://bscscan.com/address/${address}#code" target="_blank" rel="noopener">${esc(shortAddress(address))} ↗</a><a href="https://repo.sourcify.dev/56/${address}" target="_blank" rel="noopener">Sourcify 源码 ↗</a></div>`:'';
+ return`<details class="trust-details"><summary>合约与风险</summary><div class="trust-contracts">${link(config.vault,'金库')}${link(config.market,'市场 · 版本 '+config.marketVersion)}${(config.legacyMarkets??[]).map(m=>link(m.address,'历史市场')+`<a href="./index.html?legacyMarket=${m.address}#market">历史市场撤单退款 →</a>`).join('')}</div><p>矿机可能停挖或变为异常；BEM 价格与产出会波动；官方领取可能暂时失败。智能合约存在风险，合约未经独立第三方审计。</p><p>赎回须集齐同台全部份额。仅通过本页拆分入口存入 NFT。</p></details><p>© 2026 TapeMicro. 保留所有权利。 <a href="https://tapemicro.top/" rel="noopener">官方网站：tapemicro.top</a> · <a href="https://github.com/0xsissi/tapemicro" target="_blank" rel="noopener">GitHub ↗</a></p>`;
+}
+export function renderTrust(config,options){const host=globalThis.document?.getElementById('trust-info');setHTML(host,trustMarkup(config,options));localizeTree(host);}

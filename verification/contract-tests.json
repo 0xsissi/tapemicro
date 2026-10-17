@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0-rc.4",
+  "protocolVersion": 2,
+  "passed": true,
+  "tests": 60,
+  "passedCount": 60,
+  "failedCount": 0,
+  "build": {
+    "TapeMicroVault": "0x876f69ced38d75fe6f55fd5f2c9f89f479efee38a11358377a81a25fc7f5deff",
+    "TapeMicroMarket": "0xbd50a1c016c3dc406a3e354954dcdd24392d3ad724605844bc7e79f2fe9690cd",
+    "TapeMicroMarketV2": "0x638071b85f6f21d86f763e6d543009dd417e1e3962dea9ed9a10faea354c278e",
+    "TapeMicroCustody": "0xf9193fa184076b04a351ac8daa1915c752eae5655797a1d206d521be617f57cc"
+  },
+  "sources": {
+    "contracts/interfaces/IPodMining.sol": "a7e24e59ee086ba9a6aa575ad6c596869631c5480a238371864ef88bfc817f80",
+    "contracts/TapeMicroCustody.sol": "df723e208bcc1d0fb6b71f439ad741dbd31b009400b0fd0cd5824ecc736182d4",
+    "contracts/TapeMicroMarket.sol": "bcc5ba53f689c0c735d408495e9d29b53d5fcea1aec2b186079af3cf9e86b3fd",
+    "contracts/TapeMicroMarketV2.sol": "9535a75524e383774caee7bb34d88e97ce1f41bedfd04002f4274d78d1bc238f",
+    "contracts/TapeMicroVault.sol": "017d880bef241841afdc983fe90953d125e38111a2ef53966e709dfaac800328",
+    "contracts/test/BidHarness.sol": "52fe1ee5876433df4403d2bb0b47a3e79605ff69058fd7ae49fb1861e0a1b41c",
+    "contracts/test/Mocks.sol": "38dde0566705d09491dc34c855034868e28ca7e539eb7483792ef82e14bbced7",
+    "test/contracts/bids-random.test.mjs": "198cea598cd0255269343b6fee2f43613384cf826de8814729fbbaae8f911fb1",
+    "test/contracts/bids.test.mjs": "57cefa0b00cd2be342bffbb0bba64a2c09f5a924a34833a4b76b15c06ac0949b",
+    "test/contracts/fees.test.mjs": "b4a6f9e8ab0d0f16d5b36ac75dea59d84eb19f43b8109cc73e7ae2b2617d937d",
+    "test/contracts/protocol.test.mjs": "33dcdf603a75a3ba40d1779305d878a0e5b7dd2cb4a3dcdadf6d017ff58efc05",
+    "test/contracts/stress.test.mjs": "fc49b59de560955ef3aad1463661662e1c8f7ce5a3af4216a5ba2e2c745bacb4",
+    "scripts/chain-helpers.mjs": "cf664a55ea608d33063ba2e9262610656ae8476715475729447786e9216bfa59",
+    "src/trade-quote.mjs": "462aa07481da3cd161e632f031aa5ad7eb1c8f8cd91e6a85f8a2a92278846f6b",
+    "package-lock.json": "90e2d201495902f0dc0b486840f21ba6e84d48695da5577c6db98dd75dbdf524"
+  },
+  "compilerInputSha256": "a7f183fbd7c336970c7f111515bb846ee04c25bab9cbd20598bb7a2da7a73930",
+  "verifiedAt": "2026-10-17T14:06:22.958Z"
+}

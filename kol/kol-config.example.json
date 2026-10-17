@@ -1,0 +1,22 @@
+{
+  "rpcUrl": "https://bsc-rpc.publicnode.com",
+  "chainId": 56,
+  "referralMode": "open",
+  "vault": "0x金库地址",
+  "markets": [
+    "0x市场V2地址"
+  ],
+  "deploymentBlock": 0,
+  "kolList": "src/kol-list.json",
+  "statePath": "kol/kol-state.json",
+  "outPath": "src/kol-points.json",
+  "confirmations": 15,
+  "logChunk": 5000,
+  "concurrency": 8,
+  "rules": {
+    "kolShareBps": 1000,
+    "refereeBonusBps": 1000,
+    "requireFirstInteraction": true,
+    "validityDays": 0
+  }
+}

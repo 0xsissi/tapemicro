@@ -1,0 +1,102 @@
+{
+  "service": "https://sourcify.dev/server",
+  "chainId": 56,
+  "contracts": {
+    "TapeMicroVault": {
+      "address": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+      "submitStatus": 202,
+      "submit": {
+        "verificationId": "38a8a477-0971-430c-a2bc-27d0361bf92d"
+      },
+      "verificationId": "38a8a477-0971-430c-a2bc-27d0361bf92d",
+      "result": {
+        "isJobCompleted": true,
+        "verificationId": "38a8a477-0971-430c-a2bc-27d0361bf92d",
+        "jobStartTime": "2026-10-17T07:52:36Z",
+        "jobFinishTime": "2026-10-17T07:52:38Z",
+        "compilationTime": "910",
+        "externalVerifications": {
+          "etherscan": {
+            "verificationId": "aynadhegstffbvvpybpj7t6qnjaapsy4rhxuzg57amshdruj1g",
+            "statusUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=checkverifystatus&guid=aynadhegstffbvvpybpj7t6qnjaapsy4rhxuzg57amshdruj1g",
+            "explorerUrl": "https://bscscan.com//address/0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+            "contractApiUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=getabi&address=0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7"
+          }
+        },
+        "contract": {
+          "match": "exact_match",
+          "creationMatch": "exact_match",
+          "runtimeMatch": "exact_match",
+          "chainId": "56",
+          "address": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+          "verifiedAt": "2026-10-17T07:52:38Z",
+          "matchId": "56287104"
+        }
+      }
+    },
+    "TapeMicroMarketV2": {
+      "address": "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+      "submitStatus": 202,
+      "submit": {
+        "verificationId": "a6f49a3c-6761-4287-85d0-d7b5dca29c57"
+      },
+      "verificationId": "a6f49a3c-6761-4287-85d0-d7b5dca29c57",
+      "result": {
+        "isJobCompleted": true,
+        "verificationId": "a6f49a3c-6761-4287-85d0-d7b5dca29c57",
+        "jobStartTime": "2026-10-17T07:52:38Z",
+        "jobFinishTime": "2026-10-17T07:52:39Z",
+        "compilationTime": "591",
+        "externalVerifications": {
+          "etherscan": {
+            "verificationId": "akdddkkdfcvd5egkvghk1i2aljdp76c4z7ipxifwu2hng41cck",
+            "statusUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=checkverifystatus&guid=akdddkkdfcvd5egkvghk1i2aljdp76c4z7ipxifwu2hng41cck",
+            "explorerUrl": "https://bscscan.com//address/0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+            "contractApiUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=getabi&address=0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e"
+          }
+        },
+        "contract": {
+          "match": "exact_match",
+          "creationMatch": "exact_match",
+          "runtimeMatch": "exact_match",
+          "chainId": "56",
+          "address": "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+          "verifiedAt": "2026-10-17T07:52:39Z",
+          "matchId": "56287105"
+        }
+      }
+    },
+    "TapeMicroCustody": {
+      "address": "0x74950c5Df375844436C450f8D4C81F8a5612ec77",
+      "submitStatus": 202,
+      "submit": {
+        "verificationId": "3f53f561-c069-4112-93ee-4e550d22e5c2"
+      },
+      "verificationId": "3f53f561-c069-4112-93ee-4e550d22e5c2",
+      "result": {
+        "isJobCompleted": true,
+        "verificationId": "3f53f561-c069-4112-93ee-4e550d22e5c2",
+        "jobStartTime": "2026-10-17T07:52:38Z",
+        "jobFinishTime": "2026-10-17T07:52:39Z",
+        "compilationTime": "271",
+        "externalVerifications": {
+          "etherscan": {
+            "verificationId": "endg1bmhvvpduzbhavnnnhi7annziubj5gveauecmaqkqb3eph",
+            "statusUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=checkverifystatus&guid=endg1bmhvvpduzbhavnnnhi7annziubj5gveauecmaqkqb3eph",
+            "explorerUrl": "https://bscscan.com//address/0x74950c5Df375844436C450f8D4C81F8a5612ec77",
+            "contractApiUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=getabi&address=0x74950c5Df375844436C450f8D4C81F8a5612ec77"
+          }
+        },
+        "contract": {
+          "match": "exact_match",
+          "creationMatch": "exact_match",
+          "runtimeMatch": "exact_match",
+          "chainId": "56",
+          "address": "0x74950c5Df375844436C450f8D4C81F8a5612ec77",
+          "verifiedAt": "2026-10-17T07:52:39Z",
+          "matchId": "56287106"
+        }
+      }
+    }
+  }
+}

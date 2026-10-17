@@ -1,0 +1,22 @@
+[Unit]
+Description=TapeMicro public referral points index
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tapemicro-cache
+Group=tapemicro-cache
+WorkingDirectory=/var/lib/tapemicro-kol
+ExecStart=/usr/bin/node /opt/tapemicro-cache/current/kol-worker.mjs /var/lib/tapemicro-kol/config.json
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/tapemicro-kol
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

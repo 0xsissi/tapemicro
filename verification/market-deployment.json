@@ -1,0 +1,22 @@
+{
+  "chainId": 56,
+  "vault": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+  "oldMarket": "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+  "deployer": "0xFA1867bD071fB52B0F2ed73CEe30F899093090BE",
+  "feeRecipient": "0xFA1867bD071fB52B0F2ed73CEe30F899093090BE",
+  "marketVersion": 4,
+  "initCodeHash": "0x5ad24690debf17cdc87cf74473d0a7a0767bc4bdbc52757de0b962a5ee95d660",
+  "complete": true,
+  "hash": "0xa83968b940bd01a132b9474bd679eb299bb513f4a5b406a3e342b38b215f6d62",
+  "nonce": 71,
+  "address": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+  "gasLimit": "3667211",
+  "gasPrice": "50000000",
+  "started": "2026-10-17T14:07:30.177Z",
+  "broadcastAttempted": true,
+  "block": 128183568,
+  "gasUsed": "3014253",
+  "feeWei": "150712650000000",
+  "runtimeHash": "0x21606cfe55619bd13afeb9ae1ba6115433ca63d8867fd01d147b3fe19d4c52c1",
+  "verifiedAt": "2026-10-17T14:07:39.075Z"
+}

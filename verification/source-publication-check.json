@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-17T14:49:41.148218+00:00",
+  "passed": true,
+  "contracts": [
+    {
+      "contract": "TapeMicroVault",
+      "address": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+      "url": "https://repo.sourcify.dev/56/0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+      "api": "https://sourcify.dev/server/v2/contract/56/0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7?fields=metadata",
+      "creationMatch": "exact_match",
+      "runtimeMatch": "exact_match",
+      "compilerSettingsSourceHashesAndAbiMatch": true,
+      "fullMetadataObjectEqual": false,
+      "metadataOutputNote": "Sourcify API devdoc typography differs; compiler settings, source integrity hashes, ABI and exact bytecode match are verified. The local unmodified solc metadata is published separately."
+    },
+    {
+      "contract": "TapeMicroMarketV2",
+      "address": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+      "url": "https://repo.sourcify.dev/56/0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+      "api": "https://sourcify.dev/server/v2/contract/56/0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805?fields=metadata",
+      "creationMatch": "exact_match",
+      "runtimeMatch": "exact_match",
+      "compilerSettingsSourceHashesAndAbiMatch": true,
+      "fullMetadataObjectEqual": true,
+      "metadataOutputNote": null
+    },
+    {
+      "contract": "TapeMicroCustody",
+      "address": "0x74950c5Df375844436C450f8D4C81F8a5612ec77",
+      "url": "https://repo.sourcify.dev/56/0x74950c5Df375844436C450f8D4C81F8a5612ec77",
+      "api": "https://sourcify.dev/server/v2/contract/56/0x74950c5Df375844436C450f8D4C81F8a5612ec77?fields=metadata",
+      "creationMatch": "exact_match",
+      "runtimeMatch": "exact_match",
+      "compilerSettingsSourceHashesAndAbiMatch": true,
+      "fullMetadataObjectEqual": true,
+      "metadataOutputNote": null
+    }
+  ]
+}

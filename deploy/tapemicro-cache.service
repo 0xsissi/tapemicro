@@ -1,0 +1,23 @@
+[Unit]
+Description=TapeMicro read cache (/api)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tapemicro-cache
+Group=tapemicro-cache
+WorkingDirectory=/opt/tapemicro-cache/current
+ExecStart=/usr/bin/node /opt/tapemicro-cache/current/cache-server.mjs /opt/tapemicro-cache/current/cache-server.json
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=production
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadOnlyPaths=/opt/tapemicro-cache
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target

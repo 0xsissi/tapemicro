@@ -1,0 +1,33 @@
+{
+  "address": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+  "chainId": 56,
+  "submitStatus": 202,
+  "submit": {
+    "verificationId": "6efdc1f5-2d77-40fb-b740-6fa6e23341e0"
+  },
+  "verificationId": "6efdc1f5-2d77-40fb-b740-6fa6e23341e0",
+  "result": {
+    "isJobCompleted": true,
+    "verificationId": "6efdc1f5-2d77-40fb-b740-6fa6e23341e0",
+    "jobStartTime": "2026-10-17T14:08:13Z",
+    "jobFinishTime": "2026-10-17T14:08:14Z",
+    "compilationTime": "739",
+    "externalVerifications": {
+      "etherscan": {
+        "verificationId": "rmqtghbudrgrhgqeebe1hsd8tnbmaiu14gf5gzvmmr9kmqwvgy",
+        "statusUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=checkverifystatus&guid=rmqtghbudrgrhgqeebe1hsd8tnbmaiu14gf5gzvmmr9kmqwvgy",
+        "explorerUrl": "https://bscscan.com//address/0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+        "contractApiUrl": "https://api.etherscan.io/v2/api?chainid=56&module=contract&action=getabi&address=0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805"
+      }
+    },
+    "contract": {
+      "match": "exact_match",
+      "creationMatch": "exact_match",
+      "runtimeMatch": "exact_match",
+      "chainId": "56",
+      "address": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+      "verifiedAt": "2026-10-17T14:08:14Z",
+      "matchId": "56305876"
+    }
+  }
+}

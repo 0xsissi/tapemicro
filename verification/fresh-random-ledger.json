@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "groups": [
+    {
+      "seed": 7,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 28,
+        "cancel": 17,
+        "expire": 14,
+        "ask": 33,
+        "buy": 27,
+        "cancelAsk": 30,
+        "withdraw": 29,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 29,
+        "fees": 43
+      }
+    },
+    {
+      "seed": 81,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 31,
+        "cancel": 17,
+        "expire": 16,
+        "ask": 33,
+        "buy": 27,
+        "cancelAsk": 30,
+        "withdraw": 26,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 25,
+        "fees": 45
+      }
+    },
+    {
+      "seed": 912,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 30,
+        "cancel": 17,
+        "expire": 13,
+        "ask": 33,
+        "buy": 25,
+        "cancelAsk": 30,
+        "withdraw": 21,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 26,
+        "fees": 40
+      }
+    },
+    {
+      "seed": 1807,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 28,
+        "cancel": 17,
+        "expire": 15,
+        "ask": 33,
+        "buy": 30,
+        "cancelAsk": 29,
+        "withdraw": 24,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 26,
+        "fees": 44
+      }
+    },
+    {
+      "seed": 81723,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 29,
+        "cancel": 16,
+        "expire": 15,
+        "ask": 33,
+        "buy": 29,
+        "cancelAsk": 28,
+        "withdraw": 28,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 22,
+        "fees": 46
+      }
+    },
+    {
+      "seed": 299003,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 27,
+        "cancel": 15,
+        "expire": 14,
+        "ask": 33,
+        "buy": 28,
+        "cancelAsk": 25,
+        "withdraw": 26,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 23,
+        "fees": 43
+      }
+    },
+    {
+      "seed": 771019,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 25,
+        "cancel": 17,
+        "expire": 16,
+        "ask": 33,
+        "buy": 31,
+        "cancelAsk": 32,
+        "withdraw": 27,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 29,
+        "fees": 45
+      }
+    },
+    {
+      "seed": 20261017,
+      "steps": 400,
+      "passed": true,
+      "counts": {
+        "bid": 34,
+        "sale": 22,
+        "cancel": 16,
+        "expire": 14,
+        "ask": 33,
+        "buy": 24,
+        "cancelAsk": 31,
+        "withdraw": 25,
+        "bemFund": 33,
+        "bemClaim": 33,
+        "transfer": 28,
+        "fees": 34
+      }
+    }
+  ],
+  "stepsPerGroup": 400,
+  "totalSteps": 3200,
+  "oracle": "Independent native balances including actual gas; per-wallet unit ledger; integral per-H BEM funding credited to holders, no contract accumulator/debt replication",
+  "mainnetWrites": false
+}

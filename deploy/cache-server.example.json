@@ -1,0 +1,17 @@
+{
+  "siteConfig": "config.json",
+  "protocol": "generated-protocol.json",
+  "rpcUrls": [
+    "https://bsc-rpc.publicnode.com",
+    "https://bsc-dataseed.bnbchain.org",
+    "https://rpc-bsc.48.club"
+  ],
+  "host": "127.0.0.1",
+  "port": 8787,
+  "refreshMs": 5000,
+  "staleMs": 30000,
+  "accountTtlMs": 4000,
+  "accountRate": 20,
+  "logChunk": 5000,
+  "rpcTimeoutMs": 5000
+}

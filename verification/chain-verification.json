@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-17T14:35:47.144Z",
+  "passed": true,
+  "readOnly": true,
+  "mainnetWrites": false,
+  "runtimeVerified": true,
+  "marketVersion": 4,
+  "anyBidEthCallPassed": true,
+  "oldFeesEmpty": true,
+  "oldOrdersPending": 2,
+  "runs": [
+    {
+      "ms": 4380.3955000000005,
+      "rpcRequests": 0,
+      "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+      "assets": 1,
+      "tradePoints": "120000000000000000"
+    },
+    {
+      "ms": 529.2024000000001,
+      "rpcRequests": 0,
+      "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+      "assets": 1,
+      "tradePoints": "120000000000000000"
+    }
+  ],
+  "health": {
+    "ok": true,
+    "block": 128187311,
+    "ageMs": 2454,
+    "ticks": 123,
+    "errors": 0,
+    "lastError": null,
+    "indexedTo": 128187325,
+    "openAsks": 0,
+    "openBids": 0,
+    "accountsCached": 1
+  },
+  "referrals": {
+    "toBlock": 128184711,
+    "catchingUp": true,
+    "rules": {
+      "kolShareBps": 1000,
+      "refereeBonusBps": 1000,
+      "requireFirstInteraction": true,
+      "validityDays": 0
+    },
+    "markets": [
+      "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+      "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805"
+    ]
+  },
+  "config": {
+    "version": "1.0.0-rc.4",
+    "chainId": 56,
+    "network": "BNB Smart Chain",
+    "rpcUrls": [
+      "https://bsc-rpc.publicnode.com",
+      "https://rpc-bsc.48.club",
+      "https://bsc-dataseed.bnbchain.org"
+    ],
+    "explorer": "https://bscscan.com",
+    "mining": "0x7E2E0DC66a3bD9103E69b766afA62d9f7b697b46",
+    "bem": "0x5ce033B2bFCa3Af30b3e8C8457DeaF776A8b695a",
+    "tapeout": "0xb1024b89886B9a34Aa4ff5F31C411D708b20a14C",
+    "behemoth": "0x1F5Cb4aeaE1807Bf60c3b9C0D8aDBCC14e91f12C",
+    "lens": "0x2243Eaf4Dd308AeA7E243C06d7b95265a90b0134",
+    "vault": "0x8c0D89E24fb48a7Db7ECf4849aed9a4ac92ab0E7",
+    "market": "0xbc1Ec4D96b005aFbe5a575c490cE11dA44163805",
+    "deploymentBlock": 128183568,
+    "local": false,
+    "feeRecipient": "0xFA1867bD071fB52B0F2ed73CEe30F899093090BE",
+    "protocolVersion": 2,
+    "feeManager": "0xFA1867bD071fB52B0F2ed73CEe30F899093090BE",
+    "marketVersion": 4,
+    "cacheApi": "/api",
+    "legacyMarkets": [
+      {
+        "address": "0x1d4E4d85c69122C3Ab56102BD69c16D28DE3376e",
+        "marketVersion": 3,
+        "deploymentBlock": 128133511,
+        "feeManager": "0xFA1867bD071fB52B0F2ed73CEe30F899093090BE"
+      }
+    ]
+  }
+}
