@@ -6,6 +6,10 @@ TapeMicro 将 BSC 上合格的 TapeOut 原矿机拆成 ERC-1155 微矿机，提�
 
 TapeMicro is an open-source ERC-1155 fractional miner vault and two-sided BNB order book for TapeOut on BNB Smart Chain. Each original miner has its own custody contract, token ID and BEM accounting. It is an independent integration.
 
+## 钱包连接与页面更新
+
+网页固定使用内置 BSC 配置，不提供 RPC/合约地址编辑入口，也不读取旧浏览器连接覆盖配置。页脚在短页面贴底、长页面跟随正文。新增标准多钱包发现及选择，兼容 EIP-6963 和 legacy EIP-1193 注入；连接时请求切换/添加 BSC。手机请使用钱包 App 的内置浏览器，当前没有 WalletConnect 扫码连接。本轮 131 项前端/工具测试通过；合约源码未变，保留原 60 项与 3,200 步对账证据。[说明与兼容边界](docs/footer-wallets.zh-CN.md) · [本轮验收](verification/wallet-layout-release.json)
+
 ## 当前部署
 
 版本 `1.0.0-rc.4`，金库协议 `2`，市场 `MARKET_VERSION = 4`。合约源文件名 `TapeMicroMarketV2.sol`，不代表市场版本为 2。

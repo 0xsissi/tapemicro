@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-17T15:10:49.986321+00:00",
+  "passed": true,
+  "frontendTests": 131,
+  "newWalletTests": 10,
+  "contractsUnchanged": true,
+  "previousContractTests": 60,
+  "contractTestsRerun": false,
+  "previousRandomLedgerSteps": 3200,
+  "productionFrontendReproduced": true,
+  "manifestSha256": "2e3a32aebf5c76d72b9210600479d072a054496c8b2cba2c4d2767acf8a0a27e",
+  "noUserConnectionSettings": true,
+  "walletConnectQrSupported": false,
+  "injectedProviderDiscovery": [
+    "EIP-6963",
+    "EIP-1193 legacy"
+  ],
+  "browserFixturesOnly": true,
+  "mainnetTransactionsSubmitted": false
+}

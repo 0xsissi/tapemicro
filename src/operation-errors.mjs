@@ -6,7 +6,7 @@ export function operationError(error,name=null){
  if(code==='TX_PENDING')return{kind:'pending',message:'交易已提交，暂未确认。请在交易记录中查询，不要重复提交'};
  if(code==='TX_CANCELLED')return{kind:'cancelledOnchain',message:'原交易已在钱包中取消或替换，请核对链上结果'};
  if(code==='TX_REVERTED'||error?.receipt?.status===0)return{kind:'reverted',message:'交易已上链但执行失败，网络 Gas 已消耗。请刷新资产后重试'};
- if(code==='READ_TIMEOUT')return{kind:'network',message:'节点响应慢，可以重试或在连接设置中切换节点'};
+ if(code==='READ_TIMEOUT')return{kind:'network',message:'节点响应较慢，请稍后重试'};
  if(code==='UI_CANCELLED')return{kind:'cancelledUI',message:'操作已取消'};
  if(/provider destroyed|cancelled request|canceled request|provider.*destroyed/i.test(text+' '+nested))return{kind:'network',message:'连接已断开，正在重新连接…'};
  if(code==='HARVEST_UNAVAILABLE')return{kind:'contract',message:'官方领取暂不可用，可稍后重试或仅领取已同步收益'};

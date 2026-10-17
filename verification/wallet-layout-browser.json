@@ -1,0 +1,40 @@
+{
+  "virtualAssets": true,
+  "mainnetWrites": false,
+  "walletResult": "本机虚拟数据验收 · 无真实钱包或签名 模拟钱包 B · BSC 0x38 · 无真实签名",
+  "checks": [
+    {
+      "documentHeight": 720,
+      "footerBottom": 720,
+      "horizontalOverflow": false,
+      "label": "desktop-short-zh",
+      "route": "#points",
+      "settingsControls": 0,
+      "viewportHeight": 720
+    },
+    {
+      "documentHeight": 855,
+      "footerBottom": 855.21875,
+      "horizontalOverflow": false,
+      "label": "mobile-short-en",
+      "settingsControls": 0,
+      "viewportHeight": 844
+    },
+    {
+      "documentHeight": 2737,
+      "footerAfterContent": true,
+      "footerBottom": 2736.734375,
+      "horizontalOverflow": false,
+      "label": "mobile-long-en",
+      "viewportHeight": 844
+    },
+    {
+      "documentHeight": 2712,
+      "footerAfterContent": true,
+      "footerBottom": 2711.546875,
+      "horizontalOverflow": false,
+      "label": "mobile-long-zh-320",
+      "viewportWidth": 320
+    }
+  ]
+}

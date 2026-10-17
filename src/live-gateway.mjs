@@ -12,6 +12,7 @@ import {waitForTransaction} from './transaction-journal.mjs';
 import {marketProtocolName} from './market-contract.mjs';
 import {bidAccepts,isAnyBid} from './bid-acceptance.mjs';
 import {pointsMarkets} from './points-markets.mjs';
+import {requestWalletConnection} from './wallet-connection.mjs';
 import {taggedData} from './referral.mjs';
 const NFT_ABI=['function ownerOf(uint256) view returns(address)','function balanceOf(address) view returns(uint256)','function nextId() view returns(uint256)','function getApproved(uint256) view returns(address)','function isApprovedForAll(address,address) view returns(bool)','function approve(address,uint256)','event Transfer(address indexed from,address indexed to,uint256 indexed tokenId)'];
 const extraMining=['function currentRate() view returns(uint256)','function totalVerifWeight() view returns(uint256)','function UNVERIFIED_BPS() view returns(uint256)','function rewardPerH() view returns(uint256)'];
@@ -44,7 +45,7 @@ export class LiveGateway{
   this.legacyMarkets=[];for(const row of pointsMarkets(c).slice(1)){const key=marketProtocolName(row);await this.verifyRuntime(key,row.address);const contract=new Contract(row.address,this.protocol[key].abi,p);if(!same(await contract.vault(),c.vault)||row.marketVersion>=3&&await contract.MARKET_VERSION()!==BigInt(row.marketVersion))throw Error('历史市场绑定或版本不匹配');this.legacyMarkets.push({...row,contract});}this.ready=true;
  }
  async verifyRuntime(name,address){const a=this.protocol[name];if(!a)throw Error('缺少新版合约 ABI');const code=await this.provider.getCode(address);if(code==='0x'||keccak256(maskRuntime(code,a.immutableRanges))!==a.runtimeHash)throw Error('合约代码与本版本不匹配，已停用交易');}
- async connect(index=0){if(this.config.local){this.signer=await this.provider.getSigner(index);}else{if(!this.wallet)throw Error('请使用钱包浏览器或安装钱包插件');await this.wallet.request({method:'eth_requestAccounts'});if(BigInt(await this.wallet.request({method:'eth_chainId'}))!==BigInt(this.config.chainId))await this.wallet.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x'+this.config.chainId.toString(16)}]});this.signer=await new BrowserProvider(this.wallet).getSigner();}this.address=await this.signer.getAddress();++this.epoch;return this.address;}
+ async connect(index=0){if(this.config.local){this.signer=await this.provider.getSigner(index);}else{await requestWalletConnection(this.wallet,this.config);this.signer=await new BrowserProvider(this.wallet).getSigner();}this.address=await this.signer.getAddress();if(!this.config.local&&BigInt(await this.wallet.request({method:'eth_chainId'}))!==BigInt(this.config.chainId)){this.disconnect();throw Error('钱包尚未切换到 BSC 主网，请在钱包中确认后重试');}++this.epoch;return this.address;}
  disconnect(){this.signer=null;this.address=null;++this.epoch;}
  async read({orderLimit=80,reward=true,book=true,account=true,assetIds=null,simulateBids=true,signal,minBlock=0}={}){
   const epoch=this.epoch,who=this.address,p=this.provider,c=this.config,head=await p.getBlock('latest'),blockTag=head.number;if(blockTag<minBlock)throw Object.assign(Error('节点尚未同步到交易确认区块，请稍后刷新'),{code:'NETWORK_ERROR'});
