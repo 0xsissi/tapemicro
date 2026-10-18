@@ -5,7 +5,7 @@ import {LiveGateway} from './live-gateway.mjs';
 import {mountApp} from './app-controller.mjs';
 import {CacheClient,useCache} from './cache-client.mjs';
 import {ReferralClient} from './referral-client.mjs';
-import {discoverWallets} from './wallet-connection.mjs';
+import{lazyWalletUI}from'./wallet-ui-loader.mjs';
 const LOCAL=__LOCAL_CONFIG__;
 let config=selectSiteConfig(DEFAULT,{legacyMarket:new URLSearchParams(location.search).get('legacyMarket')});
 if(new URLSearchParams(location.search).get('network')==='local'){
@@ -17,4 +17,6 @@ if(new URLSearchParams(location.search).get('network')==='local'){
 const referrals=new ReferralClient({config});
 const gateway=new LiveGateway(config,PROTOCOL,{referrals});
 if(config.cacheApi&&!config.local)gateway.cache=useCache(gateway,new CacheClient({config}));
-mountApp(gateway,{wallets:config.local?null:discoverWallets()});
+const walletModuleUrl=__WALLET_MODULE_URL__;
+const walletUi=config.local?null:lazyWalletUI(()=>import(walletModuleUrl),config);
+mountApp(gateway,{walletUi});

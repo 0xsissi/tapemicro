@@ -3,6 +3,10 @@ import {availableH} from './market-plan.mjs';
 import {bidAccepts} from './bid-acceptance.mjs';
 export function quoteSales(fills){const q=quoteFills(fills);return{quantity:q.quantity,gross:q.gross,fee:q.fee,net:q.gross-q.fee};}
 const same=(a,b)=>String(a??'').toLowerCase()===String(b??'').toLowerCase();
+export function assertUnlistedSale(fills,assets){
+ const totals=new Map();for(const f of fills)totals.set(String(f.assetId),(totals.get(String(f.assetId))??0n)+f.amount);
+ for(const [id,amount]of totals){const a=assets.find(a=>String(a.id)===id);if(!a?.tradable||amount>availableH({...a,reserved:a.reserved??0n}))throw Error('部分份额已挂售或余额变化，请先撤单再卖出');}
+}
 export const liveBids=(bids,{address=null,now=0}={})=>bids.filter(b=>b.valid&&b.receivable!==false&&b.remaining>0n&&b.expiresAt>BigInt(now)&&!same(b.bidder,address));
 const liveAsks=(orders,now)=>orders.filter(o=>o.tradable&&o.approved&&o.balance>0n&&o.remaining>0n&&o.expiresAt>BigInt(now));
 export function lowestAskForAssets(orders,assetIds,{now=0}={}){
@@ -16,18 +20,17 @@ export function hasCrossedQuotes(orders,bids,{now=0}={}){
 export function planSale(bids,assets,wanted,{address=null,now=0,maxFills=16}={}){
  if(typeof wanted!=='bigint'||wanted<0n)throw Error('请输入整数 H');
  if(wanted===0n)return{fills:[],requested:wanted,enough:false,limited:false,reservedQuantity:0n,...quoteSales([])};
- const eligible=assets.filter(a=>a.tradable&&a.balance>0n),orders=liveBids(bids,{address,now}).filter(b=>eligible.some(a=>bidAccepts(b,a.id))).sort((a,b)=>a.priceWei===b.priceWei?(a.id<b.id?-1:1):a.priceWei>b.priceWei?-1:1);
+ const freeH=a=>availableH({...a,reserved:a.reserved??0n});
+ const eligible=assets.filter(a=>a.tradable&&freeH(a)>0n),orders=liveBids(bids,{address,now}).filter(b=>eligible.some(a=>bidAccepts(b,a.id))).sort((a,b)=>a.priceWei===b.priceWei?(a.id<b.id?-1:1):a.priceWei>b.priceWei?-1:1);
  if(wanted===0n||!eligible.length||!orders.length)return{fills:[],requested:wanted,enough:false,limited:false,reservedQuantity:0n,...quoteSales([])};
  // Minimum-cost flow accounts for overlapping accepted sets. A flexible
  // high bid must not consume the only asset a later bid accepts when another
  // asset can fill it. Costs use exact integer wei; capacities use integer H.
  const sink=eligible.length+orders.length+1,n=sink+1,g=Array.from({length:n},()=>[]),links=[];
  const edge=(from,to,cap,cost)=>{const e={to,rev:g[to].length,cap,original:cap,cost};g[from].push(e);g[to].push({to:from,rev:g[from].length-1,cap:0n,original:0n,cost:-cost});return e;};
- // One reserved H costs more than the maximum possible proceeds of the entire
- // request. This prioritizes free inventory, then price, while residual edges
- // can still reassign overlapping acceptance sets to fill the request.
- const freeH=a=>availableH({...a,reserved:a.reserved??0n}),reservedCost=orders[0].priceWei*wanted+1n;
- eligible.forEach((a,i)=>{const free=freeH(a);edge(0,i+1,free,0n);edge(0,i+1,a.balance-free,reservedCost);});
+ // Listed shares stay reserved in this UI until the seller cancels the asks.
+ // This is a wallet-side safeguard, not an on-chain transfer lock.
+ eligible.forEach((a,i)=>edge(0,i+1,freeH(a),0n));
  orders.forEach((b,j)=>{const node=eligible.length+j+1;edge(node,sink,b.remaining,0n);eligible.forEach((a,i)=>{if(bidAccepts(b,a.id))links.push({b,a,e:edge(i+1,node,a.balance,-b.priceWei)});});});
  let left=wanted;
  while(left>0n){const dist=Array(n).fill(null),prev=Array(n);dist[0]=0n;

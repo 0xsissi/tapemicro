@@ -178,3 +178,6 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 .purchase-scope{display:grid;gap:4px;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--text-2)}.purchase-scope strong{font-size:15px;color:var(--text)}.purchase-scope small{font-size:13px;color:var(--text-3)}.purchase-scope button{justify-self:start;margin-top:4px}
 .mobile-order-main>.text-button{flex-shrink:0}
 .fill-breakdown>div>span:first-child small{display:block;font-size:13px;color:var(--text-3);line-height:1.5}
+
+/* The page already reserves the scrollbar gutter. Avoid duplicate modal compensation. */
+body.protocol-app[data-scroll-locked]{margin-right:0!important;padding-right:0!important}
