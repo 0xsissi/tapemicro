@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-18T02:08:44.420123+00:00",
+  "frontendTests": 149,
+  "contractTests": 60,
+  "randomLedgerSteps": 3200,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "websitePublished": true,
+  "resourcesVerified": 32,
+  "manifestSha256": "0aa2e078c8603721b014912694a4c216683088557b7504e3e3e77e50a7ad8e65",
+  "projectId": "0c8f8955535c492a5f7a990b773b72fb",
+  "relayCheck": {
+    "date": "2026-10-18T02:02:09.186Z",
+    "projectId": "0c8f8955535c492a5f7a990b773b72fb",
+    "origin": "https://tapemicro.top",
+    "mainnetWrites": false,
+    "realWalletUsed": false,
+    "uriPersisted": false,
+    "uriGenerated": true,
+    "relayConnected": true,
+    "chainId": 56,
+    "passed": true,
+    "httpStatus": 101,
+    "webSocketsStarted": 1
+  },
+  "publicSnapshotBuildMatches": true,
+  "publicSnapshotTestsPassed": true,
+  "dependencyAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 22,
+    "high": 0,
+    "critical": 0,
+    "total": 22
+  },
+  "browserValidationUnavailable": true,
+  "realPhonePairingCompleted": false,
+  "reownDashboardAllowlistModified": false
+}

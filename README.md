@@ -6,13 +6,17 @@ TapeMicro 将 BSC 上合格的 TapeOut 原矿机拆成 ERC-1155 微矿机，提�
 
 TapeMicro is an open-source ERC-1155 fractional miner vault and two-sided BNB order book for TapeOut on BNB Smart Chain. Each original miner has its own custody contract, token ID and BEM accounting. It is an independent integration.
 
+## WalletConnect 手机扫码
+
+RainbowKit 已配置公开 Project ID、BSC 网络及官方中继，提供手机钱包扫码入口；保留插件钱包连接与恢复。恢复插件钱包不等待扫码服务。浏览器操作当前被 Work 设置禁用，未代设置 Reown 后台白名单，也未完成真实手机扫码授权验收。[实现与边界](docs/walletconnect.zh-CN.md) · [发布记录](verification/walletconnect-release.json)
+
 ## RainbowKit 与挂售保护
 
-主站现使用 RainbowKit 2.2.11（Wagmi/Viem），支持已安装 EVM 钱包发现、授权连接记忆、账户切换和 BSC 网络检查；暂无 WalletConnect 扫码。钱包组件随静态站点打包。立即卖出仅使用未挂售份额，核验及签名前重新检查余额与预留；这是网页保护，线上合约没有硬锁。移除卖单盘口易混淆的累计 H 标注。[实现与验证范围](docs/rainbowkit.zh-CN.md) · [发布证据](verification/rainbowkit-release.json)
+主站现使用 RainbowKit 2.2.11（Wagmi/Viem），支持已安装 EVM 钱包发现、授权连接记忆、账户切换和 BSC 网络检查；支持 WalletConnect 手机扫码。钱包组件随静态站点打包。立即卖出仅使用未挂售份额，核验及签名前重新检查余额与预留；这是网页保护，线上合约没有硬锁。移除卖单盘口易混淆的累计 H 标注。[实现与验证范围](docs/rainbowkit.zh-CN.md) · [发布证据](verification/rainbowkit-release.json)
 
 ## 钱包连接与页面更新
 
-网页固定使用内置 BSC 配置，不提供 RPC/合约地址编辑入口，也不读取旧浏览器连接覆盖配置。页脚在短页面贴底、长页面跟随正文。新增标准多钱包发现及选择，兼容 EIP-6963 和 legacy EIP-1193 注入；连接时请求切换/添加 BSC。手机请使用钱包 App 的内置浏览器，当前没有 WalletConnect 扫码连接。本轮 131 项前端/工具测试通过；合约源码未变，保留原 60 项与 3,200 步对账证据。[说明与兼容边界](docs/footer-wallets.zh-CN.md) · [本轮验收](verification/wallet-layout-release.json)
+网页固定使用内置 BSC 配置，不提供 RPC/合约地址编辑入口，也不读取旧浏览器连接覆盖配置。页脚在短页面贴底、长页面跟随正文。新增标准多钱包发现及选择，兼容 EIP-6963 和 legacy EIP-1193 注入；连接时请求切换/添加 BSC。手机可以使用 WalletConnect 扫码，也可以在钱包 App 内置浏览器打开本站。本轮 131 项前端/工具测试通过；合约源码未变，保留原 60 项与 3,200 步对账证据。[说明与兼容边界](docs/footer-wallets.zh-CN.md) · [本轮验收](verification/wallet-layout-release.json)
 
 ## 当前部署
 
@@ -57,7 +61,7 @@ npm test
 npm run verify:contracts
 ```
 
-当前发布包含 143 项前端/工具/本地链测试、60 项合约测试及 8×400 步独立随机对账。测试使用隔离的本机 Anvil；这不等同于主网双钱包验收或独立第三方审计。`verification/` 保留发布证据；公开快照的全新构建与测试结果另列在公开验收记录中。历史 `verify:*`/`package:*` 发布工具依赖未公开的本地历史证据目录，不是全新克隆的必需步骤。
+当前发布包含 149 项前端/工具/本地链测试、60 项合约测试及 8×400 步独立随机对账。测试使用隔离的本机 Anvil；这不等同于主网双钱包验收或独立第三方审计。`verification/` 保留发布证据；公开快照的全新构建与测试结果另列在公开验收记录中。历史 `verify:*`/`package:*` 发布工具依赖未公开的本地历史证据目录，不是全新克隆的必需步骤。
 
 ## 目录
 

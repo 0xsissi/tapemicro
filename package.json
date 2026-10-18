@@ -46,6 +46,9 @@
   },
   "overrides": {
     "tmp": "0.2.7",
-    "ws": "8.21.0"
+    "ws": "8.21.0",
+    "@walletconnect/logger": {
+      "pino": "10.0.0"
+    }
   }
 }
