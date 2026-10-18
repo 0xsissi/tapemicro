@@ -9,6 +9,7 @@ let language=readLanguage();
 export const getLanguage=()=>language;
 export const locale=()=>language==='en'?'en-US':'zh-CN';
 const words={
+ '社区链接':'Community links','Telegram 群组 ↗':'Telegram group ↗',
  '部分份额已挂售或余额变化，请先撤单再卖出':'Some units are listed or your balance has changed. Cancel listings before selling these units.',
  '请先撤销卖单':'Cancel your listings first','仅使用未挂售份额':'Unlisted units only','可卖范围':'Available inventory','仅使用未挂售份额；挂售中的份额请先撤单。':'Only unlisted units are used. Cancel listings first to sell listed units.','仅卖出未挂售份额，挂售中的请先撤单。卖出前的已结算 BEM 仍归你。小额成交也需要网络 Gas。':'Only unlisted units can be sold here. Cancel listings first to release listed units. Your settled BEM remains yours. Small trades also require network gas.',
  '钱包组件正在准备，请稍后重试':'The wallet component is loading. Please try again shortly.','钱包组件加载失败，请刷新网页重试':'The wallet component failed to load. Refresh the page and try again.',

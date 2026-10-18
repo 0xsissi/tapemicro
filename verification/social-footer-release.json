@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-18T02:13:08.426447+00:00",
+  "websitePublished": true,
+  "resourcesVerified": 32,
+  "manifestSha256": "83ec630351eeb5c8818a20e3799e601d01339eae487cc8050a7908c68fa5fa9b",
+  "frontendTests": 149,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "footerChecks": {
+    "passed": true,
+    "date": "2026-10-18T02:11:41.744182+00:00",
+    "checks": [
+      {
+        "page": "app",
+        "links": [
+          "https://x.com/luoluo3311",
+          "https://t.me/+rQM0AKp729E2ZWZl"
+        ],
+        "externalTabProtected": true
+      },
+      {
+        "page": "demo",
+        "links": [
+          "https://x.com/luoluo3311",
+          "https://t.me/+rQM0AKp729E2ZWZl"
+        ],
+        "externalTabProtected": true
+      },
+      {
+        "page": "local",
+        "links": [
+          "https://x.com/luoluo3311",
+          "https://t.me/+rQM0AKp729E2ZWZl"
+        ],
+        "externalTabProtected": true
+      },
+      {
+        "page": "zh",
+        "links": [
+          "https://x.com/luoluo3311",
+          "https://t.me/+rQM0AKp729E2ZWZl"
+        ],
+        "externalTabProtected": true
+      },
+      {
+        "page": "en",
+        "links": [
+          "https://x.com/luoluo3311",
+          "https://t.me/+rQM0AKp729E2ZWZl"
+        ],
+        "externalTabProtected": true
+      }
+    ],
+    "publicBuildMatches": true,
+    "contractsChanged": false,
+    "browserValidationUnavailable": true
+  }
+}

@@ -181,3 +181,5 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 
 /* The page already reserves the scrollbar gutter. Avoid duplicate modal compensation. */
 body.protocol-app[data-scroll-locked]{margin-right:0!important;padding-right:0!important}
+.footer-socials{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 20px;font-size:13px;line-height:1.8}
+.footer-socials a{display:inline-flex;align-items:center;min-height:32px;white-space:nowrap}
