@@ -1,0 +1,617 @@
+{
+  "date": "2026-10-18T01:10:54.325191+00:00",
+  "frontendTests": 140,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "websitePublished": true,
+  "resourcesVerified": 29,
+  "manifestSha256": "88314887932e95b2a3b2477b72498e0d1728e55760d26e74848b9ca5a8c85a1c",
+  "browserChecks": {
+    "date": "2026-10-18T01:08:46.187920+00:00",
+    "passed": true,
+    "virtualAssets": true,
+    "mainnetWrites": false,
+    "fiveColumnsAligned": true,
+    "selectedListingOnly": true,
+    "noFallbackOnInvalidation": true,
+    "walletConnectionPreservesSelection": true,
+    "virtualPurchaseVerified": true,
+    "checks": [
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "zh-CN",
+        "connected": true,
+        "selected": "2",
+        "requested": "3",
+        "quantity": "3",
+        "fills": [
+          {
+            "id": "2",
+            "assetId": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+            "amount": "3",
+            "seller": "0x3333333333333333333333333333333333333333"
+          }
+        ],
+        "checkoutDisabled": false,
+        "scope": "\u4ec5\u4e70\u6b64\u5355\nBehemoth #1772\n\u5356\u5355 #2\n\u6062\u590d\u81ea\u52a8\u5339\u914d",
+        "quote": "\u4ec5\u5339\u914d\u5df2\u9009\u5356\u5355\n3H \u00d7 0.0012\nBehemoth #1772 \u00b7 \u5356\u5355 #2\n0.0036\n\u6210\u4ea4\u91d1\u989d\n0.0036 BNB\n\u670d\u52a1\u8d39 1%\n0.000036 BNB\n\u5408\u8ba1\u652f\u4ed8\n0.003636 BNB\n\u6210\u4ea4\u79ef\u5206\n+3.6 \u5206\n\u8d39\u7528\u9884\u4f30 \u00b7 \u786e\u8ba4\u65f6\u94fe\u4e0a\u6838\u9a8c\n\u4e70\u5165 3H\n\n\u6b63\u5e38\u6536\u5272\u65f6\uff0c\u6210\u4ea4\u524d\u6536\u76ca\u5148\u7ed3\u7ed9\u5356\u5bb6\u3002",
+        "asks": "0.0007\nBNB / H \u00b7 \u5356\u5355 #5\n\t5H\n\u7d2f\u8ba1 5H\n\tTapeOut #5438\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\n0.001\nBNB / H \u00b7 \u5356\u5355 #1\n\t50H\n\u7d2f\u8ba1 55H\n\tTapeOut #5438\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355\n0.0012\nBNB / H \u00b7 \u5356\u5355 #2\n\t30H\n\u4e70\u5165 3H\n\u7d2f\u8ba1 85H\n\tBehemoth #1772\t0x3333\u20263333\n\t\u4e70\u5165\u6b64\u5355\n0.0015\nBNB / H \u00b7 \u5356\u5355 #3\n\t100H\n\u7d2f\u8ba1 185H\n\tTapeOut #4000\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355",
+        "bids": "0.0009\nBNB / H \u00b7 \u4e70\u5355 #1\n\t40H\t\u63a5\u53d7 2 \u53f0\u77ff\u673a\t0x2222\u20262222\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0008\nBNB / H \u00b7 \u4e70\u5355 #2\n\t30H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0007\nBNB / H \u00b7 \u4e70\u5355 #3\n\t10H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0006\nBNB / H \u00b7 \u4e70\u5355 #4\n\t4H\t\u4efb\u610f\u77ff\u673a\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\u9000\u6b3e",
+        "askHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u53ef\u4e70\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u6765\u6e90\u77ff\u673a",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u5356\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u5269\u4f59\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u63a5\u53d7\u8303\u56f4",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u4e70\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "0",
+        "otherBalance": "30",
+        "targetRemaining": "30",
+        "bnb": "1247600000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "zh-CN",
+        "connected": true,
+        "selected": null,
+        "requested": "3",
+        "quantity": "3",
+        "fills": [
+          {
+            "id": "1",
+            "assetId": "63630472191749950382881361730954594557860580780362033722208116716511872111432",
+            "amount": "3",
+            "seller": "0x2222222222222222222222222222222222222222"
+          }
+        ],
+        "checkoutDisabled": false,
+        "scope": "",
+        "quote": "\u81ea\u52a8\u51d1\u9f50 1 \u5f20\u5356\u5355\n3H \u00d7 0.001\nTapeOut #5438 \u00b7 \u5356\u5355 #1\n0.003\n\u6210\u4ea4\u91d1\u989d\n0.003 BNB\n\u670d\u52a1\u8d39 1%\n0.00003 BNB\n\u5408\u8ba1\u652f\u4ed8\n0.00303 BNB\n\u6210\u4ea4\u79ef\u5206\n+3 \u5206\n\u8d39\u7528\u9884\u4f30 \u00b7 \u786e\u8ba4\u65f6\u94fe\u4e0a\u6838\u9a8c\n\u4e70\u5165 3H\n\n\u6b63\u5e38\u6536\u5272\u65f6\uff0c\u6210\u4ea4\u524d\u6536\u76ca\u5148\u7ed3\u7ed9\u5356\u5bb6\u3002",
+        "asks": "0.0007\nBNB / H \u00b7 \u5356\u5355 #5\n\t5H\n\u7d2f\u8ba1 5H\n\tTapeOut #5438\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\n0.001\nBNB / H \u00b7 \u5356\u5355 #1\n\t50H\n\u4e70\u5165 3H\n\u7d2f\u8ba1 55H\n\tTapeOut #5438\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355\n0.0012\nBNB / H \u00b7 \u5356\u5355 #2\n\t30H\n\u7d2f\u8ba1 85H\n\tBehemoth #1772\t0x3333\u20263333\n\t\u4e70\u5165\u6b64\u5355\n0.0015\nBNB / H \u00b7 \u5356\u5355 #3\n\t100H\n\u7d2f\u8ba1 185H\n\tTapeOut #4000\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355",
+        "bids": "0.0009\nBNB / H \u00b7 \u4e70\u5355 #1\n\t40H\t\u63a5\u53d7 2 \u53f0\u77ff\u673a\t0x2222\u20262222\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0008\nBNB / H \u00b7 \u4e70\u5355 #2\n\t30H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0007\nBNB / H \u00b7 \u4e70\u5355 #3\n\t10H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0006\nBNB / H \u00b7 \u4e70\u5355 #4\n\t4H\t\u4efb\u610f\u77ff\u673a\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\u9000\u6b3e",
+        "askHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u53ef\u4e70\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u6765\u6e90\u77ff\u673a",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u5356\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u5269\u4f59\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u63a5\u53d7\u8303\u56f4",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u4e70\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "0",
+        "otherBalance": "30",
+        "targetRemaining": "30",
+        "bnb": "1247600000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "zh-CN",
+        "connected": true,
+        "selected": "2",
+        "requested": "31",
+        "quantity": "30",
+        "fills": [
+          {
+            "id": "2",
+            "assetId": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+            "amount": "30",
+            "seller": "0x3333333333333333333333333333333333333333"
+          }
+        ],
+        "checkoutDisabled": true,
+        "scope": "\u4ec5\u4e70\u6b64\u5355\nBehemoth #1772\n\u5356\u5355 #2\n\u6062\u590d\u81ea\u52a8\u5339\u914d",
+        "quote": "\u4ec5\u5339\u914d\u5df2\u9009\u5356\u5355\n30H \u00d7 0.0012\nBehemoth #1772 \u00b7 \u5356\u5355 #2\n0.036\n\n\u5df2\u9009\u5356\u5355\u6570\u91cf\u4e0d\u8db3\u6216\u5df2\u5931\u6548\uff0c\u672c\u6b21\u53ef\u5339\u914d 30H\u3002\u8bf7\u8c03\u6574\u6570\u91cf\u3002\n\n\u6210\u4ea4\u91d1\u989d\n0.036 BNB\n\u670d\u52a1\u8d39 1%\n0.00036 BNB\n\u5408\u8ba1\u652f\u4ed8\n0.03636 BNB\n\u6210\u4ea4\u79ef\u5206\n+36 \u5206\n\u8d39\u7528\u9884\u4f30 \u00b7 \u786e\u8ba4\u65f6\u94fe\u4e0a\u6838\u9a8c\n\u4e70\u5165 30H\n\n\u6b63\u5e38\u6536\u5272\u65f6\uff0c\u6210\u4ea4\u524d\u6536\u76ca\u5148\u7ed3\u7ed9\u5356\u5bb6\u3002",
+        "asks": "0.0007\nBNB / H \u00b7 \u5356\u5355 #5\n\t5H\n\u7d2f\u8ba1 5H\n\tTapeOut #5438\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\n0.001\nBNB / H \u00b7 \u5356\u5355 #1\n\t50H\n\u7d2f\u8ba1 55H\n\tTapeOut #5438\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355\n0.0012\nBNB / H \u00b7 \u5356\u5355 #2\n\t30H\n\u4e70\u5165 30H\n\u7d2f\u8ba1 85H\n\tBehemoth #1772\t0x3333\u20263333\n\t\u4e70\u5165\u6b64\u5355\n0.0015\nBNB / H \u00b7 \u5356\u5355 #3\n\t100H\n\u7d2f\u8ba1 185H\n\tTapeOut #4000\t0x2222\u20262222\n\t\u4e70\u5165\u6b64\u5355",
+        "bids": "0.0009\nBNB / H \u00b7 \u4e70\u5355 #1\n\t40H\t\u63a5\u53d7 2 \u53f0\u77ff\u673a\t0x2222\u20262222\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0008\nBNB / H \u00b7 \u4e70\u5355 #2\n\t30H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0007\nBNB / H \u00b7 \u4e70\u5355 #3\n\t10H\t\u63a5\u53d7 1 \u53f0\u77ff\u673a\t0x3333\u20263333\n\u53ef\u5356\u7ed9\u5b83\n\t\u5356\u7ed9\u6b64\u5355\n0.0006\nBNB / H \u00b7 \u4e70\u5355 #4\n\t4H\t\u4efb\u610f\u77ff\u673a\t0x1111\u20261111\n\u6211\u7684\n\t\u64a4\u5355\u9000\u6b3e",
+        "askHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u53ef\u4e70\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u6765\u6e90\u77ff\u673a",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u5356\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "\u5355\u4ef7 / H",
+            "left": 152.5,
+            "width": 133.1875
+          },
+          {
+            "text": "\u5269\u4f59\u6570\u91cf",
+            "left": 285.6875,
+            "width": 111
+          },
+          {
+            "text": "\u63a5\u53d7\u8303\u56f4",
+            "left": 396.6875,
+            "width": 199.796875
+          },
+          {
+            "text": "\u4e70\u5bb6",
+            "left": 596.484375,
+            "width": 148
+          },
+          {
+            "text": "\u64cd\u4f5c",
+            "left": 744.484375,
+            "width": 148.015625
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "0",
+        "otherBalance": "30",
+        "targetRemaining": "30",
+        "bnb": "1247600000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "en",
+        "connected": true,
+        "selected": "2",
+        "requested": "30",
+        "quantity": "30",
+        "fills": [
+          {
+            "id": "2",
+            "assetId": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+            "amount": "30",
+            "seller": "0x3333333333333333333333333333333333333333"
+          }
+        ],
+        "checkoutDisabled": false,
+        "scope": "This listing only\nBehemoth #1772\nListing #2\nMatch all listings",
+        "quote": "Matching the selected listing only\n30H \u00d7 0.0012\nBehemoth #1772 \u00b7 Listing #2\n0.036\nTrade value\n0.036 BNB\nService fee 1%\n0.00036 BNB\nTotal payment\n0.03636 BNB\nTrading points\n+36 pts\nFee estimate \u00b7 Checked on-chain when confirming\nBuy 30H\n\nWhen harvesting succeeds, pre-purchase rewards are settled to the seller first.",
+        "asks": "0.0007 BNB/H \u00b7 5H\nCancel\nTapeOut #5438\n\u00b7 Mine\n0.001 BNB/H \u00b7 50H\nBuy this listing\nTapeOut #5438\n\u00b7 Seller 0x2222\u20262222\n0.0012 BNB/H \u00b7 30H\nBuy this listing\nBehemoth #1772\n\u00b7 Seller 0x3333\u20263333\n0.0015 BNB/H \u00b7 100H\nBuy this listing\nTapeOut #4000\n\u00b7 Seller 0x2222\u20262222",
+        "bids": "0.0009 BNB/H \u00b7 40H\nSell into bid\nAccepts 2 miners\n\u00b7 Buyer 0x2222\u20262222\n0.0008 BNB/H \u00b7 30H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0007 BNB/H \u00b7 10H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0006 BNB/H \u00b7 4H\nCancel and refund\nAny miner\n\u00b7 Mine",
+        "askHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Available",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Original miner",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Seller",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Remaining H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Accepted miners",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Buyer",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "0",
+        "otherBalance": "30",
+        "targetRemaining": "30",
+        "bnb": "1247600000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "en",
+        "connected": true,
+        "selected": "2",
+        "requested": "3",
+        "quantity": "3",
+        "fills": [
+          {
+            "id": "2",
+            "assetId": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+            "amount": "3",
+            "seller": "0x3333333333333333333333333333333333333333"
+          }
+        ],
+        "checkoutDisabled": false,
+        "scope": "This listing only\nBehemoth #1772\nListing #2\nMatch all listings",
+        "quote": "Matching the selected listing only\n3H \u00d7 0.0012\nBehemoth #1772 \u00b7 Listing #2\n0.0036\nTrade value\n0.0036 BNB\nService fee 1%\n0.000036 BNB\nTotal payment\n0.003636 BNB\nTrading points\n+3.6 pts\nFee estimate \u00b7 Checked on-chain when confirming\nBuy 3H\n\nWhen harvesting succeeds, pre-purchase rewards are settled to the seller first.",
+        "asks": "0.0007 BNB/H \u00b7 5H\nCancel\nTapeOut #5438\n\u00b7 Mine\n0.001 BNB/H \u00b7 50H\nBuy this listing\nTapeOut #5438\n\u00b7 Seller 0x2222\u20262222\n0.0012 BNB/H \u00b7 30H\nBuy this listing\nBehemoth #1772\n\u00b7 Seller 0x3333\u20263333\n0.0015 BNB/H \u00b7 100H\nBuy this listing\nTapeOut #4000\n\u00b7 Seller 0x2222\u20262222",
+        "bids": "0.0009 BNB/H \u00b7 40H\nSell into bid\nAccepts 2 miners\n\u00b7 Buyer 0x2222\u20262222\n0.0008 BNB/H \u00b7 30H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0007 BNB/H \u00b7 10H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0006 BNB/H \u00b7 4H\nCancel and refund\nAny miner\n\u00b7 Mine",
+        "askHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Available",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Original miner",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Seller",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Remaining H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Accepted miners",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Buyer",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "0",
+        "otherBalance": "30",
+        "targetRemaining": "30",
+        "bnb": "1247600000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "en",
+        "connected": true,
+        "selected": "2",
+        "requested": "0",
+        "quantity": "0",
+        "fills": [],
+        "checkoutDisabled": true,
+        "scope": "This listing only\nBehemoth #1772\nListing #2\nMatch all listings",
+        "quote": "Only the selected listing will be purchased. Other listings will not be matched.\n\nTrade value\n0 BNB\nService fee 1%\n0 BNB\nTotal payment\n0 BNB\nTrading points\n+0 pts\nEnter H to check the quote\nBuy 0H\n\nWhen harvesting succeeds, pre-purchase rewards are settled to the seller first.",
+        "asks": "0.0007 BNB/H \u00b7 5H\nCancel\nTapeOut #5438\n\u00b7 Mine\n0.001 BNB/H \u00b7 50H\nBuy this listing\nTapeOut #5438\n\u00b7 Seller 0x2222\u20262222\n0.0012 BNB/H \u00b7 27H\nBuy this listing\nBehemoth #1772\n\u00b7 Seller 0x3333\u20263333\n0.0015 BNB/H \u00b7 100H\nBuy this listing\nTapeOut #4000\n\u00b7 Seller 0x2222\u20262222",
+        "bids": "0.0009 BNB/H \u00b7 40H\nSell into bid\nAccepts 2 miners\n\u00b7 Buyer 0x2222\u20262222\n0.0008 BNB/H \u00b7 30H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0007 BNB/H \u00b7 10H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0006 BNB/H \u00b7 4H\nCancel and refund\nAny miner\n\u00b7 Mine",
+        "askHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Available",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Original miner",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Seller",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Remaining H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Accepted miners",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Buyer",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "3",
+        "otherBalance": "30",
+        "targetRemaining": "27",
+        "bnb": "1243964000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      },
+      {
+        "virtualAssets": true,
+        "mainnetWrites": false,
+        "language": "en",
+        "connected": true,
+        "selected": "2",
+        "requested": "1",
+        "quantity": "0",
+        "fills": [],
+        "checkoutDisabled": true,
+        "scope": "This listing only\nListing #2\nListing #2\nMatch all listings",
+        "quote": "Only the selected listing will be purchased. Other listings will not be matched.\n\nThe selected listing is unavailable or has insufficient units. 0H can be matched. Adjust the quantity.\n\nTrade value\n0 BNB\nService fee 1%\n0 BNB\nTotal payment\n0 BNB\nTrading points\n+0 pts\nEnter H to check the quote\nBuy 0H\n\nWhen harvesting succeeds, pre-purchase rewards are settled to the seller first.",
+        "asks": "0.0007 BNB/H \u00b7 5H\nCancel\nTapeOut #5438\n\u00b7 Mine\n0.001 BNB/H \u00b7 50H\nBuy this listing\nTapeOut #5438\n\u00b7 Seller 0x2222\u20262222\n0.0015 BNB/H \u00b7 100H\nBuy this listing\nTapeOut #4000\n\u00b7 Seller 0x2222\u20262222",
+        "bids": "0.0009 BNB/H \u00b7 40H\nSell into bid\nAccepts 2 miners\n\u00b7 Buyer 0x2222\u20262222\n0.0008 BNB/H \u00b7 30H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0007 BNB/H \u00b7 10H\nSell into bid\nAccepts 1 miner\n\u00b7 Buyer 0x3333\u20263333\n0.0006 BNB/H \u00b7 4H\nCancel and refund\nAny miner\n\u00b7 Mine",
+        "askHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Available",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Original miner",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Seller",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "bidHeaders": [
+          {
+            "text": "Price / H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Remaining H",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Accepted miners",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Buyer",
+            "left": 0,
+            "width": 0
+          },
+          {
+            "text": "Actions",
+            "left": 0,
+            "width": 0
+          }
+        ],
+        "overflow": false,
+        "targetAsset": "88699376240118305706041240139653206440228195486797925889468980358406954548046",
+        "targetBalance": "3",
+        "otherBalance": "30",
+        "targetRemaining": "0",
+        "bnb": "1243964000000000000",
+        "before": {
+          "target": "0",
+          "other": "30",
+          "bnb": "1247600000000000000"
+        }
+      }
+    ]
+  }
+}

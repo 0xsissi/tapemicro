@@ -172,5 +172,9 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 
 /* Public books include the connected wallet's orders; their action is cancellation. */
 .own-order-label{display:inline-block;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--text-2);font-size:13px;font-weight:400;line-height:1.6;white-space:nowrap}
-.book-table.public-asks th:nth-child(1){width:16%}.book-table.public-asks th:nth-child(2){width:14%}.book-table.public-asks th:nth-child(3){width:14%}.book-table.public-asks th:nth-child(4){width:22%}.book-table.public-asks th:nth-child(5){width:20%}.book-table.public-asks th:nth-child(6){width:14%}
+.book-table.public-book th:nth-child(1){width:18%}.book-table.public-book th:nth-child(2){width:15%}.book-table.public-book th:nth-child(3){width:27%}.book-table.public-book th:nth-child(4){width:20%}.book-table.public-book th:nth-child(5){width:20%}
+.book-table.public-book .price-cell small{display:block}
 .mobile-order-main>.button{flex-shrink:0}
+.purchase-scope{display:grid;gap:4px;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--text-2)}.purchase-scope strong{font-size:15px;color:var(--text)}.purchase-scope small{font-size:13px;color:var(--text-3)}.purchase-scope button{justify-self:start;margin-top:4px}
+.mobile-order-main>.text-button{flex-shrink:0}
+.fill-breakdown>div>span:first-child small{display:block;font-size:13px;color:var(--text-3);line-height:1.5}

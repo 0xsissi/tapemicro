@@ -9,6 +9,10 @@ let language=readLanguage();
 export const getLanguage=()=>language;
 export const locale=()=>language==='en'?'en-US':'zh-CN';
 const words={
+ '买入此单':'Buy this listing','仅买此单':'This listing only','恢复自动匹配':'Match all listings','仅匹配已选卖单':'Matching the selected listing only',
+ '只购买已选卖单，不会匹配其他卖单。':'Only the selected listing will be purchased. Other listings will not be matched.',
+ '这张卖单当前不可买，请刷新盘口':'This listing is unavailable. Refresh the order book.',
+ '查找只筛选列表；指定购买请点「买入此单」。':'Search filters the list only. Choose Buy this listing to target a specific listing.',
  '恢复钱包…':'Restoring…','正在恢复钱包连接…':'Restoring wallet connection…','切回 BSC':'Switch to BSC','恢复连接':'Reconnect','切换钱包':'Switch wallet',
  '网络已设为 BSC 主网，连接时请在钱包中确认。下次访问会自动恢复已授权的钱包。':'BSC mainnet is preconfigured. Confirm in your wallet. Your authorized wallet will reconnect automatically next time.',
  '使用指南':'Guide',
@@ -448,6 +452,8 @@ const templates=[
  ['正在加载 · 已扫描 {0} / {1} 单 · {2}','Loading · Scanned {0} / {1} listings · {2}'],
  ['已扫描 {0} / {1} 单 · {2}','Scanned {0} / {1} listings · {2}'],
  ['自动凑齐 {0} 张卖单','Matched {0} listings'],
+ ['累计 {0}H','Cumulative {0}H'],
+ ['已选卖单数量不足或已失效，本次可匹配 {0}H。请调整数量。','The selected listing is unavailable or has insufficient units. {0}H can be matched. Adjust the quantity.'],
  ['{0}，本次可匹配 {1}H。请调整数量或加载更多卖单。','{0}. Available match: {1}H. Adjust the amount or load more listings.'],
  ['{0}，本次可匹配 {1}H。请调整数量。','{0}. Available match: {1}H. Adjust the amount.'],
  ['已合并 {0} 张卖单，一笔交易。','Combined {0} listings in one transaction.'],
