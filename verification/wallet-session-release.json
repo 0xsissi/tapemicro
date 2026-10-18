@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-18T00:41:52.454250+00:00",
+  "frontendTests": 139,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "websitePublished": true,
+  "resourcesVerified": 29,
+  "manifestSha256": "bc6fbf354be84798947af6c2d04543e528f00a772ef5d9558ecace45f2255278",
+  "walletConnectAdded": false,
+  "browserChecks": {
+    "date": "2026-10-18T00:38:12.174010+00:00",
+    "passed": true,
+    "virtualWallet": true,
+    "mainnetWrites": false,
+    "automaticPermissionRequests": 0,
+    "explicitDisconnectPersists": true,
+    "sameRewardTotal": true,
+    "startupHeadingStable": true,
+    "checks": [
+      {
+        "address": "0x1111111111111111111111111111111111111111",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 25
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "desktop-restored",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x1111111111111111111111111111111111111111",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 23
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111"
+        ],
+        "headerText": "Holdings2 HClaimable0.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 259.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "mobile-stable-final",
+        "headingTops": [
+          259.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x2222222222222222222222222222222222222222",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 27
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111",
+          "read-start:0x2222222222222222222222222222222222222222",
+          "read-end:0x2222222222222222222222222222222222222222"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "account-changed",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x2222222222222222222222222222222222222222",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 29
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111",
+          "read-start:0x2222222222222222222222222222222222222222",
+          "read-end:0x2222222222222222222222222222222222222222",
+          "read-start:0x2222222222222222222222222222222222222222"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": true,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "transient-disconnect-restored",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x2222222222222222222222222222222222222222",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 29
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111",
+          "read-start:0x2222222222222222222222222222222222222222",
+          "read-end:0x2222222222222222222222222222222222222222",
+          "read-start:0x2222222222222222222222222222222222222222",
+          "read-end:0x2222222222222222222222222222222222222222"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": true,
+        "label": "wrong-chain-no-prompt",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": null,
+        "bannerVisible": false,
+        "counts": {
+          "requests": 2,
+          "sends": 0,
+          "silent": 31
+        },
+        "dataLoaded": false,
+        "debug": [],
+        "headerText": "",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "readError": false,
+        "reading": false,
+        "ready": false,
+        "restoring": false,
+        "label": "manual-disconnect-persists",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x1111111111111111111111111111111111111111",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 3,
+          "sends": 0,
+          "silent": 32
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "explicit-connect-only",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      },
+      {
+        "address": "0x1111111111111111111111111111111111111111",
+        "bannerVisible": false,
+        "counts": {
+          "requests": 3,
+          "sends": 0,
+          "silent": 34
+        },
+        "dataLoaded": true,
+        "debug": [
+          "read-start:0x1111111111111111111111111111111111111111",
+          "read-end:0x1111111111111111111111111111111111111111"
+        ],
+        "headerText": "\u6301\u67092 H\u53ef\u98860.0035 BEM",
+        "headerTotal": "356300",
+        "headingTop": 160.796875,
+        "overflow": false,
+        "pageAmount": "0.003563 BEM",
+        "pageTotal": "356300",
+        "readError": false,
+        "reading": false,
+        "ready": true,
+        "restoring": false,
+        "unavailable": false,
+        "wrongChain": false,
+        "label": "guide-return-no-prompt",
+        "headingTops": [
+          160.796875
+        ],
+        "startupBannerVisible": false
+      }
+    ]
+  }
+}

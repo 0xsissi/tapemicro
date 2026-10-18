@@ -9,6 +9,8 @@ let language=readLanguage();
 export const getLanguage=()=>language;
 export const locale=()=>language==='en'?'en-US':'zh-CN';
 const words={
+ '恢复钱包…':'Restoring…','正在恢复钱包连接…':'Restoring wallet connection…','切回 BSC':'Switch to BSC','恢复连接':'Reconnect','切换钱包':'Switch wallet',
+ '网络已设为 BSC 主网，连接时请在钱包中确认。下次访问会自动恢复已授权的钱包。':'BSC mainnet is preconfigured. Confirm in your wallet. Your authorized wallet will reconnect automatically next time.',
  '使用指南':'Guide',
  '缓存数据':'Cached display data','链上读取':'Direct chain read',
  '停止核验':'Stop checking','停止读取':'Stop loading','已停止读取，可重新读取或按编号查找。':'Loading stopped. Retry or look up a miner by ID.','已停止核验，可重新查询。':'Check stopped. You can look up the miner again.',

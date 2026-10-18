@@ -166,3 +166,6 @@ dialog{background:var(--surface);color:var(--text);border:1px solid var(--line);
 /* The guide is the fifth navigation item; keep the wrapped header within small screens. */
 @media(max-width:1180px){.main-nav{gap:0}}
 @media(max-width:360px){.main-nav a{font-size:14px}}
+
+/* Reserve both balance lines before account data arrives, including long English labels. */
+@media(max-width:560px){.header-balances>span,.header-balances>a{flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;min-height:44px}}
