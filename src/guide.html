@@ -10,256 +10,25 @@
 <link rel="preload" href="./fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" hreflang="en" href="./guide-en.html">
-<style>
-@font-face{font-family:Plex;src:url('./fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:Plex;src:url('./fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
-:root{
-  --bg:#0B0C0E;--surface:#131518;--raise:#1A1D21;--line:#262A30;--line-soft:#1C1F24;
-  --text:#F3F3F1;--text-2:#B4B8BF;--text-3:#858A92;--up:#4CC38A;--down:#F0716B;--gold:#E8B44A;
-  --gold-tint:rgba(232,180,74,.07);--up-tint:rgba(76,195,138,.08);--down-tint:rgba(240,113,107,.08);
-  --font:"Plex","IBM Plex Sans","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;
-  --mono:var(--font);
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:auto;scroll-padding-top:84px}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.75 var(--font);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-/* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(11,12,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-soft)}
-.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;font-size:16px}
-.brand svg{width:22px;height:22px;fill:none;stroke:var(--text);stroke-width:1.6}
-.brand .core{fill:var(--gold);stroke:none}
-.nav{display:flex;gap:22px;font-size:14px}
-.nav a{text-decoration:none;color:var(--text-2);padding:20px 0;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--text)}
-.nav a.on{color:var(--text);border-color:var(--text)}
-.top .go{margin-left:auto;text-decoration:none;font-size:14px;border:1px solid var(--line);border-radius:10px;padding:7px 14px}
-.top .go:hover{background:var(--raise)}
-/* layout */
-.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding:40px 24px 96px}
-.toc{position:sticky;top:96px;align-self:start;font-size:14px}
-.toc b{display:block;color:var(--text-3);font-weight:400;font-size:13px;letter-spacing:.08em;margin-bottom:10px}
-.toc a{display:flex;gap:10px;text-decoration:none;color:var(--text-2);padding:6px 10px;border-radius:8px;border-left:2px solid transparent}
-.toc a span{color:var(--text-3);font-variant-numeric:tabular-nums}
-.toc a:hover{background:var(--surface);color:var(--text)}
-.toc a.on{color:var(--text);background:var(--surface);border-left-color:var(--gold)}
-main{min-width:0}
-.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.12em;font-weight:600}
-h1{font-size:40px;line-height:1.25;margin:10px 0 14px;font-weight:600;letter-spacing:-.01em}
-.lead{color:var(--text-2);font-size:16px;max-width:720px;margin:0}
-section{padding-top:64px}
-section>header{border-top:1px solid var(--line-soft);padding-top:28px;margin-bottom:22px}
-h2{font-size:26px;line-height:1.35;margin:6px 0 10px;font-weight:600}
-h3{font-size:17px;margin:30px 0 10px;font-weight:600}
-p{margin:0 0 12px}
-.sub{color:var(--text-2);max-width:760px}
-.muted{color:var(--text-3)}
-code,.mono{font-family:var(--mono);font-size:.9em}
-code{background:var(--raise);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
-strong{font-weight:600}
-/* quick cards */
-.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-.quick a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;transition:border-color .15s}
-.quick a:hover{border-color:var(--text-3)}
-.quick .n{color:var(--gold);font-size:13px;font-weight:600}
-.quick .t{display:block;font-size:17px;font-weight:600;margin:6px 0 4px}
-.quick .d{display:block;color:var(--text-2);font-size:13.5px}
-/* facts */
-.facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:22px 0}
-.facts div{padding:16px 18px;border-right:1px solid var(--line)}
-.facts div:last-child{border-right:0}
-.facts small{display:block;color:var(--text-3);font-size:13px}
-.facts b{display:block;font-size:22px;font-weight:600;margin-top:4px}
-.facts span{display:block;color:var(--text-2);font-size:13px}
-/* figures */
-figure{margin:22px 0 26px}
-.fig{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;overflow:hidden}
-figcaption{color:var(--text-3);font-size:13px;margin-top:10px;display:flex;gap:8px;align-items:baseline}
-figcaption .tag{border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:13px;color:var(--text-3);flex:none}
-svg.dia{width:100%;height:auto;display:block}
-svg.dia text{font-family:var(--font);fill:var(--text)}
-svg.dia .t2{fill:var(--text-2)}
-svg.dia .t3{fill:var(--text-3)}
-svg.dia .gold{fill:var(--gold)}
-svg.dia .up{fill:var(--up)}
-svg.dia .down{fill:var(--down)}
-/* steps */
-ol.steps{list-style:none;padding:0;margin:16px 0;counter-reset:s}
-ol.steps>li{position:relative;padding:0 0 18px 46px;counter-increment:s}
-ol.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--raise);display:grid;place-items:center;font-size:13px;font-weight:600}
-ol.steps>li::after{content:"";position:absolute;left:14px;top:32px;bottom:4px;width:1px;background:var(--line)}
-ol.steps>li:last-child::after{display:none}
-ol.steps b{display:block;font-weight:600}
-ol.steps p{color:var(--text-2);margin:2px 0 0}
-/* two col */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
-/* callouts */
-.note{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 16px;margin:16px 0;color:var(--text-2)}
-.note b{color:var(--text)}
-.note.warn{border-color:rgba(232,180,74,.35);background:var(--gold-tint)}
-.note.warn b{color:var(--gold)}
-.note.bad{border-color:rgba(240,113,107,.35);background:var(--down-tint)}
-.note.bad b{color:var(--down)}
-/* tables */
-.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
-.tbl th,.tbl td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
-.tbl th{color:var(--text-3);font-weight:400;font-size:13px;border-bottom-color:var(--line)}
-.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.tbl .free{color:var(--up)}
-.tblwrap{border:1px solid var(--line);border-radius:14px;overflow-x:auto;background:var(--surface)}
-.tblwrap .tbl{margin:0}
-.tblwrap .tbl tr:last-child td{border-bottom:0}
-/* ui mockups (示意，按主站样式) */
-.mock{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;font-size:13.5px;position:relative}
-.mock .ttl{font-weight:600;font-size:15px;margin-bottom:12px}
-.mock .row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:var(--text-2)}
-.mock .row b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
-.mock .row.tot{border-top:1px solid var(--line);margin-top:6px;padding-top:10px}
-.mock .row.tot b{font-size:16px}
-.mock .lbl{color:var(--text-3);font-size:13px;margin:10px 0 6px}
-.mock .input{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);font-size:18px;font-weight:600}
-.mock .input small{font-size:13px;color:var(--text-3);font-weight:400}
-.mock .chips{display:flex;gap:8px;margin-top:8px}
-.mock .chips span{flex:1;text-align:center;border:1px solid var(--line);border-radius:8px;padding:5px 0;color:var(--text-2);font-size:13px}
-.mock .chips span.on{border-color:var(--text);color:var(--text)}
-.mock .btn{display:block;text-align:center;border-radius:10px;padding:10px;margin-top:14px;font-weight:600;background:var(--text);color:var(--bg)}
-.mock .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-.mock .tabs{display:flex;border-bottom:1px solid var(--line);margin:-4px -4px 14px}
-.mock .tabs span{flex:1;text-align:center;padding:8px 0;color:var(--text-3)}
-.mock .tabs span.on{color:var(--text);border-bottom:2px solid var(--text)}
-.mock .seg{display:flex;gap:8px}
-.mock .seg span{flex:1;border:1px solid var(--line);border-radius:10px;padding:9px 10px;color:var(--text-2);font-size:13px;line-height:1.45}
-.mock .seg span b{display:block;color:var(--text);font-size:13.5px}
-.mock .seg span.on{border-color:var(--gold);background:var(--gold-tint)}
-.mock .seg span.on b{color:var(--gold)}
-.mock .step{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;color:var(--text-2)}
-.mock .step>i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;border:1px solid var(--line);flex:none}
-.mock .step.done>i{background:var(--up);border-color:var(--up);color:var(--bg)}
-.mock .step.cur{border-color:var(--text);color:var(--text)}
-.mock .item{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
-.mock .item.on{border-color:var(--text)}
-.mock .item .chip{width:34px;height:34px;border-radius:8px;background:var(--raise);display:grid;place-items:center;flex:none}
-.mock .item .chip svg{width:18px;height:18px;fill:none;stroke:var(--text-2);stroke-width:1.6}
-.mock .item div{flex:1;min-width:0}
-.mock .item small{display:block;color:var(--text-3);font-size:13px}
-.mock .item .r{text-align:right;flex:none}
-.mock .box{width:16px;height:16px;border:1px solid var(--text-3);border-radius:4px;flex:none}
-.mock .box.on{background:var(--text);border-color:var(--text);position:relative}
-.mock .box.on::after{content:"";position:absolute;left:5px;top:1px;width:4px;height:9px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg)}
-.mock .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 8px;font-size:13px;color:var(--text-3)}
-.mock .pill.ok{color:var(--up);border-color:rgba(76,195,138,.4)}
-.mk{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--gold);color:var(--bg);font-size:13px;font-weight:600;margin-right:6px;vertical-align:1px;font-style:normal;box-shadow:0 0 0 3px rgba(232,180,74,.16)}
-ol.steps.mkd>li::before{background:var(--gold);color:var(--bg);border-color:var(--gold)}
-.tbl.k td:first-child{white-space:nowrap}
-svg.dia.dia-m{display:none}
-@media (max-width:640px){svg.dia.dia-w{display:none}svg.dia.dia-m{display:block}}
-.flow{display:flex;align-items:stretch;gap:10px;margin:18px 0}
-.flow .fb{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.flow .fb small{display:block;color:var(--text-3);font-size:13px}
-.flow .fb b{display:block;margin:2px 0}
-.flow .fb p{color:var(--text-2);font-size:13.5px;margin:0}
-.flow .fb.hl{border-color:rgba(232,180,74,.45);background:var(--gold-tint)}
-.flow .fa{display:grid;place-items:center;color:var(--text-3);font-size:18px;flex:none}
-@media (max-width:640px){.flow{flex-direction:column}.flow .fa{transform:rotate(90deg);height:18px}}
-.legend{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
-.legend li{display:flex;gap:10px;color:var(--text-2);font-size:13.5px}
-.legend li i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--bg);font-size:13px;font-weight:600;display:grid;place-items:center;flex:none;margin-top:2px}
-/* wallet prompt mock */
-.wallet{max-width:340px;margin:0 auto;background:#16181c;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:13px}
-.wallet .wh{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;color:var(--text-2)}
-.wallet .wb{padding:16px}
-.wallet .wb .fn{font-family:var(--mono);font-size:14px;color:var(--text);margin-bottom:10px}
-.wallet .kv{display:flex;justify-content:space-between;gap:10px;padding:5px 0;color:var(--text-3)}
-.wallet .kv span:last-child{color:var(--text);font-family:var(--mono);font-size:13px;text-align:right}
-.wallet .wf{display:flex;gap:10px;padding:0 16px 16px}
-.wallet .wf span{flex:1;text-align:center;border-radius:10px;padding:8px 0;border:1px solid var(--line)}
-.wallet .wf span.ok{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
-/* check lists */
-.ck{list-style:none;padding:0;margin:8px 0}
-.ck li{padding:4px 0 4px 26px;position:relative;color:var(--text-2)}
-.ck li::before{content:"";position:absolute;left:2px;top:11px;width:12px;height:7px;border:solid var(--up);border-width:0 0 2px 2px;transform:rotate(-45deg)}
-.ck.no li::before{border:0;width:auto;height:auto;transform:none;content:"✕";color:var(--down);top:4px;left:3px;font-size:13px}
-.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
-.card b{display:block;margin-bottom:4px}
-.card p{color:var(--text-2);font-size:13.5px;margin:0}
-/* faq */
-details{border-bottom:1px solid var(--line-soft)}
-details:first-of-type{border-top:1px solid var(--line-soft)}
-summary{list-style:none;cursor:pointer;padding:16px 36px 16px 0;position:relative;font-weight:600}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:6px;top:12px;font-size:20px;font-weight:400;color:var(--text-3)}
-details[open] summary::after{content:"−"}
-details .a{color:var(--text-2);padding:0 0 18px;max-width:780px}
-.faqgroup{color:var(--text-3);font-size:13px;letter-spacing:.08em;margin:30px 0 6px}
-/* addresses */
-.addr{display:grid;gap:10px;margin:14px 0}
-.addr div{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
-.addr b{min-width:96px;font-weight:600}
-.addr code{background:none;border:0;padding:0;word-break:break-all;color:var(--text-2)}
-.addr a{font-size:13px;color:var(--text-3)}
-.addr a:hover{color:var(--text)}
-footer{border-top:1px solid var(--line-soft);color:var(--text-3);font-size:13px;padding:28px 0 40px}
-.totop{color:var(--text-3);text-decoration:none;font-size:13px}
-@media (max-width:960px){
-  .layout{grid-template-columns:minmax(0,1fr);gap:0;padding-top:24px}
-  .toc{position:sticky;top:64px;z-index:10;background:var(--bg);margin:0 -24px;padding:10px 24px;border-bottom:1px solid var(--line-soft);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-  .toc::-webkit-scrollbar{display:none}
-  .toc b{display:none}
-  .toc a{white-space:nowrap;border-left:0;border:1px solid var(--line);padding:4px 10px}
-  .toc a.on{border-color:var(--gold)}
-  html{scroll-padding-top:128px}
-  .two{grid-template-columns:minmax(0,1fr)}
-}
-@media (max-width:640px){
-  .wrap{padding:0 16px}
-  .toc{margin:0 -16px;padding:10px 16px}
-  .nav{display:none}
-  h1{font-size:30px}
-  h2{font-size:22px}
-  .quick,.cols3{grid-template-columns:1fr}
-  .facts{grid-template-columns:1fr 1fr}
-  .facts div:nth-child(2){border-right:0}
-  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .fig{padding:14px}
-  .mock{padding:14px}
-}
-
-body{font-variant-numeric:tabular-nums}
-.guide-language{flex-shrink:0;white-space:nowrap;margin-left:auto;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:14px}
-.top .go{margin-left:0;white-space:nowrap}
-.top .brand{flex-shrink:0}
-.mock,.flow .fb,.wallet{min-width:0;overflow-wrap:anywhere}
-.mock .row>*,.wallet .kv>*{min-width:0}
-.mock .row b{flex-shrink:0;text-align:right}
-.wallet .wb .fn{overflow-wrap:anywhere}
-@media(max-width:1120px){.top .wrap{gap:16px}.nav{gap:16px}}
-@media(max-width:960px){.top .nav{display:none}}
-@media(max-width:640px){.top .wrap{gap:12px}.top .go{padding:7px 10px}.tbl th,.tbl td{padding:10px 8px}.tbl.k td:first-child{white-space:normal}.fig{padding:12px}.wallet .wb,.wallet .wh{padding:12px}.mock .row b{flex-shrink:1}.legend li{overflow-wrap:anywhere}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="./protocol.css">
+<link rel="stylesheet" href="./guide.css">
+<script defer src="./guide.js"></script>
 </head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-logo" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><rect class="core" x="9" y="9" width="6" height="6" rx="1"/></symbol>
-</svg>
+<body class="protocol-app guide-page">
+<!-- ICONS -->
+<!-- GUIDE HEADER -->
+<main class="app-shell guide-content">
+<div class="page-heading"><div><h1>从这里开始使用 TapeMicro</h1><p>TapeMicro 把 TapeOut 和 Behemoth 的原矿机拆成 1H 一份的微矿机。1H 起买，随时挂单买卖，按持有份额领取 $BEM，集齐整台还能赎回原矿机。</p></div></div>
+<div class="quick">
+      <a href="#what"><span class="n">01 · 第一次使用</span><span class="t">3 分钟看懂微矿机</span><span class="d">原矿机、微矿机、收益归属和赎回的关系</span></a>
+      <a href="#buy"><span class="n">02 · 开始交易</span><span class="t">买入第一份微矿机</span><span class="d">立即买入、挂买单，以及成交前要核对什么</span></a>
+      <a href="#safety"><span class="n">03 · 遇到问题</span><span class="t">授权、确认与常见问题</span><span class="d">看懂钱包弹窗，识别不该确认的请求</span></a>
+    </div>
 
-<div class="top">
-  <div class="wrap">
-    <a class="brand" href="./index.html"><svg><use href="#i-logo"/></svg>TapeMicro</a>
-    <nav class="nav">
-      <a href="./index.html#deposit">拆分</a><a href="./index.html#market">交易</a><a href="./index.html#rewards">领取</a><a href="./index.html#points">积分</a><a class="on" href="./guide.html">使用指南</a>
-    </nav>
-    <a class="guide-language" href="./guide-en.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
-    <a class="go" href="./index.html#market">打开应用 →</a>
-  </div>
-</div>
 
-<div class="wrap layout">
-  <aside class="toc" id="toc">
+<div class="guide-layout">
+<aside class="toc" id="toc">
     <b>使用指南</b>
     <a href="#what"><span>01</span>TapeMicro 是什么</a>
     <a href="#start"><span>02</span>准备钱包</a>
@@ -273,18 +42,7 @@ body{font-variant-numeric:tabular-nums}
     <a href="#safety"><span>10</span>安全与授权</a>
     <a href="#faq"><span>11</span>常见问题</a>
   </aside>
-
-  <main>
-    <div class="eyebrow">TAPEMICRO / 使用指南</div>
-    <h1>从这里开始使用 TapeMicro</h1>
-    <p class="lead">TapeMicro 把 TapeOut 和 Behemoth 的原矿机拆成 1H 一份的微矿机。1H 起买，随时挂单买卖，按持有份额领取 $BEM，集齐整台还能赎回原矿机。</p>
-
-    <div class="quick">
-      <a href="#what"><span class="n">01 · 第一次使用</span><span class="t">3 分钟看懂微矿机</span><span class="d">原矿机、微矿机、收益归属和赎回的关系</span></a>
-      <a href="#buy"><span class="n">02 · 开始交易</span><span class="t">买入第一份微矿机</span><span class="d">立即买入、挂买单，以及成交前要核对什么</span></a>
-      <a href="#safety"><span class="n">03 · 遇到问题</span><span class="t">授权、确认与常见问题</span><span class="d">看懂钱包弹窗，识别不该确认的请求</span></a>
-    </div>
-
+<article class="guide-article">
     <!-- 01 -->
     <section id="what">
       <header><div class="eyebrow">01 / 认识 TapeMicro</div><h2>一台原矿机 = N 份 1H 微矿机</h2>
@@ -834,37 +592,10 @@ body{font-variant-numeric:tabular-nums}
       <h3>风险提示</h3>
       <p class="muted" style="font-size:13.5px">参与前请了解：原矿机可能停挖或变成异常状态；BEM 价格和全网产出都会变化，历史产出不代表未来；官方挖矿合约的领取可能暂时失败；智能合约存在未知漏洞的风险，目前合约未经第三方审计。请只投入你能承受损失的资金。</p>
     </section>
-  </main>
+
+</article>
 </div>
-
-<footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <span>© 2026 TapeMicro. 保留所有权利。</span>
-    <a class="totop" href="#">回到顶部 ↑</a>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var language=document.documentElement.lang==='en'?'en':'zh';
-  try{localStorage.setItem('tapemicro-language',language);}catch(e){}
-  var switcher=document.querySelector('.guide-language');
-  if(switcher){var languagePath=switcher.getAttribute('href');function updateLanguageLink(){switcher.href=languagePath+location.hash;}updateLanguageLink();window.addEventListener('hashchange',updateLanguageLink);}
-  var links=[].slice.call(document.querySelectorAll('#toc a'));
-  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
-  var current=null;
-  function set(id){
-    if(current===id)return;current=id;
-    links.forEach(function(a){a.classList.toggle('on',a===map[id]);});
-    var a=map[id],toc=document.getElementById('toc');if(a&&window.innerWidth<=960){toc.scrollTo({left:Math.max(0,a.offsetLeft-toc.clientWidth/2+a.offsetWidth/2),behavior:'auto'});}
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting)set(e.target.id);});
-    },{rootMargin:'-30% 0px -60% 0px'});
-    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
-  }
-})();
-</script>
+</main>
+<!-- GUIDE FOOTER -->
 </body>
 </html>

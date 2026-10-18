@@ -1,0 +1,789 @@
+{
+  "date": "2026-10-18T00:20:28.558024+00:00",
+  "sharedAppAssets": [
+    "tokens.css",
+    "protocol.css"
+  ],
+  "headerBuiltFromAppTemplate": true,
+  "sharedTypographyMatches": true,
+  "frontendTests": 131,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "websitePublished": true,
+  "resourcesVerified": 29,
+  "manifestSha256": "8b16846d2086e773755b53e0eee2b30fdf9c39d90c92d612a9745c9c452a1d67",
+  "browserChecks": {
+    "passed": true,
+    "mainnetTransactionsSubmitted": false,
+    "sharedTypographyMatches": true,
+    "styleDifferences": [],
+    "checks": [
+      {
+        "label": "desktop-zh",
+        "app": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 1430.65625,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1265
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 28.796875,
+            "left": 72.5,
+            "line": "28.8px",
+            "size": "18px",
+            "top": 23.09375,
+            "weight": "600",
+            "width": 122.484375
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 76,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1120
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 1230.265625,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 76,
+            "weight": "400",
+            "width": 1120
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 75,
+            "left": 218.984375,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 30
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 24,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 174.796875,
+            "weight": "400",
+            "width": 284.15625
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 40.796875,
+            "left": 72.5,
+            "line": "40.8px",
+            "size": "34px",
+            "top": 124,
+            "weight": "600",
+            "width": 284.15625
+          },
+          "width": 1280
+        },
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 11721.1875,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1265
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 28.796875,
+            "left": 72.5,
+            "line": "28.8px",
+            "size": "18px",
+            "top": 23.09375,
+            "weight": "600",
+            "width": 122.484375
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 76,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1120
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 11520.796875,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 76,
+            "weight": "400",
+            "width": 1120
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 75,
+            "left": 218.984375,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 30
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 48,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 174.796875,
+            "weight": "400",
+            "width": 920
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 40.796875,
+            "left": 72.5,
+            "line": "40.8px",
+            "size": "34px",
+            "top": 124,
+            "weight": "600",
+            "width": 920
+          },
+          "width": 1280
+        }
+      },
+      {
+        "label": "mobile-zh-390",
+        "app": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 2526.8125,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 375
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 27.1875,
+            "left": 18,
+            "line": "27.2px",
+            "size": "17px",
+            "top": 23.40625,
+            "weight": "600",
+            "width": 181
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 117,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 339
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 2278.03125,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 117,
+            "weight": "400",
+            "width": 339
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 50,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 66,
+            "weight": "400",
+            "width": 67.796875
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 25.1875,
+            "left": 18,
+            "line": "25.2px",
+            "size": "14px",
+            "top": 207,
+            "weight": "400",
+            "width": 265.203125
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 36,
+            "left": 18,
+            "line": "36px",
+            "size": "30px",
+            "top": 161,
+            "weight": "600",
+            "width": 265.203125
+          },
+          "width": 390
+        },
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 18755,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 375
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 27.1875,
+            "left": 18,
+            "line": "27.2px",
+            "size": "17px",
+            "top": 23.40625,
+            "weight": "600",
+            "width": 217
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 117,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 339
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 18473.421875,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 117,
+            "weight": "400",
+            "width": 339
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 50,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 66,
+            "weight": "400",
+            "width": 67.796875
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 75.5625,
+            "left": 18,
+            "line": "25.2px",
+            "size": "14px",
+            "top": 243,
+            "weight": "400",
+            "width": 339
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 72,
+            "left": 18,
+            "line": "36px",
+            "size": "30px",
+            "top": 161,
+            "weight": "600",
+            "width": 339
+          },
+          "width": 390
+        }
+      },
+      {
+        "label": "mobile-en-390",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 21023.4375,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 375
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 27.1875,
+            "left": 18,
+            "line": "27.2px",
+            "size": "17px",
+            "top": 23.40625,
+            "weight": "600",
+            "width": 200.21875
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 117,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 339
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 20741.859375,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 117,
+            "weight": "400",
+            "width": 339
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 50,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": 66,
+            "weight": "400",
+            "width": 67.796875
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 125.9375,
+            "left": 18,
+            "line": "25.2px",
+            "size": "14px",
+            "top": 243,
+            "weight": "400",
+            "width": 339
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 72,
+            "left": 18,
+            "line": "36px",
+            "size": "30px",
+            "top": 161,
+            "weight": "600",
+            "width": 339
+          },
+          "width": 390
+        }
+      },
+      {
+        "label": "mobile-en-320",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 24269.359375,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": -5409,
+            "weight": "400",
+            "width": 305
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 24,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -5384,
+            "weight": "600",
+            "width": 134.21875
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 117,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -5409,
+            "weight": "400",
+            "width": 269
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 23987.78125,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -5292,
+            "weight": "400",
+            "width": 269
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 50,
+            "left": 18,
+            "line": "22.4px",
+            "size": "14px",
+            "top": -5343,
+            "weight": "400",
+            "width": 53.625
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 151.125,
+            "left": 18,
+            "line": "25.2px",
+            "size": "14px",
+            "top": -5166,
+            "weight": "400",
+            "width": 269
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 72,
+            "left": 18,
+            "line": "36px",
+            "size": "30px",
+            "top": -5248,
+            "weight": "600",
+            "width": 269
+          },
+          "width": 320
+        }
+      },
+      {
+        "label": "mobile-zh-320",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 20662.59375,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": -19010,
+            "weight": "400",
+            "width": 305
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 24,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -18985,
+            "weight": "600",
+            "width": 151
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 117,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -19010,
+            "weight": "400",
+            "width": 269
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 20381.015625,
+            "left": 18,
+            "line": "24px",
+            "size": "15px",
+            "top": -18893,
+            "weight": "400",
+            "width": 269
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 50,
+            "left": 18,
+            "line": "22.4px",
+            "size": "14px",
+            "top": -18944,
+            "weight": "400",
+            "width": 53.796875
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 100.75,
+            "left": 18,
+            "line": "25.2px",
+            "size": "14px",
+            "top": -18767,
+            "weight": "400",
+            "width": 269
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 72,
+            "left": 18,
+            "line": "36px",
+            "size": "30px",
+            "top": -18849,
+            "weight": "600",
+            "width": 269
+          },
+          "width": 320
+        }
+      },
+      {
+        "label": "tablet-zh-768",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 14762.625,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": -13863,
+            "weight": "400",
+            "width": 753
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 28.796875,
+            "left": 28,
+            "line": "28.8px",
+            "size": "18px",
+            "top": -13839.40625,
+            "weight": "600",
+            "width": 537
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 149,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -13863,
+            "weight": "400",
+            "width": 697
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 14489.234375,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -13714,
+            "weight": "400",
+            "width": 697
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 52,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -13767,
+            "weight": "400",
+            "width": 139.390625
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 48,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -13615.203125,
+            "weight": "400",
+            "width": 697
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 40.796875,
+            "left": 28,
+            "line": "40.8px",
+            "size": "34px",
+            "top": -13666,
+            "weight": "600",
+            "width": 697
+          },
+          "width": 768
+        }
+      },
+      {
+        "label": "tablet-en-768",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 15932.265625,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": -14457,
+            "weight": "400",
+            "width": 753
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 28.796875,
+            "left": 28,
+            "line": "28.8px",
+            "size": "18px",
+            "top": -14433.40625,
+            "weight": "600",
+            "width": 516.9375
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 149,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -14457,
+            "weight": "400",
+            "width": 697
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 15658.875,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -14308,
+            "weight": "400",
+            "width": 697
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 52,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -14361,
+            "weight": "400",
+            "width": 139.390625
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 72,
+            "left": 28,
+            "line": "24px",
+            "size": "15px",
+            "top": -14209.203125,
+            "weight": "400",
+            "width": 697
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 40.796875,
+            "left": 28,
+            "line": "40.8px",
+            "size": "34px",
+            "top": -14260,
+            "weight": "600",
+            "width": 697
+          },
+          "width": 768
+        }
+      },
+      {
+        "label": "desktop-en",
+        "guide": {
+          "body": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 12279.46875,
+            "left": 0,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1265
+          },
+          "brand": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 28.796875,
+            "left": 72.5,
+            "line": "28.8px",
+            "size": "18px",
+            "top": 23.09375,
+            "weight": "600",
+            "width": 122.484375
+          },
+          "header": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 76,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 1120
+          },
+          "main": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 12079.078125,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 76,
+            "weight": "400",
+            "width": 1120
+          },
+          "nav": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 75,
+            "left": 218.984375,
+            "line": "24px",
+            "size": "15px",
+            "top": 0,
+            "weight": "400",
+            "width": 30.515625
+          },
+          "overflow": false,
+          "subtitle": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 48,
+            "left": 72.5,
+            "line": "24px",
+            "size": "15px",
+            "top": 174.796875,
+            "weight": "400",
+            "width": 920
+          },
+          "title": {
+            "font": "Plex, \"Microsoft YaHei\", \"PingFang SC\", \"Noto Sans CJK SC\", sans-serif",
+            "height": 40.796875,
+            "left": 72.5,
+            "line": "40.8px",
+            "size": "34px",
+            "top": 124,
+            "weight": "600",
+            "width": 920
+          },
+          "width": 1280
+        }
+      }
+    ],
+    "faqExpanded": true,
+    "languagePreservesSection": true
+  }
+}

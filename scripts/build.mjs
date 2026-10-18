@@ -3,14 +3,16 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {build} from 'esbuild';
 import {keccak256} from 'ethers';
+import {buildGuide} from './build-guide.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 await mkdir(`${root}dist/demo`,{recursive:true});
 await mkdir(`${root}dist/contracts`,{recursive:true});
 let html=await readFile(`${root}src/index.html`,'utf8');
 html=html.replace('<!-- ICONS -->',await readFile(`${root}src/icons.svg`,'utf8'));
 await writeFile(`${root}dist/index.html`,html);
-for(const file of ['styles.css','tokens.css','protocol.css','config.json','kol-list.json','kol-points.json','guide.html','guide-en.html'])await copyFile(`${root}src/${file}`,`${root}dist/${file}`);
-const files=['index.html','styles.css','tokens.css','protocol.css','app.js','config.json','kol-list.json','kol-points.json','protocol.json','demo/index.html','demo/app.js','deploy.html','deploy.js','fees.html','fees.js','contracts/compiler-input.json','THIRD_PARTY_NOTICES.txt','guide.html','guide-en.html'];
+for(const file of ['styles.css','tokens.css','protocol.css','guide.css','config.json','kol-list.json','kol-points.json'])await copyFile(`${root}src/${file}`,`${root}dist/${file}`);
+for(const file of ['guide.html','guide-en.html'])await writeFile(`${root}dist/${file}`,buildGuide(await readFile(`${root}src/${file}`,'utf8'),{appHtml:html,icons:await readFile(`${root}src/icons.svg`,'utf8'),english:file==='guide-en.html'}));
+const files=['index.html','styles.css','tokens.css','protocol.css','app.js','config.json','kol-list.json','kol-points.json','protocol.json','demo/index.html','demo/app.js','deploy.html','deploy.js','fees.html','fees.js','contracts/compiler-input.json','THIRD_PARTY_NOTICES.txt','guide.html','guide-en.html','guide.css','guide.js'];
 await mkdir(`${root}dist/fonts`,{recursive:true});
 for(const font of ['ibm-plex-sans-latin-400-normal.woff2','ibm-plex-sans-latin-600-normal.woff2','LICENSE']){await copyFile(`${root}src/fonts/${font}`,`${root}dist/fonts/${font}`);files.push('fonts/'+font);}
 await copyFile(`${root}THIRD_PARTY_NOTICES.txt`,`${root}dist/THIRD_PARTY_NOTICES.txt`);
@@ -23,6 +25,7 @@ demo=demo.replaceAll('="./guide.html"','="../guide.html"').replace('<title>TapeM
 await writeFile(`${root}dist/demo/index.html`,demo);
 await rm(`${root}dist/demo/model.js`,{force:true});
 await build({entryPoints:[`${root}src/simple-demo-client.mjs`],outfile:`${root}dist/demo/app.js`,bundle:true,format:'iife',platform:'browser',target:['es2022'],minify:true,legalComments:'eof'});
+await build({entryPoints:[`${root}src/guide-client.mjs`],outfile:`${root}dist/guide.js`,bundle:true,format:'iife',platform:'browser',target:['es2022'],minify:true,legalComments:'eof'});
 const protocol=JSON.parse(await readFile(`${root}src/protocol-legacy.json`,'utf8'));
 for(const name of ['TapeMicroVault','TapeMicroMarket','TapeMicroMarketV2','TapeMicroCustody','IPodMining']){
  const a=JSON.parse(await readFile(`${root}artifacts/${name}.json`,'utf8'));
@@ -42,7 +45,7 @@ await build({entryPoints:[`${root}src/fees-client.mjs`],outfile:`${root}dist/fee
 for(const name of ['TapeMicroVault','TapeMicroMarket','TapeMicroMarketV2','TapeMicroCustody']){await copyFile(`${root}contracts/${name}.sol`,`${root}dist/contracts/${name}.sol`);files.push(`contracts/${name}.sol`);}
 // A reopened page must fetch the matching bundle, even behind browser/CDN caches.
 // Content hashes also work when these files are served by DeWEB.
-for(const file of ['index.html','demo/index.html','deploy.html','fees.html']){
+for(const file of ['index.html','demo/index.html','deploy.html','fees.html','guide.html','guide-en.html']){
  let page=await readFile(`${root}dist/${file}`,'utf8');
  for(const url of new Set([...page.matchAll(/(?:src|href)="((?:\.{1,2}\/)[^"?]+\.(?:js|css))"/g)].map(m=>m[1]))){
   const bytes=await readFile(new URL(url,new URL('../dist/'+file,import.meta.url))),tag=createHash('sha256').update(bytes).digest('hex').slice(0,12);
