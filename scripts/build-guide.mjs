@@ -20,6 +20,6 @@ export function buildGuide(source,{appHtml,icons,english=false}){
  const returnLabel=english?'Back to app':'返回应用';
  header+=`<div class="header-right"><a class="language-switch guide-language" href="${switchTo}" lang="${english?'zh-CN':'en'}" hreflang="${english?'zh-CN':'en'}" aria-label="${switchLabel}">${english?'中文':'EN'}</a><a class="button secondary guide-return" href="./index.html#market">${returnLabel}</a></div></header>`;
  const copyright=english?'© 2026 TapeMicro. All rights reserved.':'© 2026 TapeMicro. 保留所有权利。';
- const footer=`<footer class="app-footer"><p>${copyright} <a href="https://tapemicro.top/" target="_blank" rel="noopener noreferrer">${english?'Official website':'官方网站'}：tapemicro.top</a> · <a href="https://github.com/0xsissi/tapemicro" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>${socialLinksMarkup({english})}<a class="totop" href="#">${english?'Back to top ↑':'回到顶部 ↑'}</a></footer>`;
+ const footer=`<footer class="app-footer"><p>${copyright} · <a href="https://github.com/0xsissi/tapemicro" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p>${socialLinksMarkup({english})}<a class="totop" href="#">${english?'Back to top ↑':'回到顶部 ↑'}</a></footer>`;
  return source.replace('<!-- ICONS -->',icons).replace('<!-- GUIDE HEADER -->',header).replace('<!-- GUIDE FOOTER -->',footer);
 }

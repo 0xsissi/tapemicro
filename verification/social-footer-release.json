@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-18T02:13:08.426447+00:00",
+  "date": "2026-10-18T02:18:40.308332+00:00",
   "websitePublished": true,
   "resourcesVerified": 32,
-  "manifestSha256": "83ec630351eeb5c8818a20e3799e601d01339eae487cc8050a7908c68fa5fa9b",
+  "manifestSha256": "70526cf10786bd06450b2adf086d657aa0ebbba447f648cf2d23ee476e333d4b",
   "frontendTests": 149,
   "contractsChanged": false,
   "mainnetTransactionsSubmitted": false,
   "footerChecks": {
     "passed": true,
-    "date": "2026-10-18T02:11:41.744182+00:00",
+    "date": "2026-10-18T02:17:19.915178+00:00",
     "checks": [
       {
         "page": "app",
@@ -16,7 +16,9 @@
           "https://x.com/luoluo3311",
           "https://t.me/+rQM0AKp729E2ZWZl"
         ],
-        "externalTabProtected": true
+        "externalTabProtected": true,
+        "iconOnly": true,
+        "officialSiteLinkRemoved": true
       },
       {
         "page": "demo",
@@ -24,7 +26,9 @@
           "https://x.com/luoluo3311",
           "https://t.me/+rQM0AKp729E2ZWZl"
         ],
-        "externalTabProtected": true
+        "externalTabProtected": true,
+        "iconOnly": true,
+        "officialSiteLinkRemoved": true
       },
       {
         "page": "local",
@@ -32,7 +36,9 @@
           "https://x.com/luoluo3311",
           "https://t.me/+rQM0AKp729E2ZWZl"
         ],
-        "externalTabProtected": true
+        "externalTabProtected": true,
+        "iconOnly": true,
+        "officialSiteLinkRemoved": true
       },
       {
         "page": "zh",
@@ -40,7 +46,9 @@
           "https://x.com/luoluo3311",
           "https://t.me/+rQM0AKp729E2ZWZl"
         ],
-        "externalTabProtected": true
+        "externalTabProtected": true,
+        "iconOnly": true,
+        "officialSiteLinkRemoved": true
       },
       {
         "page": "en",
@@ -48,7 +56,9 @@
           "https://x.com/luoluo3311",
           "https://t.me/+rQM0AKp729E2ZWZl"
         ],
-        "externalTabProtected": true
+        "externalTabProtected": true,
+        "iconOnly": true,
+        "officialSiteLinkRemoved": true
       }
     ],
     "publicBuildMatches": true,

@@ -1,4 +1,5 @@
 export const COMMUNITY_LINKS=Object.freeze({x:'https://x.com/luoluo3311',telegram:'https://t.me/+rQM0AKp729E2ZWZl'});
 export function socialLinksMarkup({english=false}={}){
- return`<nav class="footer-socials" aria-label="${english?'Community links':'社区链接'}"><a href="${COMMUNITY_LINKS.x}" target="_blank" rel="noopener noreferrer">X @luoluo3311 ↗</a><a href="${COMMUNITY_LINKS.telegram}" target="_blank" rel="noopener noreferrer">${english?'Telegram group ↗':'Telegram 群组 ↗'}</a></nav>`;
+ const telegram=english?'Telegram group':'Telegram 群组';
+ return`<nav class="footer-socials" aria-label="${english?'Community links':'社区链接'}"><a href="${COMMUNITY_LINKS.x}" target="_blank" rel="noopener noreferrer" aria-label="X @luoluo3311" title="X @luoluo3311"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg></a><a href="${COMMUNITY_LINKS.telegram}" target="_blank" rel="noopener noreferrer" aria-label="${telegram}" title="${telegram}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.7 3.1 18.3 20c-.2.8-.7 1-1.4.6l-5.2-3.8-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.3 9.7-8.7c.4-.4-.1-.5-.6-.2L5.8 13 1 11.5c-.8-.3-.8-.8.2-1.2L20.3 2.9c.8-.3 1.5.2 1.4.2Z"/></svg></a></nav>`;
 }
