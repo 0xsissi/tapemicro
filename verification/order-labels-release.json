@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-18T03:35:49.852527+00:00",
+  "websitePublished": true,
+  "resourcesVerified": 32,
+  "manifestSha256": "c3412ea9061c58f1868f0c58cb909af9445391955bbbe2a813a5e5be50a95d0f",
+  "frontendTests": 149,
+  "contractsChanged": false,
+  "mainnetTransactionsSubmitted": false,
+  "checks": {
+    "passed": true,
+    "date": "2026-10-18T03:34:41.832292+00:00",
+    "publicBookOrderLabelsRemoved": true,
+    "priceUnitsKept": true,
+    "minerIdsKept": true,
+    "actionIdsKept": true,
+    "matchingLogicChanged": false,
+    "contractsChanged": false,
+    "publicBuildMatches": true,
+    "browserValidationUnavailable": true
+  }
+}
