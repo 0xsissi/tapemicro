@@ -153,3 +153,52 @@ test('HTTP upstream failures expose neither a private RPC URL nor its token',asy
  const fake={health:()=>({ok:true}),snapshotJson:()=>'{"version":1}',account:()=>{throw Error('https://rpc.invalid/private-token');}},s=createServer(fake);
  try{await new Promise(r=>s.listen(0,'127.0.0.1',r));const response=await fetch('http://127.0.0.1:'+s.address().port+'/api/account/'+A);assert.equal(response.status,502);const text=await response.text();assert.doesNotMatch(text,/rpc\.invalid|private-token/);}finally{s.close();}
 });
+
+test('indexed cancelled bids remain readable when historical RPC log queries fail',async()=>{
+ const isolated=await createCache({config,protocol,accountTtlMs:0,log:()=>{}});
+ try{
+  await isolated.tick();
+  let queries=0;isolated.provider.getLogs=async()=>{queries++;throw Error('historical RPC temporarily unavailable');};
+  const data=JSON.parse(await isolated.account(C),(key,value)=>value&&typeof value==='object'&&'$big'in value?BigInt(value.$big):value);
+  const closed=data.closedBids.find(b=>b.id===2n);
+  assert.ok(closed,'cancelled bid remains in the account');
+  assert.equal(closed.refundedWei,5n*7n*10n**14n);
+  assert.equal(closed.filledAmount,0n);
+  assert.equal(queries,0,'account reads do not scan already indexed refund events again');
+ }finally{isolated.stop();isolated.provider.destroy();}
+});
+
+test('fully filled bids use an indexed zero refund without scanning history',async()=>{
+ const isolated=await createCache({config,protocol,accountTtlMs:0,log:()=>{}});
+ const end=(await node.provider.getBlock('latest')).timestamp+86400,price=10n**14n;
+ await tx(market.connect(sys.signers[2]).createBid([],1,price,end,{value:price}));
+ const bidId=(await market.nextBidId())-1n,assetId=await sys.vault.assetId(sys.nft.target,2);
+ await tx(market.connect(sys.signers[1]).sellBatch([[bidId,assetId,1,price]],0,end,{gasLimit:5_000_000}));
+ try{
+  await isolated.tick();let queries=0;
+  isolated.provider.getLogs=async()=>{queries++;throw Error('historical RPC temporarily unavailable');};
+  const data=JSON.parse(await isolated.account(C),(key,value)=>value&&typeof value==='object'&&'$big'in value?BigInt(value.$big):value);
+  const closed=data.closedBids.find(b=>b.id===bidId);
+  assert.equal(closed.refundedWei,0n);assert.equal(closed.filledAmount,1n);
+  assert.equal(queries,0);
+ }finally{isolated.stop();isolated.provider.destroy();}
+});
+
+test('a chain rollback discards indexed refunds before rebuilding the same bid',async()=>{
+ cache.stop();const isolated=await createCache({config,protocol,accountTtlMs:0,log:()=>{}});
+ const bidder=market.connect(sys.signers[2]),end=(await node.provider.getBlock('latest')).timestamp+86400,price=10n**14n;
+ await tx(bidder.createBid([],2,price,end,{value:2n*price}));
+ const bidId=(await market.nextBidId())-1n,checkpoint=await node.provider.send('evm_snapshot',[]);
+ try{
+  await isolated.tick();await tx(bidder.cancelBid(bidId));await isolated.tick();
+  const decode=text=>JSON.parse(text,(key,value)=>value&&typeof value==='object'&&'$big'in value?BigInt(value.$big):value);
+  assert.equal(decode(await isolated.account(C)).closedBids.find(b=>b.id===bidId).refundedWei,2n*price);
+  assert.equal(await node.provider.send('evm_revert',[checkpoint]),true);await isolated.tick();
+  const assetId=await sys.vault.assetId(sys.nft.target,2);
+  await tx(market.connect(sys.signers[1]).sellBatch([[bidId,assetId,1,price]],0,end,{gasLimit:5_000_000}));
+  await tx(bidder.cancelBid(bidId));await isolated.tick();
+  const rebuilt=decode(await isolated.account(C)).closedBids.find(b=>b.id===bidId);
+  assert.equal(rebuilt.refundedWei,price,'refund follows the replacement chain');
+  assert.equal(rebuilt.filledAmount,1n);
+ }finally{isolated.stop();isolated.provider.destroy();}
+});

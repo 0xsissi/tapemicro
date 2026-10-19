@@ -59,9 +59,9 @@ export async function createCache({config, protocol, rpcUrls = config.rpcUrls, p
   // ---- event index: Listed / BidCreated metadata, never re-queried ----
   const iface = main.market.interface, T = {
     Listed: iface.getEvent('Listed').topicHash,
-    ...(main.hasBids ? {BidCreated: iface.getEvent('BidCreated').topicHash} : {}),
+    ...(main.hasBids ? {BidCreated: iface.getEvent('BidCreated').topicHash, BidClosed: iface.getEvent('BidClosed').topicHash} : {}),
   };
-  const bidsByBidder = new Map(); let indexedTo = (config.deploymentBlock ?? 0) - 1; let chunk = logChunk;
+  const bidsByBidder = new Map(), bidRefunds = new Map(); let indexedTo = (config.deploymentBlock ?? 0) - 1; let chunk = logChunk;
   async function syncEvents(to) {
     while (indexedTo < to) {
       const from = indexedTo + 1, end = Math.min(to, from + chunk - 1);
@@ -73,8 +73,10 @@ export async function createCache({config, protocol, rpcUrls = config.rpcUrls, p
         if (e.name === 'Listed') main.originalAmounts.set(String(e.args.id), e.args.amount);
         else if (e.name === 'BidCreated') {
           main.bidMetadata.set(String(e.args.bidId), {assetIds: [...e.args.assetIds], originalAmount: e.args.amount});
+          bidRefunds.set(String(e.args.bidId), 0n);
           const k = e.args.bidder.toLowerCase(); if (!bidsByBidder.has(k)) bidsByBidder.set(k, []); bidsByBidder.get(k).push(e.args.bidId);
         }
+        else if (e.name === 'BidClosed') bidRefunds.set(String(e.args.bidId), e.args.refundedWei);
       }
       indexedTo = end;
     }
@@ -89,7 +91,7 @@ export async function createCache({config, protocol, rpcUrls = config.rpcUrls, p
     const base = await main.read({book: false, account: false, reward: false, simulateBids: false});
     const block = base.block, now = base.chainTime;
     if(snapshotHash&&snapshot){const previous=await p.getBlock(snapshot.block);if(!previous||previous.hash!==snapshotHash||block<snapshot.block){
-      indexedTo=(config.deploymentBlock??0)-1;main.originalAmounts.clear();main.bidMetadata.clear();bidsByBidder.clear();closedBids.clear();accounts.clear();open.asks.clear();open.bids.clear();nextSeen.asks=1n;nextSeen.bids=1n;
+      indexedTo=(config.deploymentBlock??0)-1;main.originalAmounts.clear();main.bidMetadata.clear();bidsByBidder.clear();bidRefunds.clear();closedBids.clear();accounts.clear();open.asks.clear();open.bids.clear();nextSeen.asks=1n;nextSeen.bids=1n;
       snapshot=null;serialized=null;snapshotHash=null;
     }}
     const [nextAsk, nextBid] = await batchRead(p, [{contract: main.market, method: 'nextListingId'}, ...(main.hasBids ? [{contract: main.market, method: 'nextBidId'}] : [])], {blockTag: block});
@@ -130,7 +132,10 @@ export async function createCache({config, protocol, rpcUrls = config.rpcUrls, p
       const rest = ids.filter(id => !closedBids.has(String(id)) && !open.bids.has(String(id)));
       if (rest.length) {
         const nextBid = (snapshot?.bidsTotal ?? 0n) + 1n;
-        const rows = (await inChunks(rest, chunkIds => g.readBids(chunkIds.length, data.block, data.chainTime, [], {next: nextBid, ids: chunkIds, simulate: false}))).flatMap(r => r.bids);
+        // Match bid state to the event index. A newer cancellation must not
+        // reuse the zero-refund entry from before its BidClosed event.
+        const bidBlock = Math.min(data.block, indexedTo);
+        const rows = (await inChunks(rest, chunkIds => g.readBids(chunkIds.length, bidBlock, data.chainTime, [], {next: nextBid, ids: chunkIds, simulate: false, indexedRefunds: bidRefunds}))).flatMap(r => r.bids);
         for (const b of rows) if (b.remaining === 0n) closedBids.set(String(b.id), b);
         myBids = [...known, ...rows];
       } else myBids = known;
